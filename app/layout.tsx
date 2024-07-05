@@ -1,17 +1,19 @@
-import Header from "@/components/header";
-import ActiveSectionContextProvider from "@/context/active-section-context";
-import { Toaster } from "react-hot-toast";
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Toaster } from "react-hot-toast";
 import "./globals.css";
+import Header from "@/components/header";
 import Footer from "@/components/footer";
 import ThemeSwitch from "@/components/theme-switch";
+import ActiveSectionContextProvider from "@/context/active-section-context";
 import ThemeContextProvider from "@/context/theme-context";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-	title: "Smit Bhamwala | Personal Portfolio",
+	title: "Smit Bhamwala | Personal Digital Portfolio",
 	description:
 		"Smit Bhamwala is a Full Stack developer with 2 years of experience.",
 	keywords: [
@@ -29,6 +31,12 @@ export const metadata: Metadata = {
 		"Back end",
 		"Full stack"
 	]
+};
+
+export const viewport: Viewport = {
+	width: "device-width",
+	initialScale: 1,
+	maximumScale: 1
 };
 
 export default function RootLayout({
@@ -51,6 +59,8 @@ export default function RootLayout({
 						<ThemeSwitch />
 					</ActiveSectionContextProvider>
 				</ThemeContextProvider>
+				<Analytics />
+				<SpeedInsights />
 			</body>
 		</html>
 	);
