@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import SectionHeading from "@/components/section-heading";
 import {
 	VerticalTimeline,
@@ -44,6 +44,13 @@ const ExperienceElement = ({ theme, item }: ExperienceElementProps) => {
 		triggerOnce: true,
 		threshold: 0.7
 	});
+
+	// const [width, setWidth] = useState(0);
+
+	// useEffect(() => {
+	// 	setWidth(window.innerWidth > 0 ? window.innerWidth : screen.width);
+	// }, [width]);
+
 	return (
 		<React.Fragment>
 			<VerticalTimelineElement
@@ -62,6 +69,7 @@ const ExperienceElement = ({ theme, item }: ExperienceElementProps) => {
 							? "0.4rem solid #9ca3af"
 							: "0.4rem solid rgba(255, 255, 255, 0.5)"
 				}}
+				// date={width <= 1170 ? "" : item.date}
 				date={item.date}
 				icon={item.icon}
 				iconStyle={{
@@ -74,7 +82,15 @@ const ExperienceElement = ({ theme, item }: ExperienceElementProps) => {
 				}}>
 				<div ref={ref}>
 					<h3 className="font-semibold capitalize">{item.title}</h3>
-					<p className="font-normal !mt-0">{item.location}</p>
+					{/* {width <= 1170 ? (
+						<>
+							<p className="font-normal !m-0">{item.location}</p>
+							<p className="!m-0">{item.date}</p>
+						</>
+					) : ( */}
+					<p className="font-normal !m-0">{item.location}</p>
+					{/* )} */}
+
 					<ul className="!mt-3 !font-normal text-gray-700 dark:text-white/75">
 						{item.description.map((task, index) => (
 							<li key={index} className="list-disc">

@@ -36,7 +36,7 @@ export const links = [
 export const experiencesData = [
 	{
 		title: "Bachelor of Technology (B.Tech)",
-		location: "Parul University, Vadodara, Gujarat",
+		location: "Parul University, Gujarat",
 		description: [
 			"Pursued B.Tech in Computer Science & Engineering from Parul University, Vadodara."
 		],
@@ -97,7 +97,7 @@ export const skillsData = [
 	"CSS",
 	"JavaScript",
 	"TypeScript",
-	"React.JS",
+	"React",
 	"Next.js",
 	"Auth.JS",
 	"Node.js",
