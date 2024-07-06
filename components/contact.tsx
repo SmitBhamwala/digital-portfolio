@@ -1,37 +1,40 @@
 "use client";
 
-import SectionHeading from "@/components/section-heading";
+import { useRef } from "react";
 import { motion } from "framer-motion";
+import toast from "react-hot-toast";
 import { useSectionInView } from "@/lib/hooks";
 import { sendEmail } from "@/actions/sendEmail";
+import SectionHeading from "@/components/section-heading";
 import SubmitBtn from "@/components/submit-btn";
-import toast from "react-hot-toast";
-import { useRef } from "react";
+import { useTheme } from "@/context/theme-context";
 
 export default function Contact() {
 	const { ref } = useSectionInView("Contact");
+	const { theme } = useTheme();
 
 	const emailRef = useRef<HTMLInputElement>(null);
 	const messageRef = useRef<HTMLTextAreaElement>(null);
 
 	return (
-		<motion.section
+		<section
 			id="contact"
 			ref={ref}
 			className="mb-16 w-[min(100%,38rem)] text-center"
 			// scroll-mt-[7rem]
-			initial={{
-				opacity: 0
-			}}
-			whileInView={{
-				opacity: 1
-			}}
-			transition={{
-				duration: 1
-			}}
-			viewport={{
-				once: true
-			}}>
+			// initial={{
+			// 	opacity: 0
+			// }}
+			// whileInView={{
+			// 	opacity: 1
+			// }}
+			// transition={{
+			// 	duration: 1
+			// }}
+			// viewport={{
+			// 	once: true
+			// }}
+		>
 			<SectionHeading>Contact me</SectionHeading>
 
 			<p className="text-gray-700 -mt-6 dark:text-white/80">
@@ -46,9 +49,27 @@ export default function Contact() {
 				className="mt-10 flex flex-col dark:text-black"
 				action={async (formData) => {
 					const { data, error } = await sendEmail(formData);
+					var width = window.innerWidth > 0 ? window.innerWidth : screen.width;
 
 					if (error) {
-						toast.error(error);
+						width <= 768
+							? theme == "light"
+								? toast.error(error)
+								: toast.error(error, {
+										style: {
+											background: "rgb(51 65 85)",
+											color: "#fff"
+										}
+								  })
+							: theme == "light"
+							? toast.error(error, { position: "top-right" })
+							: toast.error(error, {
+									position: "top-right",
+									style: {
+										background: "rgb(51 65 85)",
+										color: "#fff"
+									}
+							  });
 						return;
 					}
 					if (emailRef.current) {
@@ -58,10 +79,29 @@ export default function Contact() {
 						messageRef.current.value = "";
 					}
 
-					toast.success("Email sent successfully!");
+					width <= 768
+						? theme == "light"
+							? toast.success("Email sent successfully!")
+							: toast.success("Email sent successfully!", {
+									style: {
+										background: "rgb(51 65 85)",
+										color: "#fff"
+									}
+							  })
+						: theme == "light"
+						? toast.success("Email sent successfully!", {
+								position: "top-right"
+						  })
+						: toast.success("Email sent successfully!", {
+								position: "top-right",
+								style: {
+									background: "rgb(51 65 85)",
+									color: "#fff"
+								}
+						  });
 				}}>
 				<input
-					className="h-14 px-4 rounded-lg borderBlack dark:bg-white dark:bg-opacity-80 dark:focus:bg-opacity-100 transition-all dark:outline-none"
+					className="h-14 px-4 rounded-lg borderBlack dark:bg-white dark:bg-opacity-10 dark:text-gray-300 transition-all dark:outline-none"
 					name="senderEmail"
 					type="email"
 					required
@@ -70,7 +110,7 @@ export default function Contact() {
 					ref={emailRef}
 				/>
 				<textarea
-					className="h-52 my-3 rounded-lg borderBlack p-4 dark:bg-white dark:bg-opacity-80 dark:focus:bg-opacity-100 transition-all dark:outline-none"
+					className="h-52 my-3 rounded-lg borderBlack p-4 dark:bg-white dark:bg-opacity-10 dark:text-gray-300 transition-all dark:outline-none"
 					name="message"
 					placeholder="Your message"
 					required
@@ -79,6 +119,6 @@ export default function Contact() {
 				/>
 				<SubmitBtn />
 			</form>
-		</motion.section>
+		</section>
 	);
 }
