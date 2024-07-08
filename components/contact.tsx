@@ -14,7 +14,7 @@ import emailIMG from "@/public/email.png";
 import "./contact.css";
 
 export default function Contact() {
-	const { ref } = useSectionInView("Contact");
+	const { ref } = useSectionInView("Contact", 0.5);
 	const { theme } = useTheme();
 
 	const nameRef = useRef<HTMLInputElement>(null);
