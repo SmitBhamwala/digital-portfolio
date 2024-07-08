@@ -13,7 +13,7 @@ import {
 import { Tailwind } from "@react-email/tailwind";
 
 type ContactFormEmailProps = {
-	message: string;
+	message: string[];
 	senderEmail: string;
 	senderName: string;
 };
@@ -26,17 +26,21 @@ export default function ContactFormEmail({
 	return (
 		<Html>
 			<Head />
-			<Preview>New message from your digital portfolio</Preview>
+			<Preview>New Message from Your Digital Portfolio</Preview>
 			<Tailwind>
-				<Body className="bg-gray-100 text-black">
+				<Body className="rounded-md">
 					<Container>
-						<Section className="bg-white borderBlack my-10 px-10 py-4 rounded-md">
-							<Heading className="leading-tight">
-								You have received a message from {senderName}
+						<Section className="bg-gray-50 borderBlack my-2 px-6 py-4 rounded-md">
+							<Heading className="leading-tight text-black">
+								You have received a message
 							</Heading>
-							<Text>{message}</Text>
-							<Hr />
-							<Text>The sender's email is: {senderEmail}</Text>
+							<Text className="text-black">Sender's Name: {senderName}</Text>
+							<Text className="text-black">Sender's Email: {senderEmail}</Text>
+							<Container className="py-2 px-6 text-black bg-gray-100">
+								{message.map((msg, index) => (
+									<Text key={index}>{msg}</Text>
+								))}
+							</Container>
 						</Section>
 					</Container>
 				</Body>
