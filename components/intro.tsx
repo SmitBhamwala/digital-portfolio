@@ -61,6 +61,7 @@ export default function Intro() {
 					</p>
 					<Link
 						href="#contact"
+						replace
 						className="lg:w-fit text-center justify-center bg-gray-900 text-white px-7 py-3 flex items-center gap-2 rounded-2xl outline-none hover:bg-gray-950 active:scale-95 dark:bg-gray-500 transition"
 						onClick={() => {
 							setActiveSection("Contact");

@@ -2,6 +2,7 @@
 
 import { useRef } from "react";
 import toast from "react-hot-toast";
+import Link from "next/link";
 // import { MdEmail } from "react-icons/md";
 
 import { useSectionInView } from "@/lib/hooks";
@@ -33,7 +34,7 @@ export default function Contact() {
 			<SectionHeading>Get in Touch</SectionHeading>
 			<div className="flex flex-col xl:flex-row justify-center items-center gap-2 md:gap-6 xl:gap-8 m-auto">
 				<div className="flex flex-row xl:flex-col gap-2 md:gap-4 justify-center items-center text-gray-700 dark:text-white/75">
-					<a
+					<Link
 						href="https://www.linkedin.com/in/smit-bhamwala-8195971b0/"
 						target="_blank"
 						className="contact__box w-[6rem] md:w-[7rem] active:scale-95 transition bg-[#f3f4f6] dark:bg-[rgb(255, 255, 255)] dark:bg-opacity-5">
@@ -130,16 +131,16 @@ export default function Contact() {
 							</svg> */}
 						</div>
 						<h4 className="contact__title">LinkedIn</h4>
-					</a>
-					<a
+					</Link>
+					<Link
 						href="mailto:smitbhamwala@gmail.com"
 						className="contact__box w-[6rem] md:w-[7rem] active:scale-95 transition bg-[#f3f4f6] dark:bg-[rgb(255, 255, 255)] dark:bg-opacity-5">
 						<div className="about__icon">
 							<Image src={emailIMG} alt="Email Icon" height={30} width={30} />
 						</div>
 						<h4 className="contact__title">Email Me</h4>
-					</a>
-					<a
+					</Link>
+					<Link
 						href="https://wa.me/919662852061"
 						target="_blank"
 						className="contact__box w-[6rem] md:w-[7rem] active:scale-95 transition bg-[#f3f4f6] dark:bg-[rgb(255, 255, 255)] dark:bg-opacity-5">
@@ -184,7 +185,7 @@ export default function Contact() {
 							</svg>
 						</div>
 						<h4 className="contact__title">Whatsapp</h4>
-					</a>
+					</Link>
 				</div>
 
 				<p className="text-xl text-gray-500 font-medium">OR</p>

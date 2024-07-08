@@ -36,7 +36,8 @@ export default function About() {
 				<div className="w-[100%] sm:max-w-[50%] mx-auto">
 					<div className="about__info justify-center text-gray-700 dark:text-white/75">
 						<Link
-							href="#experience"
+							href="/#experience"
+							replace
 							className="about__box active:scale-95 transition bg-[#f3f4f6] dark:bg-[rgb(255, 255, 255)] dark:bg-opacity-5">
 							<div className="about__icon">
 								<MdInsights />
@@ -46,6 +47,7 @@ export default function About() {
 						</Link>
 						<Link
 							href="#projects"
+							replace
 							className="about__box active:scale-95 transition bg-[#f3f4f6] dark:bg-[rgb(255, 255, 255)] dark:bg-opacity-5">
 							<div className="about__icon">
 								<FaLaptopCode />
@@ -55,6 +57,7 @@ export default function About() {
 						</Link>
 						<Link
 							href="#contact"
+							replace
 							className="about__box active:scale-95 transition bg-[#f3f4f6] dark:bg-[rgb(255, 255, 255)] dark:bg-opacity-5">
 							<div className="about__icon">
 								<BiSupport />
