@@ -25,7 +25,7 @@ export default function Contact() {
 		<section
 			id="contact"
 			ref={ref}
-			className="mb-16 w-[min(100%,50rem)] text-center scroll-mt-36 lg:scroll-mt-28"
+			className="mb-16 w-[min(100%,50rem)] text-center scroll-mt-24 md:scroll-mt-28"
 			//scroll-mt-28
 			//lg:scroll-mt-0
 			// scroll-mt-[7rem]
