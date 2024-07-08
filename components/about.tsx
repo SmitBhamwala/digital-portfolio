@@ -25,12 +25,12 @@ export default function About() {
 	return (
 		<section
 			ref={ref}
-			className="text-center mb-28 sm:mb-40 scroll-mt-28"
+			className="relative text-center mb-28 sm:mb-40 scroll-mt-28"
 			id="about">
 			<SectionHeading>About Me</SectionHeading>
 			<div className="flex flex-col sm:flex-row">
 				<Lottie
-					className="flex justify-center w-[100%] sm:w-[50%] mx-auto md:scale-125"
+					className="flex justify-center -z-10 w-[100%] sm:w-[50%] mx-auto md:scale-125"
 					{...defaultOptions}
 				/>
 				<div className="w-[100%] sm:max-w-[50%] mx-auto">
