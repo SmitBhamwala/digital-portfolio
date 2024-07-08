@@ -8,7 +8,26 @@ html {
 
 html.dark {
   --line-color: rgba(255, 255, 255, 0.2);
+  scrollbar-color: #666 #201c29;
 }
+
+/*
+html.dark::-webkit-scrollbar {
+  width: 20px;
+
+}
+
+html.dark::-webkit-scrollbar-track {
+  box-shadow: 0 0 5px grey;
+  border-radius: 10px;
+  background-color: #666;
+}
+
+html.dark::-webkit-scrollbar-thumb {
+  background: #000000;
+  box-shadow: 0 0 5px grey;
+  border-radius: 10px;
+} */
 
 .borderBlack {
   @apply border border-black/10;
