@@ -24,10 +24,10 @@ export default function Intro() {
 				"Next.JS Developer",
 				"Software Developer"
 			],
-			typeSpeed: 100,
+			typeSpeed: 60,
 			smartBackspace: true,
-			backDelay: 2000,
-			backSpeed: 60,
+			backDelay: 1000,
+			backSpeed: 25,
 			loop: true
 		});
 

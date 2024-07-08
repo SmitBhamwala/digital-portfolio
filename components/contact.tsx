@@ -36,7 +36,7 @@ export default function Contact() {
 					<a
 						href="https://www.linkedin.com/in/smit-bhamwala-8195971b0/"
 						target="_blank"
-						className="contact__box w-[6rem] md:w-[7rem] bg-[#f3f4f6] dark:bg-[rgb(255, 255, 255)] dark:bg-opacity-5">
+						className="contact__box w-[6rem] md:w-[7rem] active:scale-95 transition bg-[#f3f4f6] dark:bg-[rgb(255, 255, 255)] dark:bg-opacity-5">
 						<div className="about__icon">
 							<svg
 								xmlns="http://www.w3.org/2000/svg"
@@ -133,7 +133,7 @@ export default function Contact() {
 					</a>
 					<a
 						href="mailto:smitbhamwala@gmail.com"
-						className="contact__box w-[6rem] md:w-[7rem] bg-[#f3f4f6] dark:bg-[rgb(255, 255, 255)] dark:bg-opacity-5">
+						className="contact__box w-[6rem] md:w-[7rem] active:scale-95 transition bg-[#f3f4f6] dark:bg-[rgb(255, 255, 255)] dark:bg-opacity-5">
 						<div className="about__icon">
 							<Image src={emailIMG} alt="Email Icon" height={30} width={30} />
 						</div>
@@ -142,7 +142,7 @@ export default function Contact() {
 					<a
 						href="https://wa.me/919662852061"
 						target="_blank"
-						className="contact__box w-[6rem] md:w-[7rem] bg-[#f3f4f6] dark:bg-[rgb(255, 255, 255)] dark:bg-opacity-5">
+						className="contact__box w-[6rem] md:w-[7rem] active:scale-95 transition bg-[#f3f4f6] dark:bg-[rgb(255, 255, 255)] dark:bg-opacity-5">
 						<div className="about__icon">
 							<svg
 								xmlns="http://www.w3.org/2000/svg"

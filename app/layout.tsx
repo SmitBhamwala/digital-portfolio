@@ -15,8 +15,9 @@ const poppins = Poppins({
 export const metadata: Metadata = {
 	title: "Smit Bhamwala | Personal Digital Portfolio",
 	description:
-		"Smit Bhamwala is a Full Stack developer with 2 years of experience.",
+		"Smit Bhamwala is a Full Stack Web Developer with 2+ years of experience.",
 	keywords: [
+		"Personal",
 		"Digital",
 		"Portfolio",
 		"Smit",
@@ -24,6 +25,7 @@ export const metadata: Metadata = {
 		"Bharuch",
 		"Web",
 		"Developer",
+		"Software",
 		"NextJS",
 		"ReactJS",
 		"NodeJS",

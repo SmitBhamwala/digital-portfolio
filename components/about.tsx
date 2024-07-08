@@ -8,6 +8,7 @@ import SectionHeading from "@/components/section-heading";
 import { useSectionInView } from "@/lib/hooks";
 import animation from "@/public/lottie/code.json";
 import "./about.css";
+import Link from "next/link";
 
 export default function About() {
 	const { ref } = useSectionInView("About");
@@ -34,27 +35,33 @@ export default function About() {
 				/>
 				<div className="w-[100%] sm:max-w-[50%] mx-auto">
 					<div className="about__info justify-center text-gray-700 dark:text-white/75">
-						<div className="about__box bg-[#f3f4f6] dark:bg-[rgb(255, 255, 255)] dark:bg-opacity-5">
+						<Link
+							href="#experience"
+							className="about__box active:scale-95 transition bg-[#f3f4f6] dark:bg-[rgb(255, 255, 255)] dark:bg-opacity-5">
 							<div className="about__icon">
 								<MdInsights />
 							</div>
 							<h3 className="about__title">Experience</h3>
 							<span className="about__subtitle">2+ Years</span>
-						</div>
-						<div className="about__box bg-[#f3f4f6] dark:bg-[rgb(255, 255, 255)] dark:bg-opacity-5">
+						</Link>
+						<Link
+							href="#projects"
+							className="about__box active:scale-95 transition bg-[#f3f4f6] dark:bg-[rgb(255, 255, 255)] dark:bg-opacity-5">
 							<div className="about__icon">
 								<FaLaptopCode />
 							</div>
 							<h3 className="about__title">Completed</h3>
 							<span className="about__subtitle">10+ Projects</span>
-						</div>
-						<div className="about__box bg-[#f3f4f6] dark:bg-[rgb(255, 255, 255)] dark:bg-opacity-5">
+						</Link>
+						<Link
+							href="#contact"
+							className="about__box active:scale-95 transition bg-[#f3f4f6] dark:bg-[rgb(255, 255, 255)] dark:bg-opacity-5">
 							<div className="about__icon">
 								<BiSupport />
 							</div>
 							<h3 className="about__title">Support</h3>
 							<span className="about__subtitle">Online 24/7</span>
-						</div>
+						</Link>
 					</div>
 
 					<p className="my-4 text-justify text-gray-700 dark:text-white/75">
