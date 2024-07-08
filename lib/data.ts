@@ -2,9 +2,9 @@ import React from "react";
 import { CgWorkAlt } from "react-icons/cg";
 // import { FaReact } from "react-icons/fa";
 import { LuGraduationCap } from "react-icons/lu";
-import corpcommentImg from "@/public/corpcomment.png";
-import rmtdevImg from "@/public/rmtdev.png";
-import wordanalyticsImg from "@/public/wordanalytics.png";
+import homeoKart from "@/public/homeoKart.png";
+import nextFoodies from "@/public/nextFoodies.png";
+import nextWorldBlogs from "@/public/nextWorldBlogs.png";
 
 export const links = [
 	{
@@ -70,25 +70,41 @@ export const experiencesData = [
 
 export const projectsData = [
 	{
-		title: "CorpComment",
+		title: "HomeoKart",
 		description:
-			"I worked as a full-stack developer on this startup project for 2 years. Users can give public feedback to companies.",
-		tags: ["React", "Next.js", "MongoDB", "Tailwind", "Prisma"],
-		imageUrl: corpcommentImg
+			"HomeoKart is an E-commerce web application where users can buy medical supplies and can also book an appointment and consult a doctor with an integrated video calling feature.",
+		tags: [
+			"Node.JS",
+			"Express.js",
+			"MongoDB",
+			"Mongoose",
+			"EJS",
+			"OAuth 2.0",
+			"HTML CSS",
+			"RazorPay",
+			"Socket.io"
+		],
+		imageUrl: homeoKart,
+		demoURL: "https://homeokart.onrender.com/",
+		sourceCodeURL: "https://github.com/Homeokart007/Homeokart"
 	},
 	{
-		title: "rmtDev",
+		title: "NextFoodies",
 		description:
-			"Job board for remote developer jobs. I was the front-end developer. It has features like filtering, sorting and pagination.",
-		tags: ["React", "TypeScript", "Next.js", "Tailwind", "Redux"],
-		imageUrl: rmtdevImg
+			"SB'S FOODZONE is a platform for foodies to share their favorite recipes with the world. It is a place to discover new dishes, and to connect with other food lovers.",
+		tags: ["React", "Next.js 14", "MongoDB", "REST API", "SEO"],
+		imageUrl: nextFoodies,
+		demoURL: "http://nextfoodies.vercel.app/",
+		sourceCodeURL: "https://github.com/SmitBhamwala/next-app-router-foodies"
 	},
 	{
-		title: "Word Analytics",
+		title: "NextWorldBlogs",
 		description:
-			"A public web app for quick analytics on text. It shows word count, character count and social media post limits.",
-		tags: ["React", "Next.js", "SQL", "Tailwind", "Framer"],
-		imageUrl: wordanalyticsImg
+			"An application for blogs related to web development. It is deployed on Vercel.",
+		tags: ["React", "Next.js 13", "MongoDB"],
+		imageUrl: nextWorldBlogs,
+		demoURL: "https://nextworldblogs.vercel.app/",
+		sourceCodeURL: "https://github.com/SmitBhamwala/nextjs-blogs"
 	}
 ] as const;
 

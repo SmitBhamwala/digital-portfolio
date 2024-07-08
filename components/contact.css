@@ -1,0 +1,33 @@
+.contact__box {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 0.75rem;
+  text-align: center;
+  padding: 1rem 1.25rem;
+}
+
+.contact__title {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+
+@media only screen and (max-width: 768px) {
+  .contact__box {
+    padding: 0.75rem 0.5rem;
+  }
+
+  .contact__title {
+    font-size: 0.75rem;
+  }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 992px) {
+  .contact__box {
+    padding: 0.87rem 1rem;
+  }
+}

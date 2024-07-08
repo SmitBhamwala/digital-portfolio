@@ -1,0 +1,43 @@
+.about__info {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+}
+
+.about__box {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 0.75rem;
+  text-align: center;
+  padding: 1rem 1.25rem;
+}
+
+.about__icon {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.about__title {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.about__subtitle {
+  font-size: 0.625rem;
+}
+
+@media only screen and (max-width: 768px) {
+  .about__box {
+    padding: 0.75rem 0.5rem;
+  }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 992px) {
+  .about__box {
+    padding: 0.87rem 1rem;
+  }
+}
