@@ -1,16 +1,15 @@
 "use client";
 
 import { useRef } from "react";
-import toast from "react-hot-toast";
 import Link from "next/link";
-// import { MdEmail } from "react-icons/md";
-
-import { useSectionInView } from "@/lib/hooks";
-import { sendEmail } from "@/actions/sendEmail";
+import Image from "next/image";
+import toast from "react-hot-toast";
 import SectionHeading from "@/components/section-heading";
 import SubmitBtn from "@/components/submit-btn";
+import { useSectionInView } from "@/lib/hooks";
+import { sendEmail } from "@/actions/sendEmail";
 import { useTheme } from "@/context/theme-context";
-import Image from "next/image";
+// import { MdEmail } from "react-icons/md";
 import emailIMG from "@/public/email.png";
 import "./contact.css";
 
@@ -31,7 +30,10 @@ export default function Contact() {
 			//lg:scroll-mt-0
 			// scroll-mt-[7rem]
 		>
-			<SectionHeading>Get in Touch</SectionHeading>
+			<SectionHeading>Get In Touch</SectionHeading>
+			<p className="italic font-medium text-gray-700 dark:text-white/75 text-xs md:text-base mb-4 xl:mb-0">
+				Let's build something amazing together ✌️
+			</p>
 			<div className="flex flex-col xl:flex-row justify-center items-center gap-2 md:gap-6 xl:gap-8 m-auto">
 				<div className="flex flex-row xl:flex-col gap-2 md:gap-4 justify-center items-center text-gray-700 dark:text-white/75">
 					<Link
@@ -268,7 +270,7 @@ export default function Contact() {
 						ref={emailRef}
 					/>
 					<textarea
-						className="h-52 rounded-lg borderBlack p-4 dark:bg-white dark:bg-opacity-10 dark:text-gray-300 transition-all outline-none"
+						className="h-48 md:h-52 rounded-lg borderBlack p-4 dark:bg-white dark:bg-opacity-10 dark:text-gray-300 transition-all outline-none"
 						name="message"
 						placeholder="Your message"
 						required

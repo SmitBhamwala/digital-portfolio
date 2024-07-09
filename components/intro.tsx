@@ -54,11 +54,16 @@ export default function Intro() {
 							ref={typedRef}
 						/>
 					</div>
-					{/* <h3 className="home__subtitle">Full Stack Web Developer</h3> */}
-					<p className="home__description">
-						I am a creative software developer based in Ahmedabad and I am very
-						passionate and dedicated to my work.
-					</p>
+					<h2 className="home__description">
+						Passionate Full Stack Web Developer dedicated to creating dynamic,
+						user-centric web applications with a blend of innovative front-end
+						design and robust back-end functionality.
+					</h2>
+					<h2 className="hidden">Full Stack Web Developer</h2>
+					<h2 className="hidden">C++ Developer</h2>
+					<h2 className="hidden">MERN Stack Developer</h2>
+					<h2 className="hidden">Next.JS Developer</h2>
+					<h2 className="hidden">Software Developer</h2>
 					<Link
 						href="#contact"
 						replace
