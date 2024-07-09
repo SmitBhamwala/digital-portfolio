@@ -60,9 +60,12 @@ export default function Intro() {
 					<h2 className="hidden">Next.JS Developer</h2>
 					<h2 className="hidden">Software Developer</h2>
 					<p className="home__description">
-						Passionate Full Stack Web Developer dedicated to creating dynamic,
-						user-centric web applications with a blend of innovative front-end
-						design and robust back-end functionality.
+						Passionate Full-Stack Web Developer specializing in developing
+						responsive, intuitive, and robust web applications{" "}
+						<span className="italic font-semibold">
+							from concept to deployment
+						</span>
+						.
 					</p>
 
 					<Link

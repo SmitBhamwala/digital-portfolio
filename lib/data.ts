@@ -118,6 +118,7 @@ export const skillsData = [
 	"Auth.JS",
 	"Node.js",
 	"Express",
+	"REST API",
 	"EJS",
 	"Git",
 	"GitHub",

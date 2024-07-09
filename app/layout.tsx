@@ -57,7 +57,28 @@ export const metadata: Metadata = {
 		"Erlang",
 		"EJS",
 		"SQL",
-		"Software Developer"
+		"Software Developer",
+		"Collaborator",
+		"Collaboration",
+		"Git",
+		"Github",
+		"Dynamic",
+		"Passionate",
+		"Full Stack Web Developer",
+		"dedicated",
+		"to creating dynamic",
+		"user-centric",
+		"innovative",
+		"design",
+		"robust",
+		"robust back-end",
+		"functionality",
+		"UI/UX",
+		"UI",
+		"UX",
+		"REST",
+		"API",
+		"REST API"
 	]
 };
 

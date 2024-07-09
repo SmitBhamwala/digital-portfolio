@@ -91,16 +91,14 @@ export default function About() {
 					</p> */}
 
 					<p className="my-4 text-justify text-gray-700 dark:text-white/75">
-						As a dedicated Full Stack Developer, I specialize in developing
-						responsive, intuitive, and robust web applications{" "}
-						<span className="italic font-semibold">
-							from concept to deployment
-						</span>
-						. With a strong foundation in both front-end and back-end
-						technologies, I am passionate about crafting seamless user
-						experiences and efficient, scalable solutions. My expertise spans a
-						range of modern frameworks and tools, enabling me to tackle diverse
-						projects with creativity and precision.
+						I am a Full Stack Web Developer dedicated to creating dynamic,
+						user-centric web applications with a blend of innovative front-end
+						design and robust back-end functionality. With a strong foundation
+						in both front-end and back-end technologies, I am committed to
+						delivering seamless user experiences and efficient, scalable
+						solutions. My expertise spans a range of modern frameworks and
+						tools, empowering me to approach diverse projects with creativity
+						and precision.
 					</p>
 					<p className="my-4 text-justify text-gray-700 dark:text-white/75">
 						Passionate about collaboration and continuous learning, I&apos;m
