@@ -48,6 +48,12 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en" className="!scroll-smooth">
+			<head>
+				<meta
+					name="google-site-verification"
+					content="TAgAdalflEvzzhS5k54ZkDVCGhM7Ji4-JI4UwwqiszE"
+				/>
+			</head>
 			<body
 				className={`${poppins.className} bg-gray-50 text-gray-950 relative dark:bg-gray-900 dark:text-gray-50 dark:text-opacity-90`}>
 				<div className="bg-[#fbe2e3] absolute top-[-6rem] -z-10 right-[11rem] h-[31.25rem] w-[31.25rem] rounded-full blur-[10rem] sm:w-[68.75rem] dark:bg-[#946263]"></div>

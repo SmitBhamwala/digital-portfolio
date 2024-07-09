@@ -4,7 +4,7 @@ import { useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import toast from "react-hot-toast";
-import SectionHeading from "@/components/section-heading";
+// import SectionHeading from "@/components/section-heading";
 import SubmitBtn from "@/components/submit-btn";
 import { useSectionInView } from "@/lib/hooks";
 import { sendEmail } from "@/actions/sendEmail";
@@ -30,7 +30,9 @@ export default function Contact() {
 			//lg:scroll-mt-0
 			// scroll-mt-[7rem]
 		>
-			<SectionHeading>Get In Touch</SectionHeading>
+			<h2 className="text-3xl font-semibold capitalize mb-6 md:mb-8 text-center">
+				Get In Touch
+			</h2>
 			<p className="italic font-medium text-gray-700 dark:text-white/75 text-xs md:text-base mb-4 xl:mb-0">
 				Let&apos;s build something amazing together ✌️
 			</p>

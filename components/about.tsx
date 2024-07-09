@@ -82,9 +82,14 @@ export default function About() {
 					</div>
 
 					{/* <p className="my-4 text-justify text-gray-700 dark:text-white/75">
+						I am a creative software developer based in Ahmedabad and I am very
+						passionate and dedicated to my work.
+					</p> */}
+					{/* <p className="my-4 text-justify text-gray-700 dark:text-white/75">
 						innovative web applications. I thrive on turning complex problems into
 						innovative solutions. staying up-to-date with the latest industry trends,
 					</p> */}
+
 					<p className="my-4 text-justify text-gray-700 dark:text-white/75">
 						As a dedicated Full Stack Developer, I specialize in developing
 						responsive, intuitive, and robust web applications{" "}
