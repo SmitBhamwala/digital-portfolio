@@ -134,7 +134,7 @@ export default function Contact() {
 									d="M12,19h5v17h-5V19z M14.485,17h-0.028C12.965,17,12,15.888,12,14.499C12,13.08,12.995,12,14.514,12	c1.521,0,2.458,1.08,2.486,2.499C17,15.887,16.035,17,14.485,17z M36,36h-5v-9.099c0-2.198-1.225-3.698-3.192-3.698	c-1.501,0-2.313,1.012-2.707,1.99C24.957,25.543,25,26.511,25,27v9h-5V19h5v2.616C25.721,20.5,26.85,19,29.738,19	c3.578,0,6.261,2.25,6.261,7.274L36,36L36,36z"></path>
 							</svg> */}
 						</div>
-						<h4 className="contact__title">LinkedIn</h4>
+						<h3 className="contact__title">LinkedIn</h3>
 					</Link>
 					<Link
 						href="mailto:smitbhamwala@gmail.com"
@@ -142,7 +142,7 @@ export default function Contact() {
 						<div className="about__icon">
 							<Image src={emailIMG} alt="Email Icon" height={30} width={30} />
 						</div>
-						<h4 className="contact__title">Email Me</h4>
+						<h3 className="contact__title">Email Me</h3>
 					</Link>
 					<Link
 						href="https://wa.me/919662852061"
@@ -188,7 +188,7 @@ export default function Contact() {
 									clipRule="evenodd"></path>
 							</svg>
 						</div>
-						<h4 className="contact__title">Whatsapp</h4>
+						<h3 className="contact__title">Whatsapp</h3>
 					</Link>
 				</div>
 
