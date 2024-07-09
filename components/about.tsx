@@ -98,9 +98,9 @@ export default function About() {
 						projects with creativity and precision.
 					</p>
 					<p className="my-4 text-justify text-gray-700 dark:text-white/75">
-						Passionate about collaboration and continuous learning, I'm always
-						eager to embrace new challenges and contribute to cutting-edge
-						projects.
+						Passionate about collaboration and continuous learning, I&apos;m
+						always eager to embrace new challenges and contribute to
+						cutting-edge projects.
 					</p>
 					<a
 						href="/Smit Bhamwala CV.pdf"

@@ -32,7 +32,7 @@ export default function Contact() {
 		>
 			<SectionHeading>Get In Touch</SectionHeading>
 			<p className="italic font-medium text-gray-700 dark:text-white/75 text-xs md:text-base mb-4 xl:mb-0">
-				Let's build something amazing together ✌️
+				Let&apos;s build something amazing together ✌️
 			</p>
 			<div className="flex flex-col xl:flex-row justify-center items-center gap-2 md:gap-6 xl:gap-8 m-auto">
 				<div className="flex flex-row xl:flex-col gap-2 md:gap-4 justify-center items-center text-gray-700 dark:text-white/75">
