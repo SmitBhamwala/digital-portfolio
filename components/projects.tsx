@@ -10,7 +10,7 @@ export default function Projects() {
 	const { ref } = useSectionInView("Projects", 0.25);
 
 	return (
-		<section ref={ref} id="projects" className="scroll-mt-28 mb-28">
+		<section ref={ref} id="projects" className="scroll-mt-28 mb-28 sm:mb-40">
 			<SectionHeading>My projects</SectionHeading>
 			<div>
 				{projectsData.map((project, index) => (
