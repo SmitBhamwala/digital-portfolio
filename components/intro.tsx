@@ -44,7 +44,7 @@ export default function Intro() {
 			id="home"
 			className="mb-28 md:mb-0 pt-28 md:pt-36 scroll-mt-[100rem]">
 			{/* [116px repeat(2, 1fr)] */}
-			<div className="home__content flex flex-col-reverse md:flex-row gap-10 lg:gap-16 xl:gap-28 m-auto pt-0 md:pt-[3rem] justify-center items-center">
+			<div className="home__content flex flex-col-reverse md:flex-row gap-8 lg:gap-16 xl:gap-28 m-auto pt-0 md:pt-[3rem] justify-center items-center">
 				<div className="home__data flex flex-col justify-center max-w-[400px] xl:max-w-[500px]">
 					<h1 className="home__title mb-0 text-4xl text font-semibold !leading-[1.5] md:text-[3rem] xl:text-[58px]">
 						Smit Bhamwala
