@@ -100,6 +100,7 @@ export default function RootLayout({
 					name="google-site-verification"
 					content="Ko9LxTYV9-KxCx0Rh82oVtryvBAAfEboWroQyzysoPo"
 				/>
+				<link rel="canonical" href="https://smitbhamwala.vercel.app" />
 			</head>
 			<body
 				className={`${poppins.className} bg-gray-50 text-gray-950 relative dark:bg-gray-900 dark:text-gray-50 dark:text-opacity-90`}>
