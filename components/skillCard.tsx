@@ -11,7 +11,9 @@ export default function SkillCard({ title, skills }: SkillCardType) {
 			</h3>
 			<div className="skills__group">
 				{skills.map((skill, index) => (
-					<div className="flex justify-start items-center gap-2 w-[100%]">
+					<div
+						key={index}
+						className="flex justify-start items-center gap-2 w-[100%]">
 						<div className="text-[15px] text-gray-800 dark:text-white/80">
 							<HiBadgeCheck />
 						</div>
