@@ -16,12 +16,12 @@ export const links = [
 		hash: "#about"
 	},
 	{
-		name: "Projects",
-		hash: "#projects"
-	},
-	{
 		name: "Skills",
 		hash: "#skills"
+	},
+	{
+		name: "Projects",
+		hash: "#projects"
 	},
 	{
 		name: "Experience",
@@ -35,24 +35,6 @@ export const links = [
 
 export const experiencesData = [
 	{
-		title: "Bachelor of Technology (B.Tech)",
-		location: "Parul University, Gujarat",
-		description: [
-			"Pursued B.Tech in Computer Science & Engineering from Parul University, Vadodara."
-		],
-		icon: React.createElement(LuGraduationCap),
-		date: "2018 - 2022"
-	},
-	{
-		title: "Front-End Web Developer (Intern)",
-		location: "RAB Stacks LLP",
-		description: [
-			"Developed fully functional Front-End of a website using ReactJS from the given FIGMA designs and integrated it with REST API."
-		],
-		icon: React.createElement(CgWorkAlt),
-		date: "08/2021 - 09/2021"
-	},
-	{
 		title: "Software Developer",
 		location: "Capgemini",
 		description: [
@@ -65,6 +47,24 @@ export const experiencesData = [
 		],
 		icon: React.createElement(CgWorkAlt),
 		date: "07/2022 - present"
+	},
+	{
+		title: "Front-End Web Developer (Intern)",
+		location: "RAB Stacks LLP",
+		description: [
+			"Developed fully functional Front-End of a website using ReactJS from the given FIGMA designs and integrated it with REST API."
+		],
+		icon: React.createElement(CgWorkAlt),
+		date: "08/2021 - 09/2021"
+	},
+	{
+		title: "Bachelor of Technology (B.Tech)",
+		location: "Parul University, Gujarat",
+		description: [
+			"Pursued B.Tech in Computer Science & Engineering from Parul University, Vadodara."
+		],
+		icon: React.createElement(LuGraduationCap),
+		date: "2018 - 2022"
 	}
 ];
 
