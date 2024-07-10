@@ -55,11 +55,7 @@ export default function Intro() {
 							ref={typedRef}
 						/>
 					</div>
-					<h2 className="hidden">Full Stack Web Developer</h2>
-					<h2 className="hidden">C++ Developer</h2>
-					<h2 className="hidden">MERN Stack Developer</h2>
-					<h2 className="hidden">Next.JS Developer</h2>
-					<h2 className="hidden">Software Developer</h2>
+
 					<p className="home__description">
 						Passionate Full-Stack Web Developer specializing in developing
 						responsive, intuitive, and robust web applications{" "}
@@ -100,7 +96,7 @@ export default function Intro() {
 						alt="Smit Bhamwala profile pic"
 						// width="300"
 						// height="300"
-						quality="90"
+						quality="85"
 						priority
 						className="home__img dark:bg-gray-900"
 					/>

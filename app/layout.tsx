@@ -15,7 +15,7 @@ const poppins = Poppins({
 export const metadata: Metadata = {
 	title: "Smit Bhamwala | Personal Digital Portfolio",
 	description:
-		"Smit Bhamwala is a Full Stack Web Developer with 2+ years of experience.",
+		"Smit Bhamwala is a passionate Full-Stack Web Developer specializing in developing responsive, intuitive, and robust web applications from concept to deployment.",
 	keywords: [
 		"Personal",
 		"Digital",
@@ -57,7 +57,6 @@ export const metadata: Metadata = {
 		"Erlang",
 		"EJS",
 		"SQL",
-		"Software Developer",
 		"Collaborator",
 		"Collaboration",
 		"Git",
@@ -66,7 +65,6 @@ export const metadata: Metadata = {
 		"Passionate",
 		"Full Stack Web Developer",
 		"dedicated",
-		"to creating dynamic",
 		"user-centric",
 		"innovative",
 		"design",
