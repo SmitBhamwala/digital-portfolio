@@ -123,7 +123,7 @@ export const skillsData = [
 	[
 		"Node.js",
 		"Express",
-		"REST API",
+		"RESTful API",
 		"EJS",
 		"Prisma",
 		"MongoDB",
@@ -132,7 +132,8 @@ export const skillsData = [
 		// "Django",
 		// "AI/ML",
 		// "ChatGPT",
-		"Auth.JS",
+		"SQL",
+		// "Auth.js",
 		"C++"
 	],
 	[
@@ -140,7 +141,6 @@ export const skillsData = [
 		"Postman",
 		"Git",
 		"Github",
-		"Pycharm",
 		"Visual Studio",
 		"Azure DevOps"
 	]

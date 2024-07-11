@@ -1,6 +1,6 @@
-import { SkillCardType } from "@/lib/types";
+import Image from "next/image";
 import { HiBadgeCheck } from "react-icons/hi";
-
+import { SkillCardType } from "@/lib/types";
 import "@/components/skills.css";
 
 export default function SkillCard({ title, skills }: SkillCardType) {
@@ -15,7 +15,12 @@ export default function SkillCard({ title, skills }: SkillCardType) {
 						key={index}
 						className="flex justify-start items-center gap-2 w-[100%]">
 						<div className="text-[15px] text-gray-800 dark:text-white/80">
-							<HiBadgeCheck />
+							<Image
+								alt={`${skill} logo`}
+								src={`/svg/skills/${skill}.svg`}
+								height="15"
+								width="15"
+							/>
 						</div>
 						<h4
 							className="font-normal text-[1rem] lg:text-[0.87rem] text-gray-800 dark:text-white/80"

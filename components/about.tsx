@@ -86,19 +86,21 @@ export default function About() {
 						passionate and dedicated to my work.
 					</p> */}
 					{/* <p className="my-4 text-justify text-gray-700 dark:text-white/75">
-						innovative web applications. I thrive on turning complex problems into
-						innovative solutions. staying up-to-date with the latest industry trends,
+						innovative web applications. I thrive on turning complex problems
+						into innovative solutions. staying up-to-date with the latest
+						industry trends. With a strong foundation in both front-end and
+						back-end technologies, I am committed to delivering seamless user
+						experiences and efficient, scalable solutions. My expertise spans a
+						range of modern frameworks and tools, empowering me to approach
+						diverse projects with creativity and precision.
 					</p> */}
 
 					<p className="my-4 text-justify text-gray-700 dark:text-white/75">
-						I am a Full Stack Web Developer dedicated to creating dynamic,
-						user-centric web applications with a blend of innovative front-end
-						design and robust back-end functionality. With a strong foundation
-						in both front-end and back-end technologies, I am committed to
-						delivering seamless user experiences and efficient, scalable
-						solutions. My expertise spans a range of modern frameworks and
-						tools, empowering me to approach diverse projects with creativity
-						and precision.
+						I am a Full Stack Web Developer from Ahmedabad dedicated to creating
+						dynamic, user-centric web applications with a blend of innovative
+						front-end design and robust back-end functionality. With my
+						expertise in modern frameworks and tools, I can tackle diverse
+						projects with creativity and precision.
 					</p>
 					<p className="my-4 text-justify text-gray-700 dark:text-white/75">
 						Passionate about collaboration and continuous learning, I&apos;m

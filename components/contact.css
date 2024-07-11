@@ -10,6 +10,11 @@
   padding: 1rem 1.25rem;
 }
 
+.contact__icon {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
 .contact__title {
   font-size: 0.875rem;
   font-weight: 500;

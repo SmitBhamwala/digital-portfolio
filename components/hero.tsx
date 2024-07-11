@@ -9,7 +9,7 @@ import { useActiveSectionContext } from "@/context/active-section-context";
 import { useSectionInView } from "@/lib/hooks";
 
 import myPic from "@/public/myPic.png";
-import "./intro.css";
+import "./hero.css";
 
 export default function Intro() {
 	const typedRef = useRef(null);
