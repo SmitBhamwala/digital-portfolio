@@ -1,6 +1,6 @@
 import { links } from "@/lib/data";
 
-export type SectionName = (typeof links)[number]["name"];
+export type SectionNameType = (typeof links)[number]["name"];
 
 export type SkillCardType = {
 	title: string;

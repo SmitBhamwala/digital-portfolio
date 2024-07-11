@@ -1,6 +1,5 @@
 import React from "react";
 import { CgWorkAlt } from "react-icons/cg";
-// import { FaReact } from "react-icons/fa";
 import { LuGraduationCap } from "react-icons/lu";
 import homeoKart from "@/public/homeoKart.png";
 import nextFoodies from "@/public/nextFoodies.png";
@@ -136,12 +135,5 @@ export const skillsData = [
 		// "Auth.js",
 		"C++"
 	],
-	[
-		"VS Code",
-		"Postman",
-		"Git",
-		"Github",
-		"Visual Studio",
-		"Azure DevOps"
-	]
+	["VS Code", "Postman", "Git", "Github", "Visual Studio", "Azure DevOps"]
 ];
