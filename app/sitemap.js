@@ -3,7 +3,7 @@ export default async function sitemap() {
 		{
 			url: "https://smitbhamwala.vercel.app",
 			lastModified: new Date(),
-			changeFrequency: "weekly",
+			changeFrequency: "daily",
 			priority: 1
 		}
 	];
