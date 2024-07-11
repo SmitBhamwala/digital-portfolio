@@ -135,5 +135,5 @@ export const skillsData = [
 		// "Auth.js",
 		"C++"
 	],
-	["VS Code", "Postman", "Git", "Github", "Visual Studio", "Azure DevOps"]
+	["VS Code", "Postman", "Git", "GitHub", "Visual Studio", "Azure DevOps"]
 ];
