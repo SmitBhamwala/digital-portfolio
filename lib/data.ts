@@ -30,19 +30,26 @@ export const links = [
 		name: "Contact",
 		hash: "#contact"
 	}
-] as const;
+	// {
+	// 	name: "Certifications",
+	// 	hash: "#certifications"
+	// }
+];
 
 export const experiencesData = [
 	{
-		title: "Software Developer",
+		title: "Senior Software Developer",
 		location: "Capgemini",
 		description: [
-			"Worked for 2 clients in Medical domain",
-			"Worked in Linux environment and on embedded devices.",
-			"Worked on C/C++ project code and solved issues.",
-			"Installation of ESXi Server on VMware (On-premises setup for customer).",
-			"Performed Formal run of protocols.",
-			"Used Azure DevOps to raise issues, create Test cases and their results."
+			"Achieved GEM (Going the Extra Mile) award by implementing 3 innovative solutions that boosted team productivity and project completion rates by 40%.",
+			"Collaborated with 2 healthcare clients to enhance patient data management systems and improve heart device code, leading to improved client satisfaction.",
+			"Debugged and resolved 10+ critical issues in two C/C++ projects using Valgrind to address memory exceptions and other critical errors.",
+			"Conducted unit testing on C++ project with Google Test, increasing code coverage from 60% to 100%."
+
+			// "Achieved GEM (Going the Extra Mile) award by consistently exceeding project goals through innovative solutions.",
+			// "Collaborated with two prominent clients of healthcare domain.",
+			// "Debugged and resolved 10+ critical issues in two C/C++ projects, utilizing advanced debugging tools to address memory exceptions and other critical errors.",
+			// "Conducted thorough unit testing on C++ project using Google Test framework, implementing comprehensive test cases that increased code coverage to 100%."
 		],
 		icon: React.createElement(CgWorkAlt),
 		date: "07/2022 - present"
@@ -51,7 +58,9 @@ export const experiencesData = [
 		title: "Front-End Web Developer (Intern)",
 		location: "RAB Stacks LLP",
 		description: [
-			"Developed fully functional Front-End of a website using ReactJS from the given FIGMA designs and integrated it with REST API."
+			"Developed front end of a website using React, translating 6+ Figma designs into responsive components.",
+			"Secured a 100% project completion rate by implementing agile development methodologies and fostering a collaborative team environment.",
+			"Streamlined deployment with CI/CD pipelines using GitHub, reducing deployment time by 60%."
 		],
 		icon: React.createElement(CgWorkAlt),
 		date: "08/2021 - 09/2021"
@@ -64,6 +73,64 @@ export const experiencesData = [
 		],
 		icon: React.createElement(LuGraduationCap),
 		date: "2018 - 2022"
+	}
+];
+
+export const certificationsData = [
+	{
+		id: 1,
+		title: "Next.js 14 & React - The Complete Guide",
+		tutor: "Maximilian Schwarzmüller (Udemy)",
+		duration: "40.5hrs",
+		description: [
+			"React: React fundamentals, hooks, useOptimistic() and React server components (RSC).",
+			"Pages router, App router, Server-Side Rendering(SSR), Server actions",
+			"Parallel and Intercepting routes, Partial prerendering, SEO",
+			"Implementing RESTful APIs with both client-side and server-side data fetching from MongoDB",
+			"Authentication🔐: Setting up authentication mechanisms using NextAuth.js and JWT.",
+			"Caching and Performance Optimization📈",
+			"Deployment: Deploying Next.js applications to platforms like Vercel for seamless CI/CD."
+		],
+		certIMG: "UC-1af9a041-8a7c-43b0-a891-bcba6b934194.jpg",
+		certificateURL:
+			"https://www.udemy.com/certificate/UC-1af9a041-8a7c-43b0-a891-bcba6b934194/",
+		icon: React.createElement(LuGraduationCap),
+		date: "24/06/2024"
+	},
+	{
+		id: 2,
+		title: "Generative AI for Everyone",
+		tutor: "Andrew Ng, DeepLearning.AI (Coursera)",
+		duration: "5hrs",
+		description: [
+			"Large Language Models (LLM)",
+			"Using Generative AI in software applications",
+			"Retrieval Augmented Generation (RAG)",
+			"Fine-tuning and Pretraining an LLM",
+			"Instruction tuning using Reinforcement Learning from Human Feedback (RLHF)",
+			"Artificial General Intelligence"
+		],
+		certIMG: "Coursera-M54M6H9BA43W.jpg",
+		certificateURL:
+			"https://www.coursera.org/account/accomplishments/verify/M54M6H9BA43W",
+		icon: React.createElement(LuGraduationCap),
+		date: "24/03/2024"
+	},
+	{
+		id: 3,
+		title: "The Complete 2024 Web Development Bootcamp",
+		tutor: "Dr. Angela Yu (Udemy)",
+		duration: "62hrs",
+		description: [
+			"Front-End: HTML5, CSS3, Bootstrap, JavaScript, jQuery, DOM Manipulation, React",
+			"Back-End: Node.js, Express.js, EJS, RESTful API and CI/CD with Git and GitHub",
+			"Database: Mongoose, MongoDB, PostgreSQL"
+		],
+		certIMG: "UC-440bad2d-9fda-4b09-b8e5-4924440ad105.jpg",
+		certificateURL:
+			"https://www.udemy.com/certificate/UC-440bad2d-9fda-4b09-b8e5-4924440ad105/",
+		icon: React.createElement(LuGraduationCap),
+		date: "11/09/2021"
 	}
 ];
 

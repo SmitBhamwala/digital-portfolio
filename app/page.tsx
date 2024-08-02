@@ -1,4 +1,5 @@
 import About from "@/components/about";
+import Certifications from "@/components/certifications";
 import Contact from "@/components/contact";
 import Experience from "@/components/experience";
 import Footer from "@/components/footer";
@@ -19,6 +20,7 @@ export default function Home() {
 			<Skills />
 			<Projects />
 			<Experience />
+			<Certifications />
 			<Contact />
 			<Footer />
 			<ThemeSwitch />
