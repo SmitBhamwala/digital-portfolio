@@ -87,11 +87,9 @@ export const viewport: Viewport = {
 };
 
 export default function RootLayout({
-	children,
-	certificateInfoModal
+	children
 }: Readonly<{
 	children: React.ReactNode;
-	certificateInfoModal: React.ReactNode;
 }>) {
 	return (
 		<html lang="en" className="!scroll-smooth">
@@ -109,7 +107,6 @@ export default function RootLayout({
 				<ThemeContextProvider>
 					<ActiveSectionContextProvider>
 						{children}
-						{certificateInfoModal}
 						<Toaster position="bottom-center" />
 					</ActiveSectionContextProvider>
 				</ThemeContextProvider>

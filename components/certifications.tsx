@@ -114,7 +114,7 @@ const CourseElement = ({ theme, course }: CertificationsElementProps) => {
 							<CertificationModal course={course} setModalOpen={setModalOpen} />
 						</div>
 					) : (
-						""
+						<div></div>
 					)}
 					{/* <Link
 						href={`/Certifications/${course.certIMG}`}

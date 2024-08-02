@@ -4,12 +4,12 @@ import { useEffect } from "react";
 import Link from "next/link";
 import { IoMdClose } from "react-icons/io";
 import { ImNewTab } from "react-icons/im";
-import { CertificationsElementProps } from "@/lib/types";
+import { CertificationsModalProps } from "@/lib/types";
 
 export default function CertificationModal({
 	course,
 	setModalOpen
-}: CertificationsElementProps | any) {
+}: CertificationsModalProps) {
 	useEffect(() => {
 		document.body.classList.add("overflow-y-hidden");
 		return () => {
@@ -59,7 +59,7 @@ export default function CertificationModal({
 							During this course, I gained valuable knowledge and hands-on
 							experience with:
 						</p>
-						{course.description.map((task: string, index: number) => (
+						{course.description.map((task: String, index: number) => (
 							<li
 								key={index}
 								className="list-disc mb-1 text-xs md:text-[0.9rem] md:leading-6">

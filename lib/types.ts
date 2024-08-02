@@ -1,4 +1,5 @@
 import { links } from "@/lib/data";
+import { SetStateAction } from "react";
 
 export type SectionNameType = (typeof links)[number]["name"];
 
@@ -31,4 +32,20 @@ export type CertificationsElementProps = {
 		icon: React.ReactNode;
 		date: string;
 	};
+};
+
+export type CertificationsModalProps = {
+	course: {
+		id: number;
+		title: string;
+		tutor: string;
+		duration: string;
+		description: String[];
+		certIMG: string;
+		certificateURL: string;
+		icon: React.ReactNode;
+		date: string;
+	};
+	// setModalOpen: SetStateAction<Boolean>;
+	setModalOpen: any;
 };
