@@ -13,7 +13,7 @@ import { useTheme } from "@/context/theme-context";
 import { certificationsData } from "@/lib/data";
 import { CertificationsElementProps } from "@/lib/types";
 import { useSectionInView } from "@/lib/hooks";
-import { ImNewTab } from "react-icons/im";
+// import { ImNewTab } from "react-icons/im";
 
 export default function Certificate() {
 	const { ref } = useSectionInView("Courses", 0.3);
@@ -96,7 +96,7 @@ const CourseElement = ({ theme, course }: CertificationsElementProps) => {
 							<FaEye />
 						</div>
 					</Link>
-					<Link
+					{/* <Link
 						href={`/Certifications/${course.certIMG}`}
 						target="_blank"
 						className="!font-normal text-gray-700 dark:text-white/75 w-fit flex justify-start items-center 
@@ -106,7 +106,7 @@ const CourseElement = ({ theme, course }: CertificationsElementProps) => {
 						<div className="ml-2">
 							<ImNewTab />
 						</div>
-					</Link>
+					</Link> */}
 				</div>
 			</div>
 		</VerticalTimelineElement>
