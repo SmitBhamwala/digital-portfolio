@@ -2,20 +2,14 @@
 
 import { useEffect } from "react";
 import Link from "next/link";
-import { notFound, useRouter } from "next/navigation";
 import { IoMdClose } from "react-icons/io";
 import { ImNewTab } from "react-icons/im";
-import { certificationsData } from "@/lib/data";
+import { CertificationsElementProps } from "@/lib/types";
 
-export default function InterceptedImagePage({ params }: any) {
-	const router = useRouter();
-	const { courseID } = params;
-	const course = certificationsData.find((course) => course.id == courseID);
-
-	if (!course) {
-		notFound();
-	}
-
+export default function CertificationModal({
+	course,
+	setModalOpen
+}: CertificationsElementProps | any) {
 	useEffect(() => {
 		document.body.classList.add("overflow-y-hidden");
 		return () => {
@@ -28,7 +22,7 @@ export default function InterceptedImagePage({ params }: any) {
 			<div
 				className="z-[1000] fixed top-0 left-0 w-full h-full bg-black opacity-55 
         flex justify-center items-center"
-				onClick={router.back}
+				onClick={() => setModalOpen(false)}
 			/>
 			<dialog
 				className="z-[1001] fixed top-0 bottom-0 left-0 right-0 flex justify-center items-center 
@@ -39,14 +33,14 @@ export default function InterceptedImagePage({ params }: any) {
 				<div className="relative pt-8 md:pt-6 pb-0 md:pb-6 px-4 md:px-10 h-fit max-h-[85vh]">
 					<div
 						className="absolute top-3 md:top-6 right-3 md:right-6 text-2xl cursor-pointer"
-						onClick={router.back}>
+						onClick={() => setModalOpen(false)}>
 						<IoMdClose />
 					</div>
 					<h3 className="font-bold text-xl md:text-2xl">{course.title}</h3>
-					<p className="font-normal text-sm md:text-[1rem] my-2">
+					<p className="font-normal text-sm md:text-[1rem] mt-2">
 						by {course.tutor}
 					</p>
-					<p className="font-normal text-sm md:text-[1rem] mb-2">
+					<p className="font-normal text-sm md:text-[1rem] !my-1">
 						Duration: {course.duration}
 					</p>
 					<Link
@@ -65,7 +59,7 @@ export default function InterceptedImagePage({ params }: any) {
 							During this course, I gained valuable knowledge and hands-on
 							experience with:
 						</p>
-						{course.description.map((task, index) => (
+						{course.description.map((task: string, index: number) => (
 							<li
 								key={index}
 								className="list-disc mb-1 text-xs md:text-[0.9rem] md:leading-6">

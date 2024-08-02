@@ -19,7 +19,7 @@ export type ExperienceElementProps = {
 };
 
 export type CertificationsElementProps = {
-	theme: string;
+	theme?: string;
 	course: {
 		id: number;
 		title: string;

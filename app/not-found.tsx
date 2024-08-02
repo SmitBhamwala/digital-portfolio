@@ -5,7 +5,7 @@ export default function NotFound() {
 	return (
 		<div className="flex flex-col justify-center items-center h-[100vh] w-full">
 			<h2 className="text-gray-700 dark:text-white/75 font-semibold text-2xl md:text-5xl mb-8">
-				Sorry, Course Not Found
+				Sorry, Page Not Found
 			</h2>
 			<Link
 				href="/"

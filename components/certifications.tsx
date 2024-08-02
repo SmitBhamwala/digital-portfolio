@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { useState } from "react";
 import { useInView } from "react-intersection-observer";
 import {
 	VerticalTimeline,
@@ -13,6 +14,7 @@ import { useTheme } from "@/context/theme-context";
 import { certificationsData } from "@/lib/data";
 import { CertificationsElementProps } from "@/lib/types";
 import { useSectionInView } from "@/lib/hooks";
+import CertificationModal from "./certification-modal";
 // import { ImNewTab } from "react-icons/im";
 
 export default function Certificate() {
@@ -44,6 +46,7 @@ export default function Certificate() {
 }
 
 const CourseElement = ({ theme, course }: CertificationsElementProps) => {
+	const [isModalOpen, setModalOpen] = useState(false);
 	const { ref, inView } = useInView({
 		triggerOnce: true,
 		threshold: 0.7
@@ -85,7 +88,7 @@ const CourseElement = ({ theme, course }: CertificationsElementProps) => {
 					Completion date: {course.date}
 				</p>
 				<div className="flex flex-col md:flex-row justify-center md:justify-between items-start md:items-center">
-					<Link
+					{/* <Link
 						scroll={false}
 						href={`/course/${course.id}`}
 						className="!font-normal text-gray-700 dark:text-white/75 w-fit flex justify-start items-center 
@@ -95,7 +98,24 @@ const CourseElement = ({ theme, course }: CertificationsElementProps) => {
 						<div className="ml-2">
 							<FaEye />
 						</div>
-					</Link>
+					</Link> */}
+					<div
+						onClick={() => setModalOpen(true)}
+						className="!font-normal text-gray-700 dark:text-white/75 w-fit flex justify-start items-center 
+          !mt-3 px-4 py-3 rounded-xl shadow-lg shadow-black/[0.15] backdrop-blur-[0.5rem] active:scale-95 
+          borderBlack bg-[#f3f4f6] dark:bg-[rgb(255, 255, 255)] dark:bg-opacity-5 cursor-pointer">
+						View More
+						<div className="ml-2">
+							<FaEye />
+						</div>
+					</div>
+					{isModalOpen ? (
+						<div>
+							<CertificationModal course={course} setModalOpen={setModalOpen} />
+						</div>
+					) : (
+						""
+					)}
 					{/* <Link
 						href={`/Certifications/${course.certIMG}`}
 						target="_blank"
