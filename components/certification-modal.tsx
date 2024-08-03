@@ -62,7 +62,7 @@ export default function CertificationModal({
 						{course.description.map((task: String, index: number) => (
 							<li
 								key={index}
-								className="list-disc mb-1 text-xs md:text-[0.9rem] md:leading-6">
+								className="list-disc mt-3 md:mt-2 text-xs md:text-[0.9rem] md:leading-6">
 								{task}
 							</li>
 						))}

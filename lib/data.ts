@@ -84,10 +84,10 @@ export const certificationsData = [
 		tutor: "Maximilian Schwarzmüller (Udemy)",
 		duration: "40.5hrs",
 		description: [
-			"React: React fundamentals, hooks, useOptimistic() and React server components (RSC).",
+			"React: React fundamentals, custom hooks and React server components (RSC).",
 			"Pages router, App router, Server-Side Rendering(SSR), Server actions",
 			"Parallel and Intercepting routes, Partial prerendering, SEO",
-			"Implementing RESTful APIs with both client-side and server-side data fetching from MongoDB",
+			"Implementing RESTful APIs with client-side and server-side data fetching from MongoDB",
 			"Authentication🔐: Setting up authentication mechanisms using NextAuth.js and JWT.",
 			"Caching and Performance Optimization📈",
 			"Deployment: Deploying Next.js applications to platforms like Vercel for seamless CI/CD."
