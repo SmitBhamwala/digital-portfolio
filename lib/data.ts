@@ -1,9 +1,6 @@
 import React from "react";
 import { CgWorkAlt } from "react-icons/cg";
 import { LuGraduationCap } from "react-icons/lu";
-import homeoKart from "@/public/homeoKart.png";
-import nextFoodies from "@/public/nextFoodies.png";
-import nextWorldBlogs from "@/public/nextWorldBlogs.png";
 
 export const links = [
 	{
@@ -41,16 +38,10 @@ export const experiencesData = [
 		title: "Senior Software Developer",
 		location: "Capgemini",
 		description: [
-			// "Achieved GEM (Going the Extra Mile) award for implementing 3 innovative solutions that boosted team productivity and project completion rates by 40%.",
 			"Achieved GEM (Going the Extra Mile) award for consistently exceeding project goals through innovative solutions.",
 			"Collaborated with 2 healthcare clients to enhance patient data management systems and improve heart device code.",
 			"Debugged and resolved 10+ critical issues in two C/C++ projects to address memory exceptions and other critical errors.",
 			"Conducted unit testing on C++ project with Google Test, increasing code coverage from 60% to 100%."
-
-			// "Achieved GEM (Going the Extra Mile) award by consistently exceeding project goals through innovative solutions.",
-			// "Collaborated with two prominent clients of healthcare domain.",
-			// "Debugged and resolved 10+ critical issues in two C/C++ projects, utilizing advanced debugging tools to address memory exceptions and other critical errors.",
-			// "Conducted thorough unit testing on C++ project using Google Test framework, implementing comprehensive test cases that increased code coverage to 100%."
 		],
 		icon: React.createElement(CgWorkAlt),
 		date: "07/2022 - present"
@@ -139,41 +130,44 @@ export const projectsData = [
 	{
 		title: "HomeoKart",
 		description:
-			"HomeoKart is an E-commerce web application where users can buy medical supplies and can also book an appointment and consult a doctor with an integrated video calling feature.",
+			"An E-commerce application for medical supply purchases, doctor appointment bookings and virtual consultations.",
 		tags: [
 			"Node.JS",
 			"Express.js",
 			"MongoDB",
 			"Mongoose",
+			"RESTful API",
 			"EJS",
+			"CSS",
 			"OAuth 2.0",
-			"HTML CSS",
-			"RazorPay",
-			"Socket.io"
+			"RazorPay"
 		],
-		imageUrl: homeoKart,
+		imageUrl: ["/homeoKart.png", "/homeoKart-1.png"],
 		demoURL: "https://homeokart.onrender.com/",
 		sourceCodeURL: "https://github.com/Homeokart007/Homeokart"
 	},
 	{
 		title: "NextFoodies",
 		description:
-			"SB'S FOODZONE is a platform for foodies to share their favorite recipes with the world. It is a place to discover new dishes, and to connect with other food lovers.",
+			"A platform for foodies to share their favorite recipes with the world. People can discover new dishes, and connect with other food lovers.",
 		tags: ["React", "Next.js 14", "MongoDB", "REST API", "SEO"],
-		imageUrl: nextFoodies,
+		imageUrl: [
+			"/nextFoodies.png",
+			"/nextFoodies-1.png",
+		],
 		demoURL: "http://nextfoodies.vercel.app/",
 		sourceCodeURL: "https://github.com/SmitBhamwala/next-app-router-foodies"
-	},
-	{
-		title: "NextWorldBlogs",
-		description:
-			"An application for blogs related to web development. It is deployed on Vercel.",
-		tags: ["React", "Next.js 13", "MongoDB"],
-		imageUrl: nextWorldBlogs,
-		demoURL: "https://nextworldblogs.vercel.app/",
-		sourceCodeURL: "https://github.com/SmitBhamwala/nextjs-blogs"
 	}
-] as const;
+	// {
+	// 	title: "NextWorldBlogs",
+	// 	description:
+	// 		"An application for blogs related to web development. It is deployed on Vercel.",
+	// 	tags: ["React", "Next.js 13", "MongoDB"],
+	// 	imageUrl: ["/nextWorldBlogs.png", "/nextWorldBlogs-1.png"],
+	// 	demoURL: "https://nextworldblogs.vercel.app/",
+	// 	sourceCodeURL: "https://github.com/SmitBhamwala/nextjs-blogs"
+	// }
+];
 
 export const skillsData = [
 	[
