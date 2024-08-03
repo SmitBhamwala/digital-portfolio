@@ -20,13 +20,13 @@ export default function ExperienceModal({
 	return (
 		<>
 			<div
-				className="z-[1000] fixed top-0 left-0 w-full h-full bg-black opacity-55 
+				className="z-[1000] fixed top-0 left-0 w-full h-full bg-black opacity-55 dark:opacity-75 
         flex justify-center items-center"
 				onClick={() => setExperienceModalOpen(false)}
 			/>
 			<dialog
 				className="z-[1001] fixed top-0 bottom-0 left-0 right-0 flex justify-center items-center 
-        bg-[#f3f4f6] dark:bg-gray-700 text-gray-700 dark:text-white/75 
+        bg-[#f3f4f6] dark:bg-gray-800 text-gray-700 dark:text-white/75 
          rounded-3xl max-w-[90%] xl:max-w-fit overflow-scroll md:overflow-hidden"
 				open>
 				{/* max-w-[90%] md:max-w-full */}
