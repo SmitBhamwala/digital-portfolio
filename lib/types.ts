@@ -19,6 +19,18 @@ export type ExperienceElementProps = {
 	};
 };
 
+export type ExperienceModalProps = {
+	item: {
+		title: string;
+		location: string;
+		description: String[];
+		icon: React.ReactNode;
+		date: string;
+	};
+	// setExperienceModalOpen: SetStateAction<Boolean>;
+	setExperienceModalOpen: any;
+};
+
 export type CertificationsElementProps = {
 	theme?: string;
 	course: {
@@ -34,7 +46,7 @@ export type CertificationsElementProps = {
 	};
 };
 
-export type CertificationsModalProps = {
+export type CertificationModalProps = {
 	course: {
 		id: number;
 		title: string;
@@ -46,6 +58,6 @@ export type CertificationsModalProps = {
 		icon: React.ReactNode;
 		date: string;
 	};
-	// setModalOpen: SetStateAction<Boolean>;
-	setModalOpen: any;
+	// setCertificationModalOpen: SetStateAction<Boolean>;
+	setCertificationModalOpen: any;
 };

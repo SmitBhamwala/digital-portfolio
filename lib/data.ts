@@ -41,9 +41,10 @@ export const experiencesData = [
 		title: "Senior Software Developer",
 		location: "Capgemini",
 		description: [
-			"Achieved GEM (Going the Extra Mile) award by implementing 3 innovative solutions that boosted team productivity and project completion rates by 40%.",
-			"Collaborated with 2 healthcare clients to enhance patient data management systems and improve heart device code, leading to improved client satisfaction.",
-			"Debugged and resolved 10+ critical issues in two C/C++ projects using Valgrind to address memory exceptions and other critical errors.",
+			// "Achieved GEM (Going the Extra Mile) award for implementing 3 innovative solutions that boosted team productivity and project completion rates by 40%.",
+			"Achieved GEM (Going the Extra Mile) award for consistently exceeding project goals through innovative solutions.",
+			"Collaborated with 2 healthcare clients to enhance patient data management systems and improve heart device code.",
+			"Debugged and resolved 10+ critical issues in two C/C++ projects to address memory exceptions and other critical errors.",
 			"Conducted unit testing on C++ project with Google Test, increasing code coverage from 60% to 100%."
 
 			// "Achieved GEM (Going the Extra Mile) award by consistently exceeding project goals through innovative solutions.",
@@ -59,7 +60,7 @@ export const experiencesData = [
 		location: "RAB Stacks LLP",
 		description: [
 			"Developed front end of a website using React, translating 6+ Figma designs into responsive components.",
-			"Secured a 100% project completion rate by implementing agile development methodologies and fostering a collaborative team environment.",
+			"Secured a 100% project completion rate by fostering a collaborative team environment.",
 			"Streamlined deployment with CI/CD pipelines using GitHub, reducing deployment time by 60%."
 		],
 		icon: React.createElement(CgWorkAlt),
@@ -69,7 +70,7 @@ export const experiencesData = [
 		title: "Bachelor of Technology (B.Tech)",
 		location: "Parul University, Gujarat",
 		description: [
-			"Pursued B.Tech in Computer Science & Engineering from Parul University, Vadodara."
+			"Pursued B.Tech in Computer Science & Engineering with a CGPA of 8.07/10."
 		],
 		icon: React.createElement(LuGraduationCap),
 		date: "2018 - 2022"
