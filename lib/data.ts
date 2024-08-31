@@ -39,7 +39,8 @@ export const experiencesData = [
 		location: "Capgemini",
 		description: [
 			"Achieved GEM (Going the Extra Mile) award for consistently exceeding project goals through innovative solutions.",
-			"Collaborated with 2 healthcare clients to enhance patient data management systems and improve heart device code.",
+			"Collaborated with 3 healthcare clients to enhance patient data management systems and heart device code.",
+			"Upgraded medical device code from Angular v7 to v18, enhancing security and improving application performance by 30%.",
 			"Debugged and resolved 10+ critical issues in two C/C++ projects to address memory exceptions and other critical errors.",
 			"Conducted unit testing on C++ project with Google Test, increasing code coverage from 60% to 100%."
 		],
@@ -151,10 +152,7 @@ export const projectsData = [
 		description:
 			"A platform for foodies to share their favorite recipes with the world. People can discover new dishes, and connect with other food lovers.",
 		tags: ["React", "Next.js 14", "MongoDB", "REST API", "SEO"],
-		imageUrl: [
-			"/nextFoodies.png",
-			"/nextFoodies-1.png",
-		],
+		imageUrl: ["/nextFoodies.png", "/nextFoodies-1.png"],
 		demoURL: "http://nextfoodies.vercel.app/",
 		sourceCodeURL: "https://github.com/SmitBhamwala/next-app-router-foodies"
 	}
@@ -178,7 +176,8 @@ export const skillsData = [
 		"JavaScript",
 		"TypeScript",
 		"React",
-		"Next.js"
+		"Next.js",
+		"Angular"
 		// "jQuery"
 	],
 	[
