@@ -196,5 +196,13 @@ export const skillsData = [
 		// "Auth.js",
 		"C++"
 	],
-	["VS Code", "Postman", "Git", "GitHub", "Visual Studio", "Azure DevOps"]
+	[
+		"AWS",
+		"VS Code",
+		"Postman",
+		"Git",
+		"GitHub",
+		"Visual Studio",
+		"Azure DevOps"
+	]
 ];
