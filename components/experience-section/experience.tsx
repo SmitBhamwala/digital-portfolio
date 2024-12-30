@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import SectionHeading from "@/components/section-heading";
+import SectionHeading from "@/components/common/section-heading";
 import {
 	VerticalTimeline,
 	VerticalTimelineElement

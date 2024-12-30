@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import toast from "react-hot-toast";
 // import SectionHeading from "@/components/section-heading";
-import SubmitBtn from "@/components/submit-btn";
+import SubmitBtn from "@/components/contact-section/submit-btn";
 import { useSectionInView } from "@/lib/hooks";
 import { sendEmail } from "@/actions/sendEmail";
 import { useTheme } from "@/context/theme-context";
@@ -188,16 +188,16 @@ export default function Contact() {
 												background: "rgb(51 65 85)",
 												color: "#fff"
 											}
-									  })
+										})
 								: theme == "light"
-								? toast.error(error, { position: "top-right" })
-								: toast.error(error, {
-										position: "top-right",
-										style: {
-											background: "rgb(51 65 85)",
-											color: "#fff"
-										}
-								  });
+									? toast.error(error, { position: "top-right" })
+									: toast.error(error, {
+											position: "top-right",
+											style: {
+												background: "rgb(51 65 85)",
+												color: "#fff"
+											}
+										});
 							return;
 						}
 						if (nameRef.current) {
@@ -218,18 +218,18 @@ export default function Contact() {
 											background: "rgb(51 65 85)",
 											color: "#fff"
 										}
-								  })
+									})
 							: theme == "light"
-							? toast.success("Email sent successfully!", {
-									position: "top-right"
-							  })
-							: toast.success("Email sent successfully!", {
-									position: "top-right",
-									style: {
-										background: "rgb(51 65 85)",
-										color: "#fff"
-									}
-							  });
+								? toast.success("Email sent successfully!", {
+										position: "top-right"
+									})
+								: toast.success("Email sent successfully!", {
+										position: "top-right",
+										style: {
+											background: "rgb(51 65 85)",
+											color: "#fff"
+										}
+									});
 					}}>
 					<input
 						className="h-14 px-4 rounded-lg borderBlack dark:bg-white dark:bg-opacity-10 dark:text-gray-300 transition-all outline-none"

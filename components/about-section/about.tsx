@@ -5,7 +5,7 @@ import Lottie from "lottie-react";
 import { MdInsights } from "react-icons/md";
 import { FaLaptopCode } from "react-icons/fa";
 import { BiSupport } from "react-icons/bi";
-import SectionHeading from "@/components/section-heading";
+import SectionHeading from "@/components/common/section-heading";
 import { useSectionInView } from "@/lib/hooks";
 import { useActiveSectionContext } from "@/context/active-section-context";
 import animation from "@/public/lottie/code.json";
