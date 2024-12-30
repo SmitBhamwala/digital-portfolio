@@ -4,7 +4,7 @@ import { TestimonialCardProps } from "@/lib/types";
 
 export default function TestimonialCard({name, testimonial, linkedInProfilePicSrc, rating}: TestimonialCardProps) {
   return (
-    <div className="borderBlack rounded-xl p-4 bg-[#f3f4f6] dark:bg-[rgb(255, 255, 255)] dark:bg-opacity-5">
+    <div className="borderBlack rounded-xl w-[22rem] h-[20rem] p-4 bg-[#f3f4f6] dark:bg-gray-800">
       <div className="testimonial_card_header flex items-center mb-6">
         <div className="linkedin_image_container mr-4">
           <Image

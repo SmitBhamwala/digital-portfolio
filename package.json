@@ -26,6 +26,7 @@
     "react-vertical-timeline-component": "^3.6.0",
     "resend": "^4.0.1",
     "sharp": "^0.33.4",
+    "swiper": "^11.1.15",
     "typed.js": "^2.1.0"
   },
   "devDependencies": {
