@@ -98,6 +98,7 @@ export default function Intro() {
 						// height="300"
 						quality="85"
 						priority
+						draggable={false}
 						className="home__img dark:bg-gray-900"
 					/>
 				</div>

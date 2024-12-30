@@ -8,6 +8,7 @@ import Hero from "@/components/hero";
 import Projects from "@/components/projects";
 import SectionDivider from "@/components/section-divider";
 import Skills from "@/components/skills";
+import Testimonial from "@/components/testimonial";
 import ThemeSwitch from "@/components/theme-switch";
 
 export default function Home() {
@@ -21,6 +22,7 @@ export default function Home() {
 			<Projects />
 			<Experience />
 			<Certifications />
+			<Testimonial />
 			<Contact />
 			<Footer />
 			<ThemeSwitch />

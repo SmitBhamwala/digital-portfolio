@@ -61,3 +61,10 @@ export type CertificationModalProps = {
 	// setCertificationModalOpen: SetStateAction<Boolean>;
 	setCertificationModalOpen: any;
 };
+
+export type TestimonialCardProps = {
+	name: string;
+	linkedInProfilePicSrc: string;
+	testimonial: string;
+	rating: number;
+}
