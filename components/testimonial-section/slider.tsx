@@ -51,10 +51,15 @@ export default function Slider() {
 				grabCursor={true}
 				// loop={true}
 				navigation={{
-					nextEl: ".slider-button-next",
-					prevEl: ".slider-button-prev"
+					nextEl: ".swiper-button-next",
+					prevEl: ".swiper-button-prev"
 				}}
-				pagination={{ el: ".swiper-pagination", clickable: true }}
+				pagination={{
+					el: ".swiper-pagination",
+					clickable: true,
+					// dynamicBullets: true,
+          // dynamicMainBullets: 3
+				}}
 				// scrollbar={{ draggable: true }}
 				// onSlideChange={() => console.log("slide change")}
 				// onSwiper={(swiper) => console.log(swiper)}
@@ -70,24 +75,13 @@ export default function Slider() {
 						/>
 					</SwiperSlide>
 				))}
-        {testimonials.map((testimonial: TestimonialType) => (
-					<SwiperSlide key={testimonial._id}>
-						<TestimonialCard
-							name={testimonial.name}
-							email={testimonial.email}
-							linkedInProfilePicSrc={testimonial.linkedInProfilePicSrc}
-							rating={testimonial.rating}
-							testimonial={testimonial.testimonial}
-						/>
-					</SwiperSlide>
-				))}
 
 				<div className="slider-controller">
-					<div className="slider-button-prev slider-arrow">
+					<div className="swiper-button-prev slider-arrow">
 						<MdOutlineArrowBackIos />
 					</div>
 					<div className="swiper-pagination"></div>
-					<div className="slider-button-next slider-arrow">
+					<div className="swiper-button-next slider-arrow">
 						<MdOutlineArrowForwardIos />
 					</div>
 				</div>
