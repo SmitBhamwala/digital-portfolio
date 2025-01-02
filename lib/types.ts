@@ -62,9 +62,11 @@ export type CertificationModalProps = {
 	setCertificationModalOpen: any;
 };
 
-export type TestimonialCardProps = {
+export interface TestimonialType {
+  _id?: string;
 	name: string;
+	email: string;
 	linkedInProfilePicSrc: string;
-	testimonial: string;
 	rating: number;
+	testimonial: string;
 }
