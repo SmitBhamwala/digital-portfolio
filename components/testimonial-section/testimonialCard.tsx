@@ -1,5 +1,4 @@
 import Image from "next/image";
-import myPic from "@/public/myPic.png";
 import { TestimonialType } from "@/lib/types";
 import Link from "next/link";
 
@@ -10,7 +9,7 @@ export default function TestimonialCard({
 	rating
 }: TestimonialType) {
 	return (
-		<div className="borderBlack rounded-xl w-[22rem] h-[20rem] p-4 bg-[#f3f4f6] dark:bg-gray-800">
+		<div className="borderBlack rounded-xl shadow-xl w-[22rem] h-[20rem] p-4 bg-[#f3f4f6] dark:bg-gray-800">
 			<Link
 				href="https://www.linkedin.com/in/smit-bhamwala-8195971b0/"
 				target="_blank">

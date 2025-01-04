@@ -1,23 +1,19 @@
 .container {
-  max-width: 73rem;
-  margin: auto;
-  padding: 4rem 1rem;
-  margin: 0 auto;
+  max-width: 71rem;
+  /* margin: auto; */
+  /* padding: 0; */
+  /* margin: 0 auto; */
 }
-
-/* .bluuur {
-  filter: blur(0.1rem);
-} */
 
 .swiper_container {
 	padding: 2rem 0;
-	position: relative;
+	/* position: relative; */
 }
 
 .swiper-slide {
 	width: 37rem;
 	/* height: 42rem; */
-	position: relative;
+	/* position: relative; */
 }
 
 @media (max-width: 500px) {
@@ -47,54 +43,59 @@
 }
 
 .slider-controller {
-  margin-top: 2rem;
+  margin-top: 5rem;
 	position: relative;
-	bottom: 0rem;
+	bottom: 2rem;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 }
 
 .slider-controller .swiper-button-next {
-	left: 58% !important;
-	transform: translateX(-58%) !important;
+	left: 65% !important;
+	transform: translateX(-65%) !important;
+}
+
+.slider-controller .swiper-button-prev {
+	left: 35% !important;
+	transform: translateX(-35%) !important;
 }
 
 @media (max-width: 990px) {
 	.slider-controller .swiper-button-next {
-		left: 70% !important;
-		transform: translateX(-70%) !important;
+		/* left: 70% !important; */
+		/* transform: translateX(-70%) !important; */
 	}
 }
 
 @media (max-width: 450px) {
 	.slider-controller .swiper-button-next {
-		left: 80% !important;
-		transform: translateX(-80%) !important;
+		/* left: 80% !important; */
+		/* transform: translateX(-80%) !important; */
 	}
 }
 
 @media (max-width: 990px) {
 	.slider-controller .swiper-button-prev {
-		left: 30% !important;
-		transform: translateX(-30%) !important;
+		/* left: 30% !important; */
+		/* transform: translateX(-30%) !important; */
 	}
 }
 
 @media (max-width: 450px) {
 	.slider-controller .swiper-button-prev {
-		left: 20% !important;
-		transform: translateX(-20%) !important;
+		/* left: 20% !important; */
+		/* transform: translateX(-20%) !important; */
 	}
 }
 
 .slider-controller .slider-arrow {
-	background: var(--white);
+	/* background: var(--white); */
 	/* width: 3.5rem; */
 	/* height: 3.5rem; */
-	border-radius: 50%;
-	left: 42%;
-	transform: translateX(-42%);
+	/* border-radius: 50%; */
+	/* left: 42%; */
+	/* transform: translateX(-42%); */
 	filter: drop-shadow(0px 8px 24px rgba(18, 28, 53, 0.1));
 }
 
@@ -109,7 +110,7 @@
 }
 
 .swiper-pagination {
-	position: relative;
+	/* position: relative; */
 	width: 10rem !important;
 	bottom: 1rem;
 }

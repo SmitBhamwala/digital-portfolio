@@ -57,8 +57,8 @@ export default function Slider() {
 				pagination={{
 					el: ".swiper-pagination",
 					clickable: true,
-					// dynamicBullets: true,
-          // dynamicMainBullets: 3
+					dynamicBullets: true,
+          dynamicMainBullets: 3
 				}}
 				// scrollbar={{ draggable: true }}
 				// onSlideChange={() => console.log("slide change")}
