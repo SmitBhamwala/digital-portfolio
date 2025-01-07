@@ -1,3 +1,4 @@
+import { SessionProvider } from "next-auth/react";
 import About from "@/components/about-section/about";
 import Certifications from "@/components/certifications-section/certifications";
 import Contact from "@/components/contact-section/contact";
@@ -13,19 +14,21 @@ import ThemeSwitch from "@/components/common/theme-switch";
 
 export default function Home() {
 	return (
-		<main className="flex flex-col items-center px-5 m-auto w-[100%] md:max-w-[800px] lg:max-w-[968px]">
-			<Header />
-			<Hero />
-			<SectionDivider />
-			<About />
-			<Skills />
-			<Projects />
-			<Experience />
-			<Certifications />
-			<Testimonial />
-			<Contact />
-			<Footer />
-			<ThemeSwitch />
-		</main>
+		<SessionProvider>
+			<main className="flex flex-col items-center px-5 m-auto w-[100%] md:max-w-[800px] lg:max-w-[968px]">
+				<Header />
+				<Hero />
+				<SectionDivider />
+				<About />
+				<Skills />
+				<Projects />
+				<Experience />
+				<Certifications />
+				<Testimonial />
+				<Contact />
+				<Footer />
+				<ThemeSwitch />
+			</main>
+		</SessionProvider>
 	);
 }

@@ -24,9 +24,12 @@ export default function Slider() {
 
 	useEffect(() => {
 		async function fetchPosts() {
-			const res = await fetch("http://localhost:3000/api/testimonial");
+			const res = await fetch("http://localhost:3000/api/testimonial", {cache: "no-store"});
 			const data = await res.json();
-			setTestimonials(data);
+			const reviewData = data.filter(
+				(review: TestimonialType) => review.testimonial !== ""
+			);
+			setTestimonials(reviewData);
 		}
 		fetchPosts();
 	}, []);
@@ -58,7 +61,7 @@ export default function Slider() {
 					el: ".swiper-pagination",
 					clickable: true,
 					dynamicBullets: true,
-          dynamicMainBullets: 3
+					dynamicMainBullets: 3
 				}}
 				// scrollbar={{ draggable: true }}
 				// onSlideChange={() => console.log("slide change")}
@@ -69,7 +72,29 @@ export default function Slider() {
 						<TestimonialCard
 							name={testimonial.name}
 							email={testimonial.email}
-							linkedInProfilePicSrc={testimonial.linkedInProfilePicSrc}
+							image={testimonial.image}
+							rating={testimonial.rating}
+							testimonial={testimonial.testimonial}
+						/>
+					</SwiperSlide>
+				))}
+				{testimonials.map((testimonial: TestimonialType) => (
+					<SwiperSlide key={testimonial._id}>
+						<TestimonialCard
+							name={testimonial.name}
+							email={testimonial.email}
+							image={testimonial.image}
+							rating={testimonial.rating}
+							testimonial={testimonial.testimonial}
+						/>
+					</SwiperSlide>
+				))}
+				{testimonials.map((testimonial: TestimonialType) => (
+					<SwiperSlide key={testimonial._id}>
+						<TestimonialCard
+							name={testimonial.name}
+							email={testimonial.email}
+							image={testimonial.image}
 							rating={testimonial.rating}
 							testimonial={testimonial.testimonial}
 						/>

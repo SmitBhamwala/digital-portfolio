@@ -66,7 +66,7 @@ export interface TestimonialType {
   _id?: string;
 	name: string;
 	email: string;
-	linkedInProfilePicSrc: string;
+	image: string;
 	rating: number;
 	testimonial: string;
 }

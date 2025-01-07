@@ -5,7 +5,7 @@ import Link from "next/link";
 export default function TestimonialCard({
 	name,
 	testimonial,
-	linkedInProfilePicSrc,
+	image,
 	rating
 }: TestimonialType) {
 	return (
@@ -16,7 +16,7 @@ export default function TestimonialCard({
 				<div className="testimonial_card_header flex items-center mb-6">
 					<div className="linkedin_image_container mr-4">
 						<Image
-							src={linkedInProfilePicSrc}
+							src={image}
 							alt={`${name}'s LinkedIn profile picture`}
 							width="70"
 							height="70"

@@ -16,7 +16,7 @@ const TestimonialSchema = new Schema<TestimonialType>(
 				"Email is invalid"
 			]
 		},
-		linkedInProfilePicSrc: {
+		image: {
 			type: String,
 			required: [true, "Profile picture is required"]
 		},
