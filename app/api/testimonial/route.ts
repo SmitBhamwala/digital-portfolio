@@ -9,8 +9,17 @@ export async function GET() {
 }
 
 export async function POST(request: NextRequest) {
-	await connectToDatabase();
-	console.log(request.body);
+	const message = await request.json();
 
-	// const { name, email, image, testimonial, rating } = request.body;
+	try {
+		await Testimonial.updateOne(
+			{ email: message.testimonial.email },
+			message.testimonial,
+			{ upsert: true }
+		);
+	} catch (error) {
+		return NextResponse.json({ error });
+	}
+
+	return NextResponse.json({ message: "Testimonial added successfully" });
 }

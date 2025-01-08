@@ -4,6 +4,9 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import Form from "next/form";
 import { IoMdClose } from "react-icons/io";
+import toast from "react-hot-toast";
+import { useTheme } from "@/context/theme-context";
+import SubmitBtn from "../contact-section/submit-btn";
 
 export default function MyAddReviewModal({
 	sessionData,
@@ -20,6 +23,7 @@ export default function MyAddReviewModal({
 
 	const [testimonial, setTestimonial] = useState(myReview.testimonial);
 	const [rating, setRating] = useState(myReview.rating);
+	const { theme } = useTheme();
 
 	function handleTestimonialInputChange(e: any) {
 		e.preventDefault();
@@ -31,13 +35,76 @@ export default function MyAddReviewModal({
 		setRating(e.target.value);
 	}
 
-	// function submitTestimonial(e:any){
-	//   e.preventDefault();
-	//   setMyReview({
-	//     ...myReview,
-	//     testimonial: e.target.value
-	//   });
-	// }
+	async function submitTestimonial() {
+		const response = await fetch("http://localhost:3000/api/testimonial", {
+			method: "POST",
+			body: JSON.stringify({
+				testimonial: {
+					name: myReview.name,
+					email: myReview.email,
+					image: myReview.image,
+					testimonial: testimonial,
+					rating: rating
+				}
+			}),
+			headers: {
+				"Content-Type": "application/json"
+			}
+		});
+		const message = await response.json();
+		var width = window.innerWidth > 0 ? window.innerWidth : screen.width;
+
+		if (message.error) {
+			width <= 768
+				? theme == "light"
+					? toast.error("Testimonial not added")
+					: toast.error("Testimonial not added", {
+							style: {
+								background: "rgb(51 65 85)",
+								color: "#fff"
+							}
+						})
+				: theme == "light"
+					? toast.error("Testimonial not added", { position: "top-right" })
+					: toast.error("Testimonial not added", {
+							position: "top-right",
+							style: {
+								background: "rgb(51 65 85)",
+								color: "#fff"
+							}
+						});
+			return;
+		}
+
+		setMyReview({
+			...myReview,
+			testimonial: testimonial,
+			rating: rating
+		});
+
+		setAddReviewModalOpen(false);
+
+		width <= 768
+			? theme == "light"
+				? toast.success(message.message)
+				: toast.success(message.message, {
+						style: {
+							background: "rgb(51 65 85)",
+							color: "#fff"
+						}
+					})
+			: theme == "light"
+				? toast.success(message.message, {
+						position: "top-right"
+					})
+				: toast.success(message.message, {
+						position: "top-right",
+						style: {
+							background: "rgb(51 65 85)",
+							color: "#fff"
+						}
+					});
+	}
 
 	return (
 		<>
@@ -59,7 +126,7 @@ export default function MyAddReviewModal({
 						<IoMdClose />
 					</div>
 					{/* <div className="borderBlack rounded-xl shadow-xl w-[22rem] h-[20rem] p-4 bg-[#f3f4f6] dark:bg-gray-800"> */}
-					<Form action="/action_page.php">
+					<Form action={submitTestimonial}>
 						<div className="testimonial_card_header flex items-center my-6">
 							<div className="linkedin_image_container mr-4">
 								<Image
@@ -126,14 +193,7 @@ export default function MyAddReviewModal({
 								)}
 							</div>
 						</div>
-						<div className="flex justify-center items-center">
-							<button
-								type="submit"
-								onClick={() => setAddReviewModalOpen(false)}
-								className="px-4 py-2 mt-6 text-white bg-blue-500 rounded-md hover:bg-blue-600">
-								Submit
-							</button>
-						</div>
+						<SubmitBtn />
 					</Form>
 				</div>
 				<p className="!mt-0 block md:hidden">&nbsp;</p>

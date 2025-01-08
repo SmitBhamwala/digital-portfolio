@@ -10,25 +10,30 @@ export default function MyReviewCard() {
 	const { data: session } = useSession();
 	const name = session?.user?.name;
 	const image = session?.user?.image;
+	const email = session?.user?.email;
 
 	const [isAddReviewModalOpen, setAddReviewModalOpen] = useState(false);
 
 	const [myReview, setMyReview] = useState<TestimonialType>({
-		name: "",
-		email: "",
-		image: "",
+		name: name!,
+		email: email!,
+		image: image!,
 		testimonial: "",
 		rating: 10
 	});
 
 	useEffect(() => {
 		async function fetchPosts() {
-			const res = await fetch("http://localhost:3000/api/testimonial");
+			const res = await fetch("http://localhost:3000/api/testimonial", {
+				cache: "no-store"
+			});
 			const data = await res.json();
 			const myReview = data.filter(
 				(review: TestimonialType) => review.email === session?.user?.email
 			);
-			setMyReview(myReview[0]);
+			if (myReview[0]) {
+				setMyReview(myReview[0]);
+			}
 		}
 		fetchPosts();
 	}, [session]);
@@ -51,7 +56,7 @@ export default function MyReviewCard() {
 				<h4 className="font-medium text-xl">{name}</h4>
 			</div>
 			<div className="testimonial_card_body">
-				{myReview.testimonial ? (
+				{myReview?.testimonial ? (
 					<div>
 						<p className="testimonial_comment">
 							&quot;{myReview.testimonial}&quot;
