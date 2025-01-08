@@ -6,7 +6,6 @@ import MyReviewCard from "./myReviewCard";
 
 export default function SignIn() {
 	const { data: session } = useSession();
-	console.log(session);
 
 	return (
 		<>

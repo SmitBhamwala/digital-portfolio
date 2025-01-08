@@ -64,18 +64,18 @@ export default function MyReviewCard() {
 						<p className="testimonial_rating mt-6">
 							Rating: {myReview.rating}/10
 						</p>
-						<div className="lg:w-fit mt-3 text-center justify-center bg-gray-900 text-white px-4 py-2 flex items-center gap-2 rounded-xl outline-none hover:bg-gray-950 active:scale-95 dark:bg-gray-500 transition">
-							<button onClick={() => setAddReviewModalOpen(true)}>
-								Edit your review
-							</button>
-						</div>
-					</div>
-				) : (
-					<div className="lg:w-fit mt-3 text-center justify-center bg-gray-900 text-white px-4 py-2 flex items-center gap-2 rounded-xl outline-none hover:bg-gray-950 active:scale-95 dark:bg-gray-500 transition">
-						<button onClick={() => setAddReviewModalOpen(true)}>
-							Add a review
+						<button
+							onClick={() => setAddReviewModalOpen(true)}
+							className="lg:w-fit mt-3 text-center justify-center bg-gray-900 text-white px-4 py-2 flex items-center gap-2 rounded-xl outline-none hover:bg-gray-950 active:scale-95 dark:bg-gray-500 transition">
+							Edit your review
 						</button>
 					</div>
+				) : (
+					<button
+						onClick={() => setAddReviewModalOpen(true)}
+						className="lg:w-fit mt-3 text-center justify-center bg-gray-900 text-white px-4 py-2 flex items-center gap-2 rounded-xl outline-none hover:bg-gray-950 active:scale-95 dark:bg-gray-500 transition">
+						Add a review
+					</button>
 				)}
 				{isAddReviewModalOpen && (
 					<div>
@@ -88,9 +88,11 @@ export default function MyReviewCard() {
 					</div>
 				)}
 			</div>
-			<div className="lg:w-fit mt-3 text-center justify-center bg-gray-900 text-white px-4 py-2 flex items-center gap-2 rounded-xl outline-none hover:bg-gray-950 active:scale-95 dark:bg-gray-500 transition">
-				<button onClick={() => signOut()}>LogOut</button>
-			</div>
+			<button
+				onClick={() => signOut()}
+				className="lg:w-fit mt-3 text-center justify-center bg-gray-900 text-white px-4 py-2 flex items-center gap-2 rounded-xl outline-none hover:bg-gray-950 active:scale-95 dark:bg-gray-500 transition">
+				LogOut
+			</button>
 		</div>
 	);
 }
