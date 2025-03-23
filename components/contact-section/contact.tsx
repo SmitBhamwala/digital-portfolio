@@ -39,7 +39,7 @@ export default function Contact() {
 			<div className="flex flex-col xl:flex-row justify-center items-center gap-2 md:gap-6 xl:gap-8 m-auto">
 				<div className="flex flex-row xl:flex-col gap-2 md:gap-4 justify-center items-center text-gray-700 dark:text-white/75">
 					<Link
-						href="https://www.linkedin.com/in/smit-bhamwala-8195971b0/"
+						href="https://www.linkedin.com/in/smitbhamwala"
 						target="_blank"
 						className="contact__box w-[6rem] md:w-[7rem] active:scale-95 transition bg-[#f3f4f6] dark:bg-[rgb(255, 255, 255)] dark:bg-opacity-5">
 						<div className="contact__icon">
