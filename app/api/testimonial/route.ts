@@ -13,7 +13,8 @@ export async function GET() {
 export async function POST(request: NextRequest) {
 	const message = await request.json();
 	const testimonial: TestimonialType = message.testimonial;
-	if (testimonial.review.trim().length < 1) {
+	const trimmedReview = testimonial.review.replace(/^\s+|\s+$/g, "");
+	if (trimmedReview.length < 1) {
 		return NextResponse.json({ error: "Review is required" });
 	}
 	if (testimonial.rating < 1 || testimonial.rating > 10) {
@@ -21,9 +22,13 @@ export async function POST(request: NextRequest) {
 	}
 
 	try {
-		await Testimonial.updateOne({ email: testimonial.email }, testimonial, {
-			upsert: true
-		});
+		await Testimonial.updateOne(
+			{ email: testimonial.email },
+			{ ...testimonial, review: trimmedReview },
+			{
+				upsert: true
+			}
+		);
 	} catch (error) {
 		return NextResponse.json({ error });
 	}

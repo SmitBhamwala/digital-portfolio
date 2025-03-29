@@ -1,13 +1,13 @@
 "use client";
 
 import Image from "next/image";
-import { signOut, useSession } from "next-auth/react";
-import { useEffect, useRef, useState } from "react";
+import { useSession } from "next-auth/react";
+import { useEffect, useState } from "react";
 import { TestimonialType } from "@/lib/types";
-import MyAddReviewModal from "./myAddReviewModal";
 import { Input } from "../ui/input";
 import toast from "react-hot-toast";
 import { useTheme } from "@/context/theme-context";
+import { Pencil, Save, X } from "lucide-react";
 
 export default function MyReviewCard() {
 	const { theme } = useTheme();
@@ -95,8 +95,6 @@ export default function MyReviewCard() {
 			rating: rating
 		});
 
-		// setAddReviewModalOpen(false);
-
 		width <= 768
 			? theme == "light"
 				? toast.success(message.message)
@@ -173,11 +171,25 @@ export default function MyReviewCard() {
 									/>
 									<span className="text-sm ml-2">/ 10</span>
 								</div>
-								<button
-									onClick={() => submitTestimonial()}
-									className="lg:w-fit mt-3 text-sm text-center justify-center bg-gray-900 text-white px-4 py-2 flex items-center gap-2 rounded-xl outline-none hover:bg-gray-950 active:scale-95 dark:bg-gray-500 transition">
-									Add a review
-								</button>
+								<div className="flex justify-start items-center gap-2">
+									<button
+										onClick={() => {
+											submitTestimonial();
+											setEditingTestimonial(false);
+										}}
+										className="lg:w-fit mt-3 text-sm text-center bg-gray-900 text-white px-4 py-2 flex justify-center items-center gap-2 rounded-xl outline-none hover:bg-gray-950 active:scale-95 dark:bg-gray-500 transition">
+										<Save size={18} className="text-green-500" />
+									</button>
+									<button
+										onClick={() => {
+											setReview(myTestimonial.review);
+											setRating(myTestimonial.rating);
+											setEditingTestimonial(false);
+										}}
+										className="lg:w-fit mt-3 text-sm text-center justify-center bg-gray-900 text-white px-4 py-2 flex items-center gap-2 rounded-xl outline-none hover:bg-gray-950 active:scale-95 dark:bg-gray-500 transition">
+										<X size={18} className="text-red-500" />
+									</button>
+								</div>
 							</>
 						) : (
 							<>
@@ -187,14 +199,13 @@ export default function MyReviewCard() {
 								<p className="testimonial_rating mt-6 text-sm">
 									Rating: {myTestimonial.rating}/10
 								</p>
+								<button
+									onClick={() => setEditingTestimonial(true)}
+									className="lg:w-fit mt-3 text-sm text-center justify-center bg-gray-900 text-white px-4 py-2 flex items-center gap-2 rounded-xl outline-none hover:bg-gray-950 active:scale-95 dark:bg-gray-500 transition">
+									<Pencil size={18} />
+								</button>
 							</>
 						)}
-
-						<button
-							onClick={() => setEditingTestimonial(true)}
-							className="lg:w-fit mt-3 text-sm text-center justify-center bg-gray-900 text-white px-4 py-2 flex items-center gap-2 rounded-xl outline-none hover:bg-gray-950 active:scale-95 dark:bg-gray-500 transition">
-							Edit your review
-						</button>
 					</div>
 				) : (
 					<>
@@ -243,22 +254,7 @@ export default function MyReviewCard() {
 						</form>
 					</>
 				)}
-				{/* {isEditingTestimonial && (
-					<div>
-						<MyAddReviewModal
-							sessionData={session!.user}
-							myReview={myTestimonial}
-							setMyReview={setMyTestimonial}
-							setAddReviewModalOpen={setEditingTestimonial}
-						/>
-					</div>
-				)} */}
 			</div>
-			{/* <button
-				onClick={() => signOut()}
-				className="lg:w-fit mt-3 text-sm text-center justify-center bg-gray-900 text-white px-4 py-2 flex items-center gap-2 rounded-xl outline-none hover:bg-gray-950 active:scale-95 dark:bg-gray-500 transition">
-				LogOut
-			</button> */}
 		</div>
 	);
 }
