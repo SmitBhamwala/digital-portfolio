@@ -32,7 +32,7 @@ export default function MyReviewCard() {
 	useEffect(() => {
 		async function fetchPosts() {
 			const res = await fetch(
-				"http://smitbhamwala.vercel.app/api/testimonial",
+				"https://smitbhamwala.vercel.app/api/testimonial",
 				{
 					cache: "no-store"
 				}
@@ -53,7 +53,7 @@ export default function MyReviewCard() {
 
 	async function submitTestimonial() {
 		const response = await fetch(
-			"http://smitbhamwala.vercel.app/api/testimonial",
+			"https://smitbhamwala.vercel.app/api/testimonial",
 			{
 				method: "POST",
 				body: JSON.stringify({
@@ -125,7 +125,7 @@ export default function MyReviewCard() {
 
 	async function deleteTestimonial() {
 		const response = await fetch(
-			"http://smitbhamwala.vercel.app/api/testimonial",
+			"https://smitbhamwala.vercel.app/api/testimonial",
 			{
 				method: "DELETE",
 				body: JSON.stringify({

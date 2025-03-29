@@ -13,7 +13,6 @@ import {
 import Autoplay from "embla-carousel-autoplay";
 import { useSession } from "next-auth/react";
 import MyReviewCard from "./myReviewCard";
-import { set } from "mongoose";
 
 export default function Slider() {
 	const [testimonials, setTestimonials] = useState([]);
@@ -22,7 +21,7 @@ export default function Slider() {
 	useEffect(() => {
 		async function fetchPosts() {
 			const res = await fetch(
-				"http://smitbhamwala.vercel.app/api/testimonial",
+				"https://smitbhamwala.vercel.app/api/testimonial",
 				{
 					cache: "no-store"
 				}
