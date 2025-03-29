@@ -31,9 +31,12 @@ export default function MyReviewCard() {
 
 	useEffect(() => {
 		async function fetchPosts() {
-			const res = await fetch("http://localhost:3000/api/testimonial", {
-				cache: "no-store"
-			});
+			const res = await fetch(
+				"http://smitbhamwala.vercel.app/api/testimonial",
+				{
+					cache: "no-store"
+				}
+			);
 			const data = await res.json();
 			const userTestimonial = data.filter(
 				(testimonial: TestimonialType) =>
@@ -49,21 +52,24 @@ export default function MyReviewCard() {
 	}, [session]);
 
 	async function submitTestimonial() {
-		const response = await fetch("http://localhost:3000/api/testimonial", {
-			method: "POST",
-			body: JSON.stringify({
-				testimonial: {
-					name: myTestimonial.name,
-					email: myTestimonial.email,
-					image: myTestimonial.image,
-					review: review,
-					rating: rating
+		const response = await fetch(
+			"http://smitbhamwala.vercel.app/api/testimonial",
+			{
+				method: "POST",
+				body: JSON.stringify({
+					testimonial: {
+						name: myTestimonial.name,
+						email: myTestimonial.email,
+						image: myTestimonial.image,
+						review: review,
+						rating: rating
+					}
+				}),
+				headers: {
+					"Content-Type": "application/json"
 				}
-			}),
-			headers: {
-				"Content-Type": "application/json"
 			}
-		});
+		);
 		const message = await response.json();
 		var width = window.innerWidth > 0 ? window.innerWidth : screen.width;
 
@@ -118,21 +124,24 @@ export default function MyReviewCard() {
 	}
 
 	async function deleteTestimonial() {
-		const response = await fetch("http://localhost:3000/api/testimonial", {
-			method: "DELETE",
-			body: JSON.stringify({
-				testimonial: {
-					name: myTestimonial.name,
-					email: myTestimonial.email,
-					image: myTestimonial.image,
-					review: "",
-					rating: 10
+		const response = await fetch(
+			"http://smitbhamwala.vercel.app/api/testimonial",
+			{
+				method: "DELETE",
+				body: JSON.stringify({
+					testimonial: {
+						name: myTestimonial.name,
+						email: myTestimonial.email,
+						image: myTestimonial.image,
+						review: "",
+						rating: 10
+					}
+				}),
+				headers: {
+					"Content-Type": "application/json"
 				}
-			}),
-			headers: {
-				"Content-Type": "application/json"
 			}
-		});
+		);
 		const message = await response.json();
 		var width = window.innerWidth > 0 ? window.innerWidth : screen.width;
 

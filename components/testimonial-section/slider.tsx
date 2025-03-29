@@ -21,9 +21,12 @@ export default function Slider() {
 
 	useEffect(() => {
 		async function fetchPosts() {
-			const res = await fetch("http://localhost:3000/api/testimonial", {
-				cache: "no-store"
-			});
+			const res = await fetch(
+				"http://smitbhamwala.vercel.app/api/testimonial",
+				{
+					cache: "no-store"
+				}
+			);
 			const data = await res.json();
 			const testimonialData = data.filter(
 				(testimonial: TestimonialType) => testimonial.review !== ""
@@ -55,8 +58,7 @@ export default function Slider() {
 						delay: 4000
 					})
 				]}
-        className="hidden md:block"
-        >
+				className="hidden md:block">
 				<CarouselContent>
 					{session && (
 						<CarouselItem className="md:basis-1/2 lg:basis-1/3 hover:cursor-grab active:cursor-grabbing">
@@ -82,7 +84,7 @@ export default function Slider() {
 				<CarouselNext />
 			</Carousel>
 
-      <Carousel
+			<Carousel
 				opts={{
 					align: "start"
 					// loop: true
@@ -92,9 +94,8 @@ export default function Slider() {
 						delay: 4000
 					})
 				]}
-        orientation="vertical"
-        className="block md:hidden mt-16"
-        >
+				orientation="vertical"
+				className="block md:hidden mt-16">
 				<CarouselContent className="h-[30rem]">
 					{session && (
 						<CarouselItem className="basis-1/2 hover:cursor-grab active:cursor-grabbing">
