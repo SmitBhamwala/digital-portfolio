@@ -1,30 +1,28 @@
 "use client";
 
-// Import Swiper React components
-import { Swiper, SwiperSlide } from "swiper/react";
-// import Swiper core and required modules
-import { EffectCoverflow, Navigation, Pagination } from "swiper/modules";
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import "swiper/css/scrollbar";
-import "swiper/css/autoplay";
-import "swiper/css/effect-coverflow";
-
-import { MdOutlineArrowBackIos } from "react-icons/md";
-import { MdOutlineArrowForwardIos } from "react-icons/md";
 import TestimonialCard from "./testimonialCard";
-import "./slider.css";
 import { useEffect, useState } from "react";
 import { TestimonialType } from "@/lib/types";
+import {
+	Carousel,
+	CarouselContent,
+	CarouselItem,
+	CarouselNext,
+	CarouselPrevious
+} from "../ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
+import { useSession } from "next-auth/react";
+import MyReviewCard from "./myReviewCard";
 
 export default function Slider() {
 	const [testimonials, setTestimonials] = useState([]);
+	const { data: session } = useSession();
 
 	useEffect(() => {
 		async function fetchPosts() {
-			const res = await fetch("http://localhost:3000/api/testimonial", {cache: "no-store"});
+			const res = await fetch("http://localhost:3000/api/testimonial", {
+				cache: "no-store"
+			});
 			const data = await res.json();
 			const reviewData = data.filter(
 				(review: TestimonialType) => review.testimonial !== ""
@@ -37,8 +35,42 @@ export default function Slider() {
 	if (testimonials.length === 0) return <div>Loading Testimonials...</div>;
 
 	return (
-		<div className="container">
-			<Swiper
+		<div>
+			<Carousel
+				opts={{
+					align: "start"
+					// loop: true
+				}}
+				plugins={[
+					Autoplay({
+						delay: 4000
+					})
+				]}>
+				<CarouselContent>
+					{session && (
+						<CarouselItem className="md:basis-1/2 lg:basis-1/3 hover:cursor-grab active:cursor-grabbing">
+							<MyReviewCard />
+						</CarouselItem>
+					)}
+
+					{testimonials.map((testimonial: TestimonialType) => (
+						<CarouselItem
+							key={testimonial._id}
+							className="md:basis-1/2 lg:basis-1/3 hover:cursor-grab active:cursor-grabbing">
+							<TestimonialCard
+								name={testimonial.name}
+								email={testimonial.email}
+								image={testimonial.image}
+								rating={testimonial.rating}
+								testimonial={testimonial.testimonial}
+							/>
+						</CarouselItem>
+					))}
+				</CarouselContent>
+				<CarouselPrevious />
+				<CarouselNext />
+			</Carousel>
+			{/* <Swiper
 				modules={[Navigation, Pagination, EffectCoverflow]}
 				spaceBetween={40}
 				slidesPerView={3}
@@ -110,7 +142,7 @@ export default function Slider() {
 						<MdOutlineArrowForwardIos />
 					</div>
 				</div>
-			</Swiper>
+			</Swiper> */}
 		</div>
 	);
 }

@@ -9,7 +9,7 @@ export default function TestimonialCard({
 	rating
 }: TestimonialType) {
 	return (
-		<div className="borderBlack rounded-xl shadow-xl w-[22rem] h-[20rem] p-4 bg-[#f3f4f6] dark:bg-gray-800">
+		<div className="borderBlack rounded-xl shadow-xl h-[15rem] p-4 bg-[#f3f4f6] dark:bg-gray-800">
 			<Link
 				href="https://www.linkedin.com/in/smit-bhamwala-8195971b0/"
 				target="_blank">
@@ -18,20 +18,20 @@ export default function TestimonialCard({
 						<Image
 							src={image}
 							alt={`${name}'s LinkedIn profile picture`}
-							width="70"
-							height="70"
-							quality="85"
+							width="40"
+							height="40"
+							quality="100"
 							priority={false}
 							draggable={false}
 							className="object-contain rounded-full bg-orange-400"
 						/>
 					</div>
-					<h4 className="font-medium text-xl">{name}</h4>
+					<h4 className="font-medium text-lg">{name}</h4>
 				</div>
 			</Link>
 			<div className="testimonial_card_body">
-				<p className="testimonial_comment">&quot;{testimonial}&quot;</p>
-				<p className="testimonial_rating mt-6">Rating: {rating}/10</p>
+				<p className="testimonial_comment text-sm">&quot;{testimonial}&quot;</p>
+				<p className="testimonial_rating text-sm mt-6">Rating: {rating}/10</p>
 			</div>
 		</div>
 	);
