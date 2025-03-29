@@ -8,7 +8,7 @@ import {
 } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
 import { FaEye } from "react-icons/fa";
-import SectionHeading from "@/components/section-heading";
+import SectionHeading from "@/components/common/section-heading";
 import { useTheme } from "@/context/theme-context";
 import { certificationsData } from "@/lib/data";
 import { CertificationsElementProps } from "@/lib/types";

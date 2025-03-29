@@ -1,10 +1,10 @@
 "use client";
 
-import SectionHeading from "@/components/section-heading";
-import SkillCard from "@/components/skillCard";
+import SectionHeading from "@/components/common/section-heading";
+import SkillCard from "@/components/skills-section/skillCard";
 import { skillsData } from "@/lib/data";
 import { useSectionInView } from "@/lib/hooks";
-import "@/components/skills.css";
+import "@/components/skills-section/skills.css";
 
 export default function Skills() {
 	const { ref } = useSectionInView("Skills");

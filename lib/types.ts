@@ -61,3 +61,12 @@ export type CertificationModalProps = {
 	// setCertificationModalOpen: SetStateAction<Boolean>;
 	setCertificationModalOpen: any;
 };
+
+export interface TestimonialType {
+  _id?: string;
+	name: string;
+	email: string;
+	image: string;
+	rating: number;
+	review: string;
+}

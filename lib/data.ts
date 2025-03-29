@@ -30,6 +30,10 @@ export const links = [
 	// {
 	// 	name: "Certifications",
 	// 	hash: "#certifications"
+	// },
+	// {
+	// 	name: "Testimonial",
+	// 	hash: "#testimonial"
 	// }
 ];
 

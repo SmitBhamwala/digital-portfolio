@@ -3,7 +3,6 @@
 import { useEffect } from "react";
 import Link from "next/link";
 import { IoMdClose } from "react-icons/io";
-import { ImNewTab } from "react-icons/im";
 import { ExperienceModalProps } from "@/lib/types";
 
 export default function ExperienceModal({

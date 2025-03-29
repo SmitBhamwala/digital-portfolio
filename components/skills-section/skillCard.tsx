@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { HiBadgeCheck } from "react-icons/hi";
 import { SkillCardType } from "@/lib/types";
-import "@/components/skills.css";
+import "@/components/skills-section/skills.css";
 
 export default function SkillCard({ title, skills }: SkillCardType) {
 	return (
