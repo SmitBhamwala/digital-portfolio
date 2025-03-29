@@ -7,7 +7,7 @@ import { TestimonialType } from "@/lib/types";
 import { Input } from "../ui/input";
 import toast from "react-hot-toast";
 import { useTheme } from "@/context/theme-context";
-import { Pencil, Save, X } from "lucide-react";
+import { Delete, Pencil, Plus, Save, Trash2, X } from "lucide-react";
 
 export default function MyReviewCard() {
 	const { theme } = useTheme();
@@ -117,6 +117,69 @@ export default function MyReviewCard() {
 					});
 	}
 
+	async function deleteTestimonial() {
+		const response = await fetch("http://localhost:3000/api/testimonial", {
+			method: "DELETE",
+			body: JSON.stringify({
+				testimonial: {
+					name: myTestimonial.name,
+					email: myTestimonial.email,
+					image: myTestimonial.image,
+					review: "",
+					rating: 10
+				}
+			}),
+			headers: {
+				"Content-Type": "application/json"
+			}
+		});
+		const message = await response.json();
+		var width = window.innerWidth > 0 ? window.innerWidth : screen.width;
+
+		if (message.error) {
+			width <= 768
+				? theme == "light"
+					? toast.error(message.error)
+					: toast.error(message.error, {
+							style: {
+								background: "rgb(51 65 85)",
+								color: "#fff"
+							}
+						})
+				: theme == "light"
+					? toast.error(message.error, { position: "top-right" })
+					: toast.error(message.error, {
+							position: "top-right",
+							style: {
+								background: "rgb(51 65 85)",
+								color: "#fff"
+							}
+						});
+			return;
+		}
+
+		width <= 768
+			? theme == "light"
+				? toast.success(message.message)
+				: toast.success(message.message, {
+						style: {
+							background: "rgb(51 65 85)",
+							color: "#fff"
+						}
+					})
+			: theme == "light"
+				? toast.success(message.message, {
+						position: "top-right"
+					})
+				: toast.success(message.message, {
+						position: "top-right",
+						style: {
+							background: "rgb(51 65 85)",
+							color: "#fff"
+						}
+					});
+	}
+
 	return (
 		<div className="borderBlack rounded-xl shadow-xl h-[15rem] p-4 bg-[#f3f4f6] dark:bg-gray-800">
 			<div className="testimonial_card_header flex items-center mb-6">
@@ -177,8 +240,8 @@ export default function MyReviewCard() {
 											submitTestimonial();
 											setEditingTestimonial(false);
 										}}
-										className="lg:w-fit mt-3 text-sm text-center bg-gray-900 text-white px-4 py-2 flex justify-center items-center gap-2 rounded-xl outline-none hover:bg-gray-950 active:scale-95 dark:bg-gray-500 transition">
-										<Save size={18} className="text-green-500" />
+										className="lg:w-fit mt-3 text-sm text-center bg-green-600 text-white px-4 py-2 flex justify-center items-center gap-2 rounded-xl outline-none active:scale-95 transition">
+										<Save size={18} />
 									</button>
 									<button
 										onClick={() => {
@@ -186,8 +249,8 @@ export default function MyReviewCard() {
 											setRating(myTestimonial.rating);
 											setEditingTestimonial(false);
 										}}
-										className="lg:w-fit mt-3 text-sm text-center justify-center bg-gray-900 text-white px-4 py-2 flex items-center gap-2 rounded-xl outline-none hover:bg-gray-950 active:scale-95 dark:bg-gray-500 transition">
-										<X size={18} className="text-red-500" />
+										className="lg:w-fit mt-3 text-sm text-center justify-center bg-red-600 text-white px-4 py-2 flex items-center gap-2 rounded-xl outline-none active:scale-95 transition">
+										<X size={18} />
 									</button>
 								</div>
 							</>
@@ -199,11 +262,27 @@ export default function MyReviewCard() {
 								<p className="testimonial_rating mt-6 text-sm">
 									Rating: {myTestimonial.rating}/10
 								</p>
-								<button
-									onClick={() => setEditingTestimonial(true)}
-									className="lg:w-fit mt-3 text-sm text-center justify-center bg-gray-900 text-white px-4 py-2 flex items-center gap-2 rounded-xl outline-none hover:bg-gray-950 active:scale-95 dark:bg-gray-500 transition">
-									<Pencil size={18} />
-								</button>
+								<div className="flex items-center justify-start gap-2">
+									<button
+										onClick={() => setEditingTestimonial(true)}
+										className="lg:w-fit mt-3 text-sm text-center justify-center bg-blue-500 text-white px-4 py-2 flex items-center gap-2 rounded-xl outline-none active:scale-95 transition">
+										<Pencil size={18} />
+									</button>
+									<button
+										onClick={() => {
+											setReview("");
+											setRating(10);
+											setMyTestimonial({
+												...myTestimonial,
+												review: "",
+												rating: 10
+											});
+											deleteTestimonial();
+										}}
+										className="lg:w-fit mt-3 text-sm text-center justify-center bg-red-600 text-white px-4 py-2 flex items-center gap-2 rounded-xl outline-none active:scale-95 transition">
+										<Trash2 size={18} />
+									</button>
+								</div>
 							</>
 						)}
 					</div>
@@ -248,8 +327,8 @@ export default function MyReviewCard() {
 							</div>
 							<button
 								type="submit"
-								className="lg:w-fit mt-3 text-sm text-center justify-center bg-gray-900 text-white px-4 py-2 flex items-center gap-2 rounded-xl outline-none hover:bg-gray-950 active:scale-95 dark:bg-gray-500 transition">
-								Add a review
+								className="lg:w-fit mt-3 text-sm text-center justify-center bg-gray-900 text-white px-4 py-2 flex gap-2 rounded-xl outline-none hover:bg-gray-950 active:scale-95 dark:bg-gray-500 transition">
+								<Plus size={18} /> Add review
 							</button>
 						</form>
 					</>

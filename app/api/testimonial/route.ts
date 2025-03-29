@@ -35,3 +35,20 @@ export async function POST(request: NextRequest) {
 
 	return NextResponse.json({ message: "Testimonial added successfully" });
 }
+
+export async function DELETE(request: NextRequest) {
+	const message = await request.json();
+	const testimonial: TestimonialType = message.testimonial;
+
+	try {
+		await Testimonial.updateOne(
+			{ email: testimonial.email },
+			testimonial,
+			{ upsert: true }
+		);
+	} catch (error) {
+		return NextResponse.json({ error });
+	}
+
+	return NextResponse.json({ message: "Testimonial deleted successfully" });
+}
