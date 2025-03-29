@@ -13,6 +13,7 @@ import {
 import Autoplay from "embla-carousel-autoplay";
 import { useSession } from "next-auth/react";
 import MyReviewCard from "./myReviewCard";
+import { set } from "mongoose";
 
 export default function Slider() {
 	const [testimonials, setTestimonials] = useState([]);
@@ -27,10 +28,18 @@ export default function Slider() {
 			const testimonialData = data.filter(
 				(testimonial: TestimonialType) => testimonial.review !== ""
 			);
-			setTestimonials(testimonialData);
+			if (session) {
+				const testimonialsWithoutMyReview = testimonialData.filter(
+					(testimonial: TestimonialType) =>
+						testimonial.email !== session.user?.email
+				);
+				setTestimonials(testimonialsWithoutMyReview);
+			} else {
+				setTestimonials(testimonialData);
+			}
 		}
 		fetchPosts();
-	}, []);
+	}, [session]);
 
 	if (testimonials.length === 0) return <div>Loading Testimonials...</div>;
 
