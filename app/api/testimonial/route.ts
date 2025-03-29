@@ -1,22 +1,29 @@
 import { connectToDatabase } from "@/lib/mongodb";
+import { TestimonialType } from "@/lib/types";
 import Testimonial from "@/models/TestimonialModel";
 import { NextRequest, NextResponse } from "next/server";
 
 export async function GET() {
 	await connectToDatabase();
 	const testimonials = await Testimonial.find();
+
 	return NextResponse.json(testimonials);
 }
 
 export async function POST(request: NextRequest) {
 	const message = await request.json();
+	const testimonial: TestimonialType = message.testimonial;
+	if (testimonial.review.trim().length < 1) {
+		return NextResponse.json({ error: "Review is required" });
+	}
+	if (testimonial.rating < 1 || testimonial.rating > 10) {
+		return NextResponse.json({ error: "Rating must be between 1 and 10" });
+	}
 
 	try {
-		await Testimonial.updateOne(
-			{ email: message.testimonial.email },
-			message.testimonial,
-			{ upsert: true }
-		);
+		await Testimonial.updateOne({ email: testimonial.email }, testimonial, {
+			upsert: true
+		});
 	} catch (error) {
 		return NextResponse.json({ error });
 	}

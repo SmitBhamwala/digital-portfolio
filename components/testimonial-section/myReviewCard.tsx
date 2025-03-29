@@ -2,17 +2,21 @@
 
 import Image from "next/image";
 import { signOut, useSession } from "next-auth/react";
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { TestimonialType } from "@/lib/types";
 import MyAddReviewModal from "./myAddReviewModal";
+import { Input } from "../ui/input";
+import toast from "react-hot-toast";
+import { useTheme } from "@/context/theme-context";
 
 export default function MyReviewCard() {
+	const { theme } = useTheme();
 	const { data: session } = useSession();
 	const name = session?.user?.name;
 	const image = session?.user?.image;
 	const email = session?.user?.email;
 
-	const [isAddReviewModalOpen, setAddReviewModalOpen] = useState(false);
+	const [isEditingTestimonial, setEditingTestimonial] = useState(false);
 
 	const [myTestimonial, setMyTestimonial] = useState<TestimonialType>({
 		name: name!,
@@ -22,7 +26,8 @@ export default function MyReviewCard() {
 		rating: 10
 	});
 
-	const reviewRef = useRef(null);
+	const [review, setReview] = useState("");
+	const [rating, setRating] = useState(10);
 
 	useEffect(() => {
 		async function fetchPosts() {
@@ -30,16 +35,89 @@ export default function MyReviewCard() {
 				cache: "no-store"
 			});
 			const data = await res.json();
-			const myTestimonial = data.filter(
+			const userTestimonial = data.filter(
 				(testimonial: TestimonialType) =>
 					testimonial.email === session?.user?.email
 			);
-			if (myTestimonial[0]) {
-				setMyTestimonial(myTestimonial[0]);
+			if (userTestimonial[0]) {
+				setMyTestimonial(userTestimonial[0]);
+				setReview(userTestimonial[0].review);
+				setRating(userTestimonial[0].rating);
 			}
 		}
 		fetchPosts();
 	}, [session]);
+
+	async function submitTestimonial() {
+		const response = await fetch("http://localhost:3000/api/testimonial", {
+			method: "POST",
+			body: JSON.stringify({
+				testimonial: {
+					name: myTestimonial.name,
+					email: myTestimonial.email,
+					image: myTestimonial.image,
+					review: review,
+					rating: rating
+				}
+			}),
+			headers: {
+				"Content-Type": "application/json"
+			}
+		});
+		const message = await response.json();
+		var width = window.innerWidth > 0 ? window.innerWidth : screen.width;
+
+		if (message.error) {
+			width <= 768
+				? theme == "light"
+					? toast.error(message.error)
+					: toast.error(message.error, {
+							style: {
+								background: "rgb(51 65 85)",
+								color: "#fff"
+							}
+						})
+				: theme == "light"
+					? toast.error(message.error, { position: "top-right" })
+					: toast.error(message.error, {
+							position: "top-right",
+							style: {
+								background: "rgb(51 65 85)",
+								color: "#fff"
+							}
+						});
+			return;
+		}
+
+		setMyTestimonial({
+			...myTestimonial,
+			review: review,
+			rating: rating
+		});
+
+		// setAddReviewModalOpen(false);
+
+		width <= 768
+			? theme == "light"
+				? toast.success(message.message)
+				: toast.success(message.message, {
+						style: {
+							background: "rgb(51 65 85)",
+							color: "#fff"
+						}
+					})
+			: theme == "light"
+				? toast.success(message.message, {
+						position: "top-right"
+					})
+				: toast.success(message.message, {
+						position: "top-right",
+						style: {
+							background: "rgb(51 65 85)",
+							color: "#fff"
+						}
+					});
+	}
 
 	return (
 		<div className="borderBlack rounded-xl shadow-xl h-[15rem] p-4 bg-[#f3f4f6] dark:bg-gray-800">
@@ -61,41 +139,126 @@ export default function MyReviewCard() {
 			<div className="testimonial_card_body">
 				{myTestimonial?.review ? (
 					<div>
-						<p className="testimonial_comment text-sm">
-							&quot;{myTestimonial.review}&quot;
-						</p>
-						<p className="testimonial_rating mt-6 text-sm">
-							Rating: {myTestimonial.rating}/10
-						</p>
+						{isEditingTestimonial ? (
+							<>
+								<Input
+									type="text"
+									required
+									placeholder="Review"
+									value={review}
+									onChange={(e) => {
+										setReview(e.target.value);
+									}}
+									className="text-sm bg-primary/20 outline-none border-none"
+								/>
+								<div className="flex items-center justify-start my-4">
+									<Input
+										type="number"
+										required
+										placeholder="Rating"
+										value={rating || 1}
+										onChange={(e) => {
+											const value = e.target.valueAsNumber;
+											if (value < 1 || value > 10) {
+												return;
+											}
+											setRating(value);
+										}}
+										min={1}
+										max={10}
+										step={1}
+										minLength={1}
+										maxLength={2}
+										className="text-sm bg-primary/20 !outline-none !border-none w-24"
+									/>
+									<span className="text-sm ml-2">/ 10</span>
+								</div>
+								<button
+									onClick={() => submitTestimonial()}
+									className="lg:w-fit mt-3 text-sm text-center justify-center bg-gray-900 text-white px-4 py-2 flex items-center gap-2 rounded-xl outline-none hover:bg-gray-950 active:scale-95 dark:bg-gray-500 transition">
+									Add a review
+								</button>
+							</>
+						) : (
+							<>
+								<p className="testimonial_comment text-sm">
+									&quot;{myTestimonial.review}&quot;
+								</p>
+								<p className="testimonial_rating mt-6 text-sm">
+									Rating: {myTestimonial.rating}/10
+								</p>
+							</>
+						)}
+
 						<button
-							onClick={() => setAddReviewModalOpen(true)}
+							onClick={() => setEditingTestimonial(true)}
 							className="lg:w-fit mt-3 text-sm text-center justify-center bg-gray-900 text-white px-4 py-2 flex items-center gap-2 rounded-xl outline-none hover:bg-gray-950 active:scale-95 dark:bg-gray-500 transition">
 							Edit your review
 						</button>
 					</div>
 				) : (
-					<button
-						onClick={() => setAddReviewModalOpen(true)}
-						className="lg:w-fit mt-3 text-sm text-center justify-center bg-gray-900 text-white px-4 py-2 flex items-center gap-2 rounded-xl outline-none hover:bg-gray-950 active:scale-95 dark:bg-gray-500 transition">
-						Add a review
-					</button>
+					<>
+						<form
+							onSubmit={(e) => {
+								e.preventDefault();
+								submitTestimonial();
+							}}>
+							<Input
+								type="text"
+								required
+								placeholder="Review"
+								value={review}
+								onChange={(e) => {
+									setReview(e.target.value);
+								}}
+								className="text-sm bg-primary/20 outline-none border-none"
+							/>
+							<div className="flex items-center justify-start my-4">
+								<Input
+									type="number"
+									required
+									placeholder="Rating"
+									value={rating || 1}
+									onChange={(e) => {
+										const value = e.target.valueAsNumber;
+										if (value < 1 || value > 10) {
+											return;
+										}
+										setRating(value);
+									}}
+									min={1}
+									max={10}
+									step={1}
+									minLength={1}
+									maxLength={2}
+									className="text-sm bg-primary/20 !outline-none !border-none w-24"
+								/>
+								<span className="text-sm ml-2">/ 10</span>
+							</div>
+							<button
+								type="submit"
+								className="lg:w-fit mt-3 text-sm text-center justify-center bg-gray-900 text-white px-4 py-2 flex items-center gap-2 rounded-xl outline-none hover:bg-gray-950 active:scale-95 dark:bg-gray-500 transition">
+								Add a review
+							</button>
+						</form>
+					</>
 				)}
-				{isAddReviewModalOpen && (
+				{/* {isEditingTestimonial && (
 					<div>
 						<MyAddReviewModal
 							sessionData={session!.user}
 							myReview={myTestimonial}
 							setMyReview={setMyTestimonial}
-							setAddReviewModalOpen={setAddReviewModalOpen}
+							setAddReviewModalOpen={setEditingTestimonial}
 						/>
 					</div>
-				)}
+				)} */}
 			</div>
-			<button
+			{/* <button
 				onClick={() => signOut()}
 				className="lg:w-fit mt-3 text-sm text-center justify-center bg-gray-900 text-white px-4 py-2 flex items-center gap-2 rounded-xl outline-none hover:bg-gray-950 active:scale-95 dark:bg-gray-500 transition">
 				LogOut
-			</button>
+			</button> */}
 		</div>
 	);
 }

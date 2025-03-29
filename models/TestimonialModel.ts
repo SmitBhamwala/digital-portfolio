@@ -22,11 +22,16 @@ const TestimonialSchema = new Schema<TestimonialType>(
 		},
 		rating: {
 			type: Number,
+			max: 10,
+			min: 1,
+			maxlength: 2,
+			minlength: 1,
 			required: [true, "Rating is required"]
 		},
-		testimonial: {
+		review: {
 			type: String,
-			required: [true, "Testimonial is required"]
+			minlength: 1,
+			required: [true, "Review is required"]
 		}
 	},
 	{
