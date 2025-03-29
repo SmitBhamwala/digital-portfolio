@@ -14,13 +14,15 @@ export default function MyReviewCard() {
 
 	const [isAddReviewModalOpen, setAddReviewModalOpen] = useState(false);
 
-	const [myReview, setMyReview] = useState<TestimonialType>({
+	const [myTestimonial, setMyTestimonial] = useState<TestimonialType>({
 		name: name!,
 		email: email!,
 		image: image!,
-		testimonial: "",
+		review: "",
 		rating: 10
 	});
+
+	const reviewRef = useRef(null);
 
 	useEffect(() => {
 		async function fetchPosts() {
@@ -28,11 +30,12 @@ export default function MyReviewCard() {
 				cache: "no-store"
 			});
 			const data = await res.json();
-			const myReview = data.filter(
-				(review: TestimonialType) => review.email === session?.user?.email
+			const myTestimonial = data.filter(
+				(testimonial: TestimonialType) =>
+					testimonial.email === session?.user?.email
 			);
-			if (myReview[0]) {
-				setMyReview(myReview[0]);
+			if (myTestimonial[0]) {
+				setMyTestimonial(myTestimonial[0]);
 			}
 		}
 		fetchPosts();
@@ -56,13 +59,13 @@ export default function MyReviewCard() {
 				<h4 className="font-medium text-lg">{name}</h4>
 			</div>
 			<div className="testimonial_card_body">
-				{myReview?.testimonial ? (
+				{myTestimonial?.review ? (
 					<div>
 						<p className="testimonial_comment text-sm">
-							&quot;{myReview.testimonial}&quot;
+							&quot;{myTestimonial.review}&quot;
 						</p>
 						<p className="testimonial_rating mt-6 text-sm">
-							Rating: {myReview.rating}/10
+							Rating: {myTestimonial.rating}/10
 						</p>
 						<button
 							onClick={() => setAddReviewModalOpen(true)}
@@ -81,8 +84,8 @@ export default function MyReviewCard() {
 					<div>
 						<MyAddReviewModal
 							sessionData={session!.user}
-							myReview={myReview}
-							setMyReview={setMyReview}
+							myReview={myTestimonial}
+							setMyReview={setMyTestimonial}
 							setAddReviewModalOpen={setAddReviewModalOpen}
 						/>
 					</div>

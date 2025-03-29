@@ -68,5 +68,5 @@ export interface TestimonialType {
 	email: string;
 	image: string;
 	rating: number;
-	testimonial: string;
+	review: string;
 }

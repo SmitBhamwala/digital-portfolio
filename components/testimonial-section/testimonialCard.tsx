@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function TestimonialCard({
 	name,
-	testimonial,
+	review,
 	image,
 	rating
 }: TestimonialType) {
@@ -30,7 +30,7 @@ export default function TestimonialCard({
 				</div>
 			</Link>
 			<div className="testimonial_card_body">
-				<p className="testimonial_comment text-sm">&quot;{testimonial}&quot;</p>
+				<p className="testimonial_comment text-sm">&quot;{review}&quot;</p>
 				<p className="testimonial_rating text-sm mt-6">Rating: {rating}/10</p>
 			</div>
 		</div>

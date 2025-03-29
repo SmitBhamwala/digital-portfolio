@@ -24,10 +24,10 @@ export default function Slider() {
 				cache: "no-store"
 			});
 			const data = await res.json();
-			const reviewData = data.filter(
-				(review: TestimonialType) => review.testimonial !== ""
+			const testimonialData = data.filter(
+				(testimonial: TestimonialType) => testimonial.review !== ""
 			);
-			setTestimonials(reviewData);
+			setTestimonials(testimonialData);
 		}
 		fetchPosts();
 	}, []);
@@ -62,7 +62,7 @@ export default function Slider() {
 								email={testimonial.email}
 								image={testimonial.image}
 								rating={testimonial.rating}
-								testimonial={testimonial.testimonial}
+								review={testimonial.review}
 							/>
 						</CarouselItem>
 					))}
