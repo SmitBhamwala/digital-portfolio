@@ -41,7 +41,7 @@ export default function Slider() {
 		fetchPosts();
 	}, [session]);
 
-	if (testimonials.length === 0) return <div>Loading Testimonials...</div>;
+	if (testimonials.length === 0) return <div>No Testimonials</div>;
 
 	return (
 		<div>
@@ -54,7 +54,9 @@ export default function Slider() {
 					Autoplay({
 						delay: 4000
 					})
-				]}>
+				]}
+        className="hidden md:block"
+        >
 				<CarouselContent>
 					{session && (
 						<CarouselItem className="md:basis-1/2 lg:basis-1/3 hover:cursor-grab active:cursor-grabbing">
@@ -66,6 +68,44 @@ export default function Slider() {
 						<CarouselItem
 							key={testimonial._id}
 							className="md:basis-1/2 lg:basis-1/3 hover:cursor-grab active:cursor-grabbing">
+							<TestimonialCard
+								name={testimonial.name}
+								email={testimonial.email}
+								image={testimonial.image}
+								rating={testimonial.rating}
+								review={testimonial.review}
+							/>
+						</CarouselItem>
+					))}
+				</CarouselContent>
+				<CarouselPrevious />
+				<CarouselNext />
+			</Carousel>
+
+      <Carousel
+				opts={{
+					align: "start"
+					// loop: true
+				}}
+				plugins={[
+					Autoplay({
+						delay: 4000
+					})
+				]}
+        orientation="vertical"
+        className="block md:hidden mt-16"
+        >
+				<CarouselContent className="h-[30rem]">
+					{session && (
+						<CarouselItem className="basis-1/2 hover:cursor-grab active:cursor-grabbing">
+							<MyReviewCard />
+						</CarouselItem>
+					)}
+
+					{testimonials.map((testimonial: TestimonialType) => (
+						<CarouselItem
+							key={testimonial._id}
+							className="basis-1/2 hover:cursor-grab active:cursor-grabbing">
 							<TestimonialCard
 								name={testimonial.name}
 								email={testimonial.email}

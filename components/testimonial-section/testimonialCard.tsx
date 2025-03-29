@@ -9,7 +9,7 @@ export default function TestimonialCard({
 	rating
 }: TestimonialType) {
 	return (
-		<div className="borderBlack rounded-xl shadow-xl h-[15rem] p-4 bg-[#f3f4f6] dark:bg-gray-800">
+		<div className="borderBlack rounded-xl shadow-xl h-[13rem] md:h-[15rem] p-4 bg-[#f3f4f6] dark:bg-gray-800">
 			<Link
 				href="https://www.linkedin.com/in/smit-bhamwala-8195971b0/"
 				target="_blank">
