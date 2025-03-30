@@ -95,8 +95,8 @@ export default function Slider() {
 					})
 				]}
 				orientation="vertical"
-				className="block md:hidden mt-16">
-				<CarouselContent className="h-[30rem]">
+				className="block md:hidden select-none mt-16">
+				<CarouselContent className="h-[34rem]">
 					{session && (
 						<CarouselItem className="basis-1/2 hover:cursor-grab active:cursor-grabbing">
 							<MyReviewCard />

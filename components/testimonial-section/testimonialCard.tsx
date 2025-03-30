@@ -10,7 +10,7 @@ export default function TestimonialCard({
 	LinkedInId
 }: TestimonialType) {
 	return (
-		<div className="borderBlack rounded-xl shadow-xl p-4 bg-[#f3f4f6] dark:bg-gray-800">
+		<div className="borderBlack rounded-xl shadow-xl h-[15rem] md:h-[17rem] p-4 bg-[#f3f4f6] dark:bg-gray-800">
 			{LinkedInId ? (
 				<>
 					<Link
