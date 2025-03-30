@@ -70,11 +70,8 @@ export default function MyReviewCard() {
 				headers: {
 					"Content-Type": "application/json"
 				}
-			}),
-			headers: {
-				"Content-Type": "application/json"
 			}
-		});
+		);
 		const message = await response.json();
 		var width = window.innerWidth > 0 ? window.innerWidth : screen.width;
 
@@ -146,11 +143,8 @@ export default function MyReviewCard() {
 				headers: {
 					"Content-Type": "application/json"
 				}
-			}),
-			headers: {
-				"Content-Type": "application/json"
 			}
-		});
+		);
 		const message = await response.json();
 		var width = window.innerWidth > 0 ? window.innerWidth : screen.width;
 
