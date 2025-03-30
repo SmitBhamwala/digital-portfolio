@@ -1,6 +1,6 @@
 "use client";
 
-import { signIn, signOut, useSession } from "next-auth/react";
+import { signIn, useSession } from "next-auth/react";
 
 export default function SignIn() {
 	const { data: session } = useSession();
@@ -36,21 +36,17 @@ export default function SignIn() {
 
 	return (
 		<>
-			{!session ? (
-				<div>
+			{!session && (
+				<div className="text-sm">
 					<button
 						onClick={async () => {
 							await handleSignIn();
 						}}>
-						<u>SignIn with LinkedIn</u>
+						<u className="text-blue-600 dark:text-blue-500 font-bold tracking-wider">
+							SignIn
+						</u>
 					</button>
-					<span> to add/edit a review</span>
-				</div>
-			) : (
-				<div>
-					<button onClick={() => signOut()}>
-						<u>Logout</u>
-					</button>
+					<span> with LinkedIn to add/edit a review</span>
 				</div>
 			)}
 		</>

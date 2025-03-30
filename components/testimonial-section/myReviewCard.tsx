@@ -1,13 +1,13 @@
 "use client";
 
 import Image from "next/image";
-import { useSession } from "next-auth/react";
+import { signOut, useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
 import { TestimonialType } from "@/lib/types";
 import { Input } from "../ui/input";
 import toast from "react-hot-toast";
 import { useTheme } from "@/context/theme-context";
-import { Pencil, Plus, Save, Trash2, X } from "lucide-react";
+import { LogOut, Pencil, Plus, Save, Trash2, X } from "lucide-react";
 
 export default function MyReviewCard() {
 	const { theme } = useTheme();
@@ -193,7 +193,7 @@ export default function MyReviewCard() {
 	}
 
 	return (
-		<div className="borderBlack rounded-xl shadow-xl h-[17rem] p-4 bg-[#f3f4f6] dark:bg-gray-800">
+		<div className="borderBlack rounded-xl shadow-none h-[17rem] p-4 bg-[#f3f4f6] dark:bg-gray-800">
 			<div className="testimonial_card_header flex items-center mb-6">
 				<div className="linkedin_image_container mr-4">
 					<Image
@@ -213,7 +213,12 @@ export default function MyReviewCard() {
 				{myTestimonial?.review ? (
 					<div>
 						{isEditingTestimonial ? (
-							<>
+							<form
+								onSubmit={(e) => {
+									e.preventDefault();
+									submitTestimonial();
+									setEditingTestimonial(false);
+								}}>
 								<Input
 									type="text"
 									required
@@ -223,7 +228,7 @@ export default function MyReviewCard() {
 									onChange={(e) => {
 										setReview(e.target.value);
 									}}
-									className="text-sm bg-primary/20 focus-visible:ring-0"
+									className="text-sm rounded-lg borderBlack bg-white dark:bg-opacity-10 dark:text-gray-300 transition-all outline-none focus-visible:ring-0"
 								/>
 								<span className="text-gray-500 text-xs">
 									{review.length} / 130
@@ -246,20 +251,18 @@ export default function MyReviewCard() {
 										step={1}
 										minLength={1}
 										maxLength={2}
-										className="text-sm bg-primary/20 focus-visible:ring-0 w-24"
+										className="text-sm rounded-lg borderBlack bg-white dark:bg-opacity-10 dark:text-gray-300 transition-all outline-none focus-visible:ring-0 w-24"
 									/>
 									<span className="text-sm ml-2">/ 10</span>
 								</div>
 								<div className="flex justify-start items-center gap-2">
 									<button
-										onClick={() => {
-											submitTestimonial();
-											setEditingTestimonial(false);
-										}}
+										type="submit"
 										className="lg:w-fit mt-3 text-sm text-center bg-green-600 text-white px-4 py-2 flex justify-center items-center gap-2 rounded-xl outline-none active:scale-95 transition">
 										<Save size={18} />
 									</button>
 									<button
+										type="reset"
 										onClick={() => {
 											setReview(myTestimonial.review);
 											setRating(myTestimonial.rating);
@@ -269,7 +272,7 @@ export default function MyReviewCard() {
 										<X size={18} />
 									</button>
 								</div>
-							</>
+							</form>
 						) : (
 							<>
 								<p className="testimonial_comment text-sm">
@@ -298,6 +301,12 @@ export default function MyReviewCard() {
 										className="lg:w-fit mt-3 text-sm text-center justify-center bg-red-600 text-white px-4 py-2 flex items-center gap-2 rounded-xl outline-none active:scale-95 transition">
 										<Trash2 size={18} />
 									</button>
+									<button
+										type="button"
+										onClick={() => signOut()}
+										className="lg:w-fit mt-3 text-sm text-center justify-center bg-gray-900 text-white px-4 py-2 flex gap-2 rounded-xl outline-none hover:bg-gray-950 active:scale-95 dark:bg-gray-500 transition">
+										<LogOut size={18} /> LogOut
+									</button>
 								</div>
 							</>
 						)}
@@ -318,7 +327,7 @@ export default function MyReviewCard() {
 								onChange={(e) => {
 									setReview(e.target.value);
 								}}
-								className="text-sm bg-primary/20 focus-visible:ring-0"
+								className="text-sm rounded-lg borderBlack bg-white dark:bg-opacity-10 dark:text-gray-300 transition-all outline-none focus-visible:ring-0"
 							/>
 							<span className="text-gray-500 text-xs">
 								{review.length} / 130
@@ -341,15 +350,23 @@ export default function MyReviewCard() {
 									step={1}
 									minLength={1}
 									maxLength={2}
-									className="text-sm bg-primary/20 focus-visible:ring-0 w-24"
+									className="text-sm rounded-lg borderBlack bg-white dark:bg-opacity-10 dark:text-gray-300 transition-all outline-none focus-visible:ring-0 w-24"
 								/>
 								<span className="text-sm ml-2">/ 10</span>
 							</div>
-							<button
-								type="submit"
-								className="lg:w-fit mt-3 text-sm text-center justify-center bg-gray-900 text-white px-4 py-2 flex gap-2 rounded-xl outline-none hover:bg-gray-950 active:scale-95 dark:bg-gray-500 transition">
-								<Plus size={18} /> Add review
-							</button>
+							<div className="flex items-center justify-center gap-2">
+								<button
+									type="submit"
+									className="lg:w-fit mt-3 text-sm text-center justify-center bg-gray-900 text-white px-4 py-2 flex gap-2 rounded-xl outline-none hover:bg-gray-950 active:scale-95 dark:bg-gray-500 transition">
+									<Plus size={18} /> Add Review
+								</button>
+								<button
+									type="button"
+									onClick={() => signOut()}
+									className="lg:w-fit mt-3 text-sm text-center justify-center bg-gray-900 text-white px-4 py-2 flex gap-2 rounded-xl outline-none hover:bg-gray-950 active:scale-95 dark:bg-gray-500 transition">
+									<LogOut size={18} /> LogOut
+								</button>
+							</div>
 						</form>
 					</>
 				)}

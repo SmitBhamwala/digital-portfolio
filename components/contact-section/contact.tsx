@@ -241,7 +241,7 @@ export default function Contact() {
 						ref={nameRef}
 					/>
 					<input
-						className="h-14 my-3 px-4 rounded-lg borderBlack dark:bg-white dark:bg-opacity-10 dark:text-gray-300 transition-all outline-none"
+						className="h-14 my-3 px-4 rounded-lg borderBlack bg-white dark:bg-opacity-10 dark:text-gray-300 transition-all outline-none"
 						name="senderEmail"
 						type="email"
 						required
@@ -250,7 +250,7 @@ export default function Contact() {
 						ref={emailRef}
 					/>
 					<textarea
-						className="h-48 md:h-52 rounded-lg borderBlack p-4 dark:bg-white dark:bg-opacity-10 dark:text-gray-300 transition-all outline-none"
+						className="h-48 md:h-52 rounded-lg borderBlack p-4 bg-white dark:bg-opacity-10 dark:text-gray-300 transition-all outline-none"
 						name="message"
 						placeholder="Your message"
 						required
