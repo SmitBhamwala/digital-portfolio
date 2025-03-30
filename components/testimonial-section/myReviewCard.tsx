@@ -7,7 +7,7 @@ import { TestimonialType } from "@/lib/types";
 import { Input } from "../ui/input";
 import toast from "react-hot-toast";
 import { useTheme } from "@/context/theme-context";
-import { Delete, Pencil, Plus, Save, Trash2, X } from "lucide-react";
+import { Pencil, Plus, Save, Trash2, X } from "lucide-react";
 
 export default function MyReviewCard() {
 	const { theme } = useTheme();
@@ -21,6 +21,7 @@ export default function MyReviewCard() {
 	const [myTestimonial, setMyTestimonial] = useState<TestimonialType>({
 		name: name!,
 		email: email!,
+		LinkedInId: "",
 		image: image!,
 		review: "",
 		rating: 10
@@ -60,6 +61,7 @@ export default function MyReviewCard() {
 					testimonial: {
 						name: myTestimonial.name,
 						email: myTestimonial.email,
+						LinkedInId: myTestimonial.LinkedInId,
 						image: myTestimonial.image,
 						review: review,
 						rating: rating
@@ -132,6 +134,7 @@ export default function MyReviewCard() {
 					testimonial: {
 						name: myTestimonial.name,
 						email: myTestimonial.email,
+						LinkedInId: myTestimonial.LinkedInId,
 						image: myTestimonial.image,
 						review: "",
 						rating: 10

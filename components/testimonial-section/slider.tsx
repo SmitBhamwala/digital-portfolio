@@ -57,7 +57,7 @@ export default function Slider() {
 						delay: 4000
 					})
 				]}
-				className="hidden md:block">
+				className="hidden md:block select-none">
 				<CarouselContent>
 					{session && (
 						<CarouselItem className="md:basis-1/2 lg:basis-1/3 hover:cursor-grab active:cursor-grabbing">
@@ -75,6 +75,7 @@ export default function Slider() {
 								image={testimonial.image}
 								rating={testimonial.rating}
 								review={testimonial.review}
+								LinkedInId={testimonial.LinkedInId}
 							/>
 						</CarouselItem>
 					))}
@@ -112,6 +113,7 @@ export default function Slider() {
 								image={testimonial.image}
 								rating={testimonial.rating}
 								review={testimonial.review}
+								LinkedInId="smit-bhamwala-8195971b0"
 							/>
 						</CarouselItem>
 					))}

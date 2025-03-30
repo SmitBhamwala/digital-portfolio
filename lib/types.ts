@@ -63,7 +63,8 @@ export type CertificationModalProps = {
 };
 
 export interface TestimonialType {
-  _id?: string;
+	_id?: string;
+	LinkedInId: string;
 	name: string;
 	email: string;
 	image: string;

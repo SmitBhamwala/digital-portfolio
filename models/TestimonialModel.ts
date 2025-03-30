@@ -16,6 +16,11 @@ const TestimonialSchema = new Schema<TestimonialType>(
 				"Email is invalid"
 			]
 		},
+		LinkedInId: {
+			type: String,
+			unique: true,
+			required: [true, "LinkedIn is required"]
+		},
 		image: {
 			type: String,
 			required: [true, "Profile picture is required"]
