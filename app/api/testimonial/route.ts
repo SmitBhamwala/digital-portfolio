@@ -14,6 +14,11 @@ export async function POST(request: NextRequest) {
 	const message = await request.json();
 	const testimonial: TestimonialType = message.testimonial;
 	const trimmedReview = testimonial.review.replace(/^\s+|\s+$/g, "");
+	if (trimmedReview.length > 130) {
+		return NextResponse.json({
+			error: "Review must be less than 130 characters"
+		});
+	}
 	if (trimmedReview.length < 1) {
 		return NextResponse.json({ error: "Review is required" });
 	}
@@ -41,11 +46,9 @@ export async function DELETE(request: NextRequest) {
 	const testimonial: TestimonialType = message.testimonial;
 
 	try {
-		await Testimonial.updateOne(
-			{ email: testimonial.email },
-			testimonial,
-			{ upsert: true }
-		);
+		await Testimonial.updateOne({ email: testimonial.email }, testimonial, {
+			upsert: true
+		});
 	} catch (error) {
 		return NextResponse.json({ error });
 	}

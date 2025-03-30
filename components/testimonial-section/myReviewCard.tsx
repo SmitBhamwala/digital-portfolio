@@ -225,11 +225,15 @@ export default function MyReviewCard() {
 									required
 									placeholder="Review"
 									value={review}
+									maxLength={130}
 									onChange={(e) => {
 										setReview(e.target.value);
 									}}
-									className="text-sm bg-primary/20 outline-none border-none"
+									className="text-sm bg-primary/20 focus-visible:ring-0"
 								/>
+								<span className="text-gray-500 text-xs">
+									{review.length} / 130
+								</span>
 								<div className="flex items-center justify-start my-4">
 									<Input
 										type="number"
@@ -248,7 +252,7 @@ export default function MyReviewCard() {
 										step={1}
 										minLength={1}
 										maxLength={2}
-										className="text-sm bg-primary/20 !outline-none !border-none w-24"
+										className="text-sm bg-primary/20 focus-visible:ring-0 w-24"
 									/>
 									<span className="text-sm ml-2">/ 10</span>
 								</div>
@@ -316,11 +320,15 @@ export default function MyReviewCard() {
 								required
 								placeholder="Review"
 								value={review}
+								maxLength={130}
 								onChange={(e) => {
 									setReview(e.target.value);
 								}}
-								className="text-sm bg-primary/20 outline-none border-none"
+								className="text-sm bg-primary/20 focus-visible:ring-0"
 							/>
+							<span className="text-gray-500 text-xs">
+								{review.length} / 130
+							</span>
 							<div className="flex items-center justify-start my-4">
 								<Input
 									type="number"
@@ -339,7 +347,7 @@ export default function MyReviewCard() {
 									step={1}
 									minLength={1}
 									maxLength={2}
-									className="text-sm bg-primary/20 !outline-none !border-none w-24"
+									className="text-sm bg-primary/20 focus-visible:ring-0 w-24"
 								/>
 								<span className="text-sm ml-2">/ 10</span>
 							</div>

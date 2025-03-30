@@ -35,6 +35,7 @@ const TestimonialSchema = new Schema<TestimonialType>(
 		},
 		review: {
 			type: String,
+			maxlength: 130,
 			required: [true, "Review is required"]
 		}
 	},
