@@ -193,7 +193,7 @@ export default function MyReviewCard() {
 	}
 
 	return (
-		<div className="borderBlack rounded-xl shadow-xl h-[15rem] p-4 bg-[#f3f4f6] dark:bg-gray-800">
+		<div className="borderBlack rounded-xl shadow-xl p-4 bg-[#f3f4f6] dark:bg-gray-800">
 			<div className="testimonial_card_header flex items-center mb-6">
 				<div className="linkedin_image_container mr-4">
 					<Image
