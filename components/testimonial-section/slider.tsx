@@ -113,7 +113,7 @@ export default function Slider() {
 								image={testimonial.image}
 								rating={testimonial.rating}
 								review={testimonial.review}
-								LinkedInId="smit-bhamwala-8195971b0"
+								LinkedInId={testimonial.LinkedInId}
 							/>
 						</CarouselItem>
 					))}
