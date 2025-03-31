@@ -9,7 +9,6 @@ import { useActiveSectionContext } from "@/context/active-section-context";
 import { useSectionInView } from "@/lib/hooks";
 
 import myPic from "@/public/myPic.png";
-import "./hero.css";
 
 export default function Intro() {
 	const typedRef = useRef(null);
@@ -23,7 +22,7 @@ export default function Intro() {
 				"C++ Developer",
 				"MERN Stack Developer",
 				"Next.JS Developer",
-				"Software Developer"
+				"Senior Software Developer"
 			],
 			typeSpeed: 60,
 			smartBackspace: true,
@@ -49,16 +48,16 @@ export default function Intro() {
 					<h1 className="home__title mb-0 text-4xl text font-semibold !leading-[1.5] md:text-[3rem] xl:text-[58px]">
 						Smit Bhamwala
 					</h1>
-					<div className="App mb-3">
+					<div className="font-medium text-[1.1rem] md:text-[1.5rem] mb-3">
 						<span
-							className="home__subtitle dark:text-purple-300"
+							className="relative text-center text-[#007FFF] font-semibold text-[1.1rem] md:text-[1.5rem] pl-[3.2rem] md:pl-[5rem] before:content-[''] before:absolute before:w-[35px] md:before:w-[60px] before:h-[2px] before:bg-[#b5b5b5] before:left-0 before:top-1/2 dark:text-purple-300"
 							ref={typedRef}
 						/>
 					</div>
 
-					<p className="home__description">
+					<p className="max-w-[200rem] mb-[2rem]">
 						Passionate Full-Stack Web Developer specializing in developing
-						responsive, intuitive, and robust web applications{" "}
+						responsive, and robust web applications{" "}
 						<span className="italic font-semibold">
 							from concept to deployment
 						</span>
@@ -99,102 +98,11 @@ export default function Intro() {
 						quality="85"
 						priority
 						draggable={false}
-						className="home__img dark:bg-gray-900"
+						// bg-[#007FFF] ring-8 ring-[rgba(255,0,255,0.5)]
+						className="rounded-[60%_40%_30%_70%/60%_30%_70%_40%] bg-[#363636] object-contain justify-self-center animate-profile dark:bg-gray-900"
 					/>
 				</div>
 			</div>
 		</section>
 	);
 }
-
-// <section
-// 			ref={ref}
-// 			id="home"
-// 			className="mb-28 max-w-[50rem] text-center sm:mb-0 scroll-mt-[100rem]">
-// 			<div className="flex items-center justify-center">
-// 				<div className="relative">
-// 					<motion.div
-// 						initial={{ opacity: 0, scale: 0 }}
-// 						animate={{ opacity: 1, scale: 1 }}
-// 						transition={{
-// 							type: "tween",
-// 							duration: 0.2
-// 						}}>
-// 						<Image
-// 							src={"/smit-bhamwala-profile-pic.png"}
-// 							alt="Smit Bhamwala profile pic"
-// 							width="192"
-// 							height="192"
-// 							quality="95"
-// 							priority
-// 							className="h-24 w-24 rounded-full object-cover border-[0.35rem] border-white shadow-xl"
-// 						/>
-// 					</motion.div>
-// 					{/* <motion.span
-// 						className="absolute bottom-0 right-0 text-4xl"
-// 						initial={{ opacity: 0, scale: 0 }}
-// 						animate={{ opacity: 1, scale: 1 }}
-// 						transition={{
-// 							type: "spring",
-// 							stiffness: 125,
-// 							delay: 0.1,
-// 							duration: 0.7
-// 						}}>
-// 						👋
-// 					</motion.span> */}
-// 				</div>
-// 			</div>
-
-// 			<motion.h1
-// 				className="mb-10 mt-4 px-4 text-2xl font-medium !leading-[1.5] sm:text-4xl"
-// 				initial={{ opacity: 0, y: 100 }}
-// 				animate={{ opacity: 1, y: 0 }}>
-// 				<span className="font-bold">Hello, I&apos;m Smit Bhamwala.</span>{" "}
-// 				I&apos;m a <span className="font-bold">Full-Stack Web Developer</span>{" "}
-// 				with <span className="font-bold">2 years</span> of experience. I build{" "}
-// 				<span className="italic">web applications</span> in React/Next.js
-// 			</motion.h1>
-
-// 			<motion.div
-// 				className="flex flex-col sm:flex-row items-center justify-center gap-5 px-4 text-lg font-medium"
-// 				initial={{ opacity: 0, y: 100 }}
-// 				animate={{ opacity: 1, y: 0 }}
-// 				transition={{
-// 					delay: 0.1
-// 				}}>
-// 				<Link
-// 					href="#contact"
-// 					className="group bg-gray-900 text-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 hover:bg-gray-950 active:scale-105 transition"
-// 					onClick={() => {
-// 						setActiveSection("Contact");
-// 						setTimeOfLastClick(Date.now());
-// 					}}>
-// 					Contact me here{" "}
-// 					<BsArrowRight className="opacity-70 group-hover:translate-x-1 transition" />
-// 				</Link>
-
-// 				<a
-// 					className="group bg-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10"
-// 					href="/Smit Bhamwala CV.pdf"
-// 					download>
-// 					Download CV{" "}
-// 					<HiDownload className="opacity-60 group-hover:translate-y-1 transition" />
-// 				</a>
-
-// 				<div className="flex flex-row items-center justify-center gap-5 px-4 text-lg font-medium">
-// 					<a
-// 						className="bg-white p-4 text-gray-700 hover:text-gray-950 flex items-center gap-2 rounded-full focus:scale-[1.15] hover:scale-[1.15] active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10 dark:text-white/60"
-// 						href="https://www.linkedin.com/in/smit-bhamwala-8195971b0/"
-// 						target="_blank">
-// 						<BsLinkedin />
-// 					</a>
-
-// 					<a
-// 						className="bg-white p-4 text-gray-700 flex items-center gap-2 text-[1.35rem] rounded-full focus:scale-[1.15] hover:scale-[1.15] hover:text-gray-950 active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10 dark:text-white/60"
-// 						href="https://github.com/SmitBhamwala"
-// 						target="_blank">
-// 						<FaGithubSquare />
-// 					</a>
-// 				</div>
-// 			</motion.div>
-// 		</section>
