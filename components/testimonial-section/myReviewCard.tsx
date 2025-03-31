@@ -204,7 +204,7 @@ export default function MyReviewCard() {
             quality="100"
             priority={false}
             draggable={false}
-            className="object-contain rounded-full bg-orange-400 outline outline-orange-400 outline-2"
+            className="object-contain rounded-full outline outline-orange-600 outline-2"
           />
         </div>
         <h4 className="font-medium text-lg">{name}</h4>
