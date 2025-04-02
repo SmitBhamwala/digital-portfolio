@@ -219,43 +219,47 @@ export default function MyReviewCard() {
 									e.preventDefault();
 									submitTestimonial();
 									setEditingTestimonial(false);
-								}}>
-								<Input
-									type="text"
-									required
-									placeholder="Review"
-									value={review}
-									maxLength={130}
-									onChange={(e) => {
-										setReview(e.target.value);
-									}}
-									className="text-sm rounded-lg borderBlack bg-white dark:bg-opacity-10 dark:text-gray-300 transition-all outline-none focus-visible:ring-0"
-								/>
-								<span className="text-gray-500 text-xs">
-									{review.length} / 130
-								</span>
-								<div className="flex items-center justify-start my-4">
-									<Rating
-										initialValue={rating / 2}
-										allowFraction
-										className="react-simple-star-rating edit-rating"
-										iconsCount={5}
-										fillColorArray={[
-											"red",
-											"red",
-											"#F6412D",
-											"#F6412D",
-											"#FF9800",
-											"#FF9800",
-											"#FFC100",
-											"#FFC100",
-											"#FFEC19",
-											"#FFEC19"
-										]}
-										onClick={(rate: number) => {
-											setRating(rate * 2);
+								}}
+                className="flex justify-between flex-col h-[11rem]"
+                >
+								<div>
+									<Input
+										type="text"
+										required
+										placeholder="Review"
+										value={review}
+										maxLength={130}
+										onChange={(e) => {
+											setReview(e.target.value);
 										}}
+										className="text-sm rounded-lg borderBlack bg-white dark:bg-opacity-10 dark:text-gray-300 transition-all outline-none focus-visible:ring-0"
 									/>
+									<span className="text-gray-500 text-xs">
+										{review.length} / 130
+									</span>
+									<div className="flex items-center justify-start my-4">
+										<Rating
+											initialValue={rating / 2}
+											allowFraction
+											className="react-simple-star-rating edit-rating"
+											iconsCount={5}
+											fillColorArray={[
+												"red",
+												"red",
+												"#F6412D",
+												"#F6412D",
+												"#FF9800",
+												"#FF9800",
+												"#FFC100",
+												"#FFC100",
+												"#FFEC19",
+												"#FFEC19"
+											]}
+											onClick={(rate: number) => {
+												setRating(rate * 2);
+											}}
+										/>
+									</div>
 								</div>
 								<div className="flex justify-start items-center gap-2">
 									<button
@@ -276,29 +280,31 @@ export default function MyReviewCard() {
 								</div>
 							</form>
 						) : (
-							<>
-								<p className="testimonial_comment text-sm">
-									&quot;{myTestimonial.review}&quot;
-								</p>
-								<Rating
-									initialValue={myTestimonial.rating / 2}
-									allowFraction
-									readonly
-									className="react-simple-star-rating mt-4"
-									iconsCount={5}
-									fillColorArray={[
-										"red",
-										"red",
-										"#F6412D",
-										"#F6412D",
-										"#FF9800",
-										"#FF9800",
-										"#FFC100",
-										"#FFC100",
-										"#FFEC19",
-										"#FFEC19"
-									]}
-								/>
+							<div className="flex flex-col justify-between h-[11rem]">
+								<div>
+									<p className="testimonial_comment text-sm">
+										&quot;{myTestimonial.review}&quot;
+									</p>
+									<Rating
+										initialValue={myTestimonial.rating / 2}
+										allowFraction
+										readonly
+										className="react-simple-star-rating mt-4"
+										iconsCount={5}
+										fillColorArray={[
+											"red",
+											"red",
+											"#F6412D",
+											"#F6412D",
+											"#FF9800",
+											"#FF9800",
+											"#FFC100",
+											"#FFC100",
+											"#FFEC19",
+											"#FFEC19"
+										]}
+									/>
+								</div>
 								<div className="flex items-center justify-start gap-2 mt-2">
 									<button
 										onClick={() => setEditingTestimonial(true)}
@@ -326,7 +332,7 @@ export default function MyReviewCard() {
 										<LogOut size={18} /> LogOut
 									</button>
 								</div>
-							</>
+							</div>
 						)}
 					</div>
 				) : (
@@ -335,49 +341,52 @@ export default function MyReviewCard() {
 							onSubmit={(e) => {
 								e.preventDefault();
 								submitTestimonial();
-							}}>
-							<Input
-								type="text"
-								required
-								placeholder="Review"
-								value={review}
-								maxLength={130}
-								onChange={(e) => {
-									setReview(e.target.value);
-								}}
-								className="text-sm rounded-lg borderBlack bg-white dark:bg-opacity-10 dark:text-gray-300 transition-all outline-none focus-visible:ring-0"
-							/>
-							<span className="text-gray-500 text-xs">
-								{review.length} / 130
-							</span>
-							<div className="flex items-center justify-start my-4">
-								<Rating
-									initialValue={rating / 2}
-									allowFraction
-									className="react-simple-star-rating add-rating"
-									iconsCount={5}
-									fillColorArray={[
-										"red",
-										"red",
-										"#F6412D",
-										"#F6412D",
-										"#FF9800",
-										"#FF9800",
-										"#FFC100",
-										"#FFC100",
-										"#FFEC19",
-										"#FFEC19"
-									]}
-									onClick={(rate: number) => {
-										setRating(rate * 2);
+							}}
+							className="flex justify-between flex-col h-[11rem]">
+							<div>
+								<Input
+									type="text"
+									required
+									placeholder="Review"
+									value={review}
+									maxLength={130}
+									onChange={(e) => {
+										setReview(e.target.value);
 									}}
+									className="text-sm rounded-lg borderBlack bg-white dark:bg-opacity-10 dark:text-gray-300 transition-all outline-none focus-visible:ring-0"
 								/>
+								<span className="text-gray-500 text-xs">
+									{review.length} / 130
+								</span>
+								<div className="flex items-center justify-start my-4">
+									<Rating
+										initialValue={rating / 2}
+										allowFraction
+										className="react-simple-star-rating add-rating"
+										iconsCount={5}
+										fillColorArray={[
+											"red",
+											"red",
+											"#F6412D",
+											"#F6412D",
+											"#FF9800",
+											"#FF9800",
+											"#FFC100",
+											"#FFC100",
+											"#FFEC19",
+											"#FFEC19"
+										]}
+										onClick={(rate: number) => {
+											setRating(rate * 2);
+										}}
+									/>
+								</div>
 							</div>
-							<div className="flex items-center justify-center gap-2">
+							<div className="flex items-center gap-2">
 								<button
 									type="submit"
-									className="lg:w-fit mt-3 text-sm text-center justify-center bg-gray-900 text-white px-4 py-2 flex gap-2 rounded-xl outline-none hover:bg-gray-950 active:scale-95 dark:bg-gray-500 transition">
-									<Plus size={18} /> Add Review
+									className="lg:w-fit mt-3 text-sm text-center justify-center bg-green-600 text-white px-4 py-2 flex gap-2 rounded-xl outline-none active:scale-95 transition">
+									<Plus size={18} /> Add
 								</button>
 								<button
 									type="button"
