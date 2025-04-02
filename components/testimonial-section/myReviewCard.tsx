@@ -8,6 +8,7 @@ import { Input } from "../ui/input";
 import toast from "react-hot-toast";
 import { useTheme } from "@/context/theme-context";
 import { LogOut, Pencil, Plus, Save, Trash2, X } from "lucide-react";
+import { Rating } from "react-simple-star-rating";
 
 export default function MyReviewCard() {
   const { theme } = useTheme();
@@ -235,26 +236,27 @@ export default function MyReviewCard() {
                   {review.length} / 130
                 </span>
                 <div className="flex items-center justify-start my-4">
-                  <Input
-                    type="number"
-                    required
-                    placeholder="Rating"
-                    value={rating || 1}
-                    onChange={(e) => {
-                      const value = e.target.valueAsNumber;
-                      if (value < 1 || value > 10) {
-                        return;
-                      }
-                      setRating(value);
+                  <Rating
+                    initialValue={rating / 2}
+                    allowFraction
+                    className="react-simple-star-rating edit-rating"
+                    iconsCount={5}
+                    fillColorArray={[
+                      "red",
+                      "red",
+                      "#F6412D",
+                      "#F6412D",
+                      "#FF9800",
+                      "#FF9800",
+                      "#FFC100",
+                      "#FFC100",
+                      "#FFEC19",
+                      "#FFEC19"
+                    ]}
+                    onClick={(rate: number) => {
+                      setRating(rate * 2);
                     }}
-                    min={1}
-                    max={10}
-                    step={1}
-                    minLength={1}
-                    maxLength={2}
-                    className="text-sm rounded-lg borderBlack bg-white dark:bg-opacity-10 dark:text-gray-300 transition-all outline-none focus-visible:ring-0 w-24"
                   />
-                  <span className="text-sm ml-2">/ 10</span>
                 </div>
                 <div className="flex justify-start items-center gap-2">
                   <button
@@ -281,10 +283,26 @@ export default function MyReviewCard() {
                 <p className="testimonial_comment text-sm">
                   &quot;{myTestimonial.review}&quot;
                 </p>
-                <p className="testimonial_rating mt-6 text-sm">
-                  Rating: {myTestimonial.rating}/10
-                </p>
-                <div className="flex items-center justify-start gap-2">
+                <Rating
+                initialValue={myTestimonial.rating / 2}
+                allowFraction
+                readonly
+                className="react-simple-star-rating mt-4"
+                iconsCount={5}
+                fillColorArray={[
+                  "red",
+                  "red",
+                  "#F6412D",
+                  "#F6412D",
+                  "#FF9800",
+                  "#FF9800",
+                  "#FFC100",
+                  "#FFC100",
+                  "#FFEC19",
+                  "#FFEC19"
+                ]}
+              />
+                <div className="flex items-center justify-start gap-2 mt-2">
                   <button
                     onClick={() => setEditingTestimonial(true)}
                     className="lg:w-fit mt-3 text-sm text-center justify-center bg-blue-500 text-white px-4 py-2 flex items-center gap-2 rounded-xl outline-none active:scale-95 transition"
@@ -340,26 +358,27 @@ export default function MyReviewCard() {
                 {review.length} / 130
               </span>
               <div className="flex items-center justify-start my-4">
-                <Input
-                  type="number"
-                  required
-                  placeholder="Rating"
-                  value={rating || 1}
-                  onChange={(e) => {
-                    const value = e.target.valueAsNumber;
-                    if (value < 1 || value > 10) {
-                      return;
-                    }
-                    setRating(value);
-                  }}
-                  min={1}
-                  max={10}
-                  step={1}
-                  minLength={1}
-                  maxLength={2}
-                  className="text-sm rounded-lg borderBlack bg-white dark:bg-opacity-10 dark:text-gray-300 transition-all outline-none focus-visible:ring-0 w-24"
-                />
-                <span className="text-sm ml-2">/ 10</span>
+              <Rating
+                initialValue={rating / 2}
+                allowFraction
+                className="react-simple-star-rating add-rating"
+                iconsCount={5}
+                fillColorArray={[
+                  "red",
+                  "red",
+                  "#F6412D",
+                  "#F6412D",
+                  "#FF9800",
+                  "#FF9800",
+                  "#FFC100",
+                  "#FFC100",
+                  "#FFEC19",
+                  "#FFEC19"
+                ]}
+                onClick={(rate: number) => {
+                  setRating(rate * 2);
+                }}
+              />
               </div>
               <div className="flex items-center justify-center gap-2">
                 <button

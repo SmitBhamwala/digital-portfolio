@@ -3,3 +3,10 @@
 	width: 1.5rem;
 	height: 1.5rem;
 }
+
+.react-simple-star-rating.add-rating svg,
+.react-simple-star-rating.edit-rating svg {
+	display: inline-flex;
+	width: 1.9rem;
+	height: 1.9rem;
+}
