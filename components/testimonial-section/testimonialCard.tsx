@@ -1,6 +1,8 @@
 import Image from "next/image";
 import { TestimonialType } from "@/lib/types";
 import Link from "next/link";
+import { Rating } from "react-simple-star-rating";
+import "./test.css";
 
 export default function TestimonialCard({
 	name,
@@ -34,9 +36,26 @@ export default function TestimonialCard({
 					</Link>
 					<div className="testimonial_card_body">
 						<p className="testimonial_comment text-sm">&quot;{review}&quot;</p>
-						<p className="testimonial_rating text-sm mt-6">
-							Rating: {rating}/10
-						</p>
+						<Rating
+							initialValue={rating / 2}
+							readonly
+							allowFraction
+							className="react-simple-star-rating mt-6"
+							iconsCount={5}
+							fillColorArray={[
+								"red",
+								"red",
+								"#F6412D",
+								"#F6412D",
+								"#FF9800",
+								"#FF9800",
+								"#FFC100",
+								"#FFC100",
+								"#FFEC19",
+								"#FFEC19"
+							]}
+							onClick={function noRefCheck() {}}
+						/>
 					</div>
 				</>
 			) : (
@@ -58,9 +77,26 @@ export default function TestimonialCard({
 					</div>
 					<div className="testimonial_card_body">
 						<p className="testimonial_comment text-sm">&quot;{review}&quot;</p>
-						<p className="testimonial_rating text-sm mt-6">
-							Rating: {rating}/10
-						</p>
+						<Rating
+							initialValue={rating / 2}
+							readonly
+							allowFraction
+							className="react-simple-star-rating mt-6"
+							iconsCount={5}
+							fillColorArray={[
+								"red",
+								"red",
+								"#F6412D",
+								"#F6412D",
+								"#FF9800",
+								"#FF9800",
+								"#FFC100",
+								"#FFC100",
+								"#FFEC19",
+								"#FFEC19"
+							]}
+							onClick={function noRefCheck() {}}
+						/>
 					</div>
 				</>
 			)}
