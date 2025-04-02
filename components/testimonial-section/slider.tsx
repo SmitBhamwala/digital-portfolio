@@ -5,7 +5,7 @@ import { TestimonialType } from "@/lib/types";
 import { useSession } from "next-auth/react";
 import TestimonialCarousel from "./testimonialCarousel";
 
-function shuffleArray(array: any) {
+function shuffleTestimonials(array: any) {
   const shuffled = [...array]; // Clone the array to avoid mutation
   for (let i = shuffled.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
@@ -13,6 +13,7 @@ function shuffleArray(array: any) {
   }
   return shuffled;
 }
+
 export default function Slider() {
   const [testimonials, setTestimonials] = useState([]);
   const [loadingTestimonials, setLoadingTestimonials] = useState(true);
@@ -30,12 +31,15 @@ export default function Slider() {
       const testimonialData = data.filter(
         (testimonial: TestimonialType) => testimonial.review !== ""
       );
+      const randomTestimonials: any = shuffleTestimonials(testimonialData);
       if (session) {
+        const testimonialsWithoutMyReview = randomTestimonials.filter(
           (testimonial: TestimonialType) =>
             testimonial.email !== session.user?.email
         );
         setTestimonials(testimonialsWithoutMyReview);
       } else {
+        setTestimonials(randomTestimonials);
       }
     }
     setLoadingTestimonials(true);
