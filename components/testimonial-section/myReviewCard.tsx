@@ -128,8 +128,8 @@ export default function MyReviewCard() {
 			});
 
 			showToast("success", message.message);
-		} catch (error: any) {
-			showToast("error", error?.message || "Something went wrong.");
+		} catch (error: { error: string } | any) {
+			showToast("error", error?.error || "Something went wrong.");
 		}
 	}
 

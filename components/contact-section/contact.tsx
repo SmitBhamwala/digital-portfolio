@@ -3,19 +3,19 @@
 import { useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import toast from "react-hot-toast";
 // import SectionHeading from "@/components/section-heading";
 import SubmitBtn from "@/components/contact-section/submit-btn";
 import { useSectionInView } from "@/hooks/useSectionInView";
 import { sendEmail } from "@/actions/sendEmail";
-import { useTheme } from "@/context/theme-context";
 // import { MdEmail } from "react-icons/md";
 import emailIMG from "@/public/email.png";
 import "./contact.css";
+import { useCustomToast } from "@/hooks/useCustomToast";
 
 export default function Contact() {
 	const { ref } = useSectionInView("Contact", 0.5);
-	const { theme } = useTheme();
+
+	const { showToast } = useCustomToast();
 
 	const nameRef = useRef<HTMLInputElement>(null);
 	const emailRef = useRef<HTMLInputElement>(null);
@@ -175,61 +175,26 @@ export default function Contact() {
 				<form
 					className="xl:mt-10 w-[100%] flex flex-col dark:text-black"
 					action={async (formData) => {
-						const { data, error } = await sendEmail(formData);
-						var width =
-							window.innerWidth > 0 ? window.innerWidth : screen.width;
+						try {
+							const { data, error } = await sendEmail(formData);
 
-						if (error) {
-							width <= 768
-								? theme == "light"
-									? toast.error(error)
-									: toast.error(error, {
-											style: {
-												background: "rgb(51 65 85)",
-												color: "#fff"
-											}
-										})
-								: theme == "light"
-									? toast.error(error, { position: "top-right" })
-									: toast.error(error, {
-											position: "top-right",
-											style: {
-												background: "rgb(51 65 85)",
-												color: "#fff"
-											}
-										});
-							return;
+							if (error) {
+								showToast("error", error);
+								return;
+							}
+							if (nameRef.current) {
+								nameRef.current.value = "";
+							}
+							if (emailRef.current) {
+								emailRef.current.value = "";
+							}
+							if (messageRef.current) {
+								messageRef.current.value = "";
+							}
+							showToast("success", "Email sent successfully!");
+						} catch (error: { error: string } | any) {
+							showToast("error", error.error || "Something went wrong");
 						}
-						if (nameRef.current) {
-							nameRef.current.value = "";
-						}
-						if (emailRef.current) {
-							emailRef.current.value = "";
-						}
-						if (messageRef.current) {
-							messageRef.current.value = "";
-						}
-
-						width <= 768
-							? theme == "light"
-								? toast.success("Email sent successfully!")
-								: toast.success("Email sent successfully!", {
-										style: {
-											background: "rgb(51 65 85)",
-											color: "#fff"
-										}
-									})
-							: theme == "light"
-								? toast.success("Email sent successfully!", {
-										position: "top-right"
-									})
-								: toast.success("Email sent successfully!", {
-										position: "top-right",
-										style: {
-											background: "rgb(51 65 85)",
-											color: "#fff"
-										}
-									});
 					}}>
 					<input
 						className="h-14 px-4 rounded-lg borderBlack dark:bg-white dark:bg-opacity-10 dark:text-gray-300 transition-all outline-none"
