@@ -6,7 +6,7 @@ import Link from "next/link";
 import Typed from "typed.js";
 
 import { useActiveSectionContext } from "@/context/active-section-context";
-import { useSectionInView } from "@/lib/hooks";
+import { useSectionInView } from "@/hooks/useSectionInView";
 
 import myPic from "@/public/myPic.png";
 

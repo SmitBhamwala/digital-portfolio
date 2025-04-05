@@ -3,7 +3,7 @@
 import SectionHeading from "@/components/common/section-heading";
 import SkillCard from "@/components/skills-section/skillCard";
 import { skillsData } from "@/lib/data";
-import { useSectionInView } from "@/lib/hooks";
+import { useSectionInView } from "@/hooks/useSectionInView";
 import "@/components/skills-section/skills.css";
 
 export default function Skills() {

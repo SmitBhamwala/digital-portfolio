@@ -21,12 +21,12 @@ export default function Slider() {
 
   useEffect(() => {
     async function fetchPosts() {
-      const res = await fetch(
-        "https://smitbhamwala.vercel.app/api/testimonial",
-        {
-          cache: "no-store",
-        }
-      );
+      const res = await fetch("/api/testimonial", {
+        cache: "no-store",
+        headers: {
+          "x-secret-key": process.env.NEXT_PUBLIC_API_SECRET || "",
+        },
+      });
       const data = await res.json();
       const testimonialData = data.filter(
         (testimonial: TestimonialType) => testimonial.review !== ""

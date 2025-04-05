@@ -7,7 +7,7 @@ import { MdInsights } from "react-icons/md";
 import { FaLaptopCode } from "react-icons/fa";
 import { BiSupport } from "react-icons/bi";
 import SectionHeading from "@/components/common/section-heading";
-import { useSectionInView } from "@/lib/hooks";
+import { useSectionInView } from "@/hooks/useSectionInView";
 import { useActiveSectionContext } from "@/context/active-section-context";
 import animation from "@/public/lottie/code.json";
 import "./about.css";

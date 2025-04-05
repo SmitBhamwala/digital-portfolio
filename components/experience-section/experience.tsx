@@ -9,7 +9,7 @@ import {
 import "react-vertical-timeline-component/style.min.css";
 import { experiencesData } from "@/lib/data";
 import { ExperienceElementProps } from "@/lib/types";
-import { useSectionInView } from "@/lib/hooks";
+import { useSectionInView } from "@/hooks/useSectionInView";
 import { useInView } from "react-intersection-observer";
 import { useTheme } from "@/context/theme-context";
 import { FaEye } from "react-icons/fa";

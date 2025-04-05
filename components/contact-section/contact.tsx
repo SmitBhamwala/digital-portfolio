@@ -6,7 +6,7 @@ import Image from "next/image";
 import toast from "react-hot-toast";
 // import SectionHeading from "@/components/section-heading";
 import SubmitBtn from "@/components/contact-section/submit-btn";
-import { useSectionInView } from "@/lib/hooks";
+import { useSectionInView } from "@/hooks/useSectionInView";
 import { sendEmail } from "@/actions/sendEmail";
 import { useTheme } from "@/context/theme-context";
 // import { MdEmail } from "react-icons/md";

@@ -12,7 +12,7 @@ import SectionHeading from "@/components/common/section-heading";
 import { useTheme } from "@/context/theme-context";
 import { certificationsData } from "@/lib/data";
 import { CertificationsElementProps } from "@/lib/types";
-import { useSectionInView } from "@/lib/hooks";
+import { useSectionInView } from "@/hooks/useSectionInView";
 import CertificationModal from "./certification-modal";
 // import { ImNewTab } from "react-icons/im";
 
