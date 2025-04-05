@@ -13,7 +13,6 @@ export async function connectToDatabase() {
       return Promise.resolve(true);
     }
   } catch (error) {
-    console.error(error);
     return Promise.reject(error);
   }
 }

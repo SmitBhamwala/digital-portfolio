@@ -6,7 +6,6 @@ import { auth } from "@/lib/auth";
 
 export async function GET(request: NextRequest) {
 	const secret = request.headers.get("x-secret-key");
-	console.log("Referrer: " + request.headers.get("referer"));
 
 	if (secret !== process.env.NEXT_PUBLIC_API_SECRET) {
 		return NextResponse.json({ error: "Forbidden" }, { status: 403 });
