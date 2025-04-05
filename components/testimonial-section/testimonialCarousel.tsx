@@ -56,13 +56,13 @@ export default function TestimonialCarousel({
         {isSkeletonLoading && (
           <>
             <CarouselItem className={carouselItemClassName}>
-              <Skeleton className="borderBlack rounded-xl shadow-none w-[17rem] h-[17rem] bg-[#f3f4f6] dark:bg-gray-800" />
+              <Skeleton className="borderBlack rounded-xl shadow-none h-[17rem] bg-[#f3f4f6] dark:bg-gray-800" />
             </CarouselItem>
             <CarouselItem className={carouselItemClassName}>
-              <Skeleton className="borderBlack rounded-xl shadow-none w-[17rem] h-[17rem] bg-[#f3f4f6] dark:bg-gray-800" />
+              <Skeleton className="borderBlack rounded-xl shadow-none h-[17rem] bg-[#f3f4f6] dark:bg-gray-800" />
             </CarouselItem>
             <CarouselItem className={carouselItemClassName}>
-              <Skeleton className="borderBlack rounded-xl shadow-none w-[17rem] h-[17rem] bg-[#f3f4f6] dark:bg-gray-800" />
+              <Skeleton className="borderBlack rounded-xl shadow-none h-[17rem] bg-[#f3f4f6] dark:bg-gray-800" />
             </CarouselItem>
           </>
         )}
