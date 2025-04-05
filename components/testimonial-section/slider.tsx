@@ -45,7 +45,7 @@ export default function Slider() {
 		setLoadingTestimonials(true);
 		fetchPosts();
 		setLoadingTestimonials(false);
-	}, [session]);
+	}, []);
 
 	return (
 		<div className="transition-all">
