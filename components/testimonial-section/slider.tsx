@@ -22,7 +22,7 @@ export default function Slider() {
 	useEffect(() => {
 		async function fetchPosts() {
 			const res = await fetch("/api/testimonial", {
-				cache: "no-store",
+				cache: "default",
 				headers: {
 					"x-secret-key": process.env.NEXT_PUBLIC_API_SECRET || ""
 				}

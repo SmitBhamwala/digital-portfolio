@@ -37,7 +37,7 @@ export default function MyReviewCard() {
 				headers: {
 					"x-secret-key": process.env.NEXT_PUBLIC_API_SECRET || ""
 				},
-				cache: "no-store"
+				cache: "default"
 			});
 			const data = await res.json();
 			const userTestimonial = data.filter(
@@ -146,6 +146,7 @@ export default function MyReviewCard() {
 						quality="100"
 						priority={false}
 						draggable={false}
+						loading="lazy"
 						className="object-contain rounded-full outline outline-orange-600 outline-2"
 					/>
 				</div>

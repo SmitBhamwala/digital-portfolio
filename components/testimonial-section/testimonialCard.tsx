@@ -23,6 +23,7 @@ export default function TestimonialCard({
 						quality="100"
 						priority={false}
 						draggable={false}
+						loading="lazy"
 						className="object-contain rounded-full bg-orange-400"
 					/>
 				</div>
