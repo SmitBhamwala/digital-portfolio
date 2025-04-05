@@ -54,7 +54,7 @@ export default function Slider() {
 					{/* For Desktop Loader */}
 					<TestimonialCarousel
 						orientation="horizontal"
-						carouselClassName="w-[65vw] hidden md:block select-none"
+						carouselClassName="hidden md:block select-none"
 						carouselContentClassName=""
 						carouselItemClassName="md:basis-1/2 lg:basis-1/3"
 						session={session}
