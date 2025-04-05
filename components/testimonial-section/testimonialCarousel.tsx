@@ -117,8 +117,8 @@ export default function TestimonialCarousel({
             </>
           )}
         </CarouselContent>
-        <CarouselPrevious />
-        <CarouselNext />
+        {!isSkeletonLoading && <CarouselPrevious />}
+        {!isSkeletonLoading && <CarouselNext />}
       </Carousel>
       <div className="hidden md:block">
         {count > 1 && (
