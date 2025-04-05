@@ -51,7 +51,7 @@ export default function MyReviewCard() {
 			}
 		}
 		fetchPosts();
-	}, [session]);
+	}, []);
 
 	async function submitTestimonial() {
 		try {
