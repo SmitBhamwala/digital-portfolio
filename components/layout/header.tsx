@@ -45,7 +45,9 @@ export default function Header() {
               initial={{ y: -100, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}>
               <Link
-                ref={(el) => (linkRefs.current[link.name] = el)}
+                ref={(el) => {
+                  linkRefs.current[link.name] = el;
+                }}
                 className={clsx(
                   "flex w-full items-center justify-center px-3 py-3 hover:text-gray-950 transition dark:text-gray-500 dark:hover:text-gray-200",
                   {
