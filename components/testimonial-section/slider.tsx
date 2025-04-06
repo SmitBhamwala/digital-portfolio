@@ -48,7 +48,7 @@ export default function Slider() {
 	}, []);
 
 	return (
-		<div className="transition-all md:h-[19rem]">
+		<div className="transition-all md:h-[16.7rem]">
 			{loadingTestimonials ? (
 				<div>
 					{/* For Desktop Loader */}
