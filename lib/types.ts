@@ -1,5 +1,4 @@
 import { links } from "@/lib/data";
-import { SetStateAction } from "react";
 
 export type SectionNameType = (typeof links)[number]["name"];
 

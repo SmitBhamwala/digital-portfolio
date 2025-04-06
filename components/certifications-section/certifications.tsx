@@ -17,7 +17,7 @@ import CertificationModal from "./certification-modal";
 // import { ImNewTab } from "react-icons/im";
 
 export default function Certificate() {
-	const { ref } = useSectionInView("Courses", 0.3);
+	const { ref } = useSectionInView("Certifications", 0.3);
 	const { theme } = useTheme();
 
 	return (
