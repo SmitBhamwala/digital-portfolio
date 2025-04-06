@@ -60,7 +60,7 @@ export default function Slider() {
           <TestimonialCarousel
             orientation="horizontal"
             carouselClassName="w-[65vw] hidden md:block select-none"
-            carouselContentClassName="p-2"
+            carouselContentClassName="px-1 pb-2"
             carouselItemClassName="md:basis-1/2 lg:basis-1/3"
             session={session}
             testimonials={testimonials}
@@ -71,7 +71,7 @@ export default function Slider() {
           <TestimonialCarousel
             orientation="vertical"
             carouselClassName="block md:hidden select-none mt-16"
-            carouselContentClassName="h-[34rem]"
+            carouselContentClassName="mb-2 h-[34rem]"
             carouselItemClassName="basis-1/2 hover:cursor-grab active:cursor-grabbing"
             session={session}
             testimonials={testimonials}
@@ -95,7 +95,7 @@ export default function Slider() {
           <TestimonialCarousel
             orientation="vertical"
             carouselClassName="block md:hidden select-none mt-16"
-            carouselContentClassName="my-2 h-[34rem]"
+            carouselContentClassName="mb-2 h-[34rem]"
             carouselItemClassName="basis-1/2 hover:cursor-grab active:cursor-grabbing"
             session={session}
             testimonials={testimonials}
