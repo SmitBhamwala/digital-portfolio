@@ -28,13 +28,13 @@ export default function Header() {
   return (
     <header className="z-[999] relative">
       <motion.div
-        className="fixed top-6 p-0 h-[3.25rem] w-[90vw] lg:w-[48.5rem] rounded-full 
+        className="fixed top-4 lg:top-6 p-0 h-[3.25rem] w-[90vw] lg:w-[48.5rem] rounded-full 
         border border-white border-opacity-40 bg-slate-100 bg-opacity-80 shadow-lg shadow-black/[0.15] 
         backdrop-blur-[0.5rem] dark:bg-gray-950 dark:border-black/40 dark:bg-opacity-75"
         initial={{ y: -100, x: "-50%", opacity: 0 }}
         animate={{ y: 0, x: "-50%", opacity: 1 }}></motion.div>
 
-      <nav className="flex fixed top-[1.7rem] h-[2.875rem] -translate-x-1/2 py-0">
+      <nav className="flex fixed top-[1.2rem] lg:top-[1.7rem] h-[2.875rem] -translate-x-1/2 py-0">
         <ul
           ref={listRef}
           className="flex w-[85vw] lg:w-[47.5rem] overflow-x-auto scrollbar-none flex-nowrap items-center justify-start lg:justify-center text-[0.9rem] font-medium text-gray-500 md:gap-2 scroll-smooth">
