@@ -1,8 +1,8 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import { TestimonialType } from "@/lib/types";
 import { useSession } from "next-auth/react";
+import { useEffect, useState } from "react";
 import TestimonialCarousel from "./testimonialCarousel";
 
 function shuffleTestimonials(array: any) {
@@ -55,7 +55,7 @@ export default function Slider() {
 					<TestimonialCarousel
 						orientation="horizontal"
 						carouselClassName="w-[65vw] hidden md:block select-none"
-						carouselContentClassName=""
+						carouselContentClassName="p-2"
 						carouselItemClassName="md:basis-1/2 lg:basis-1/3"
 						session={session}
 						testimonials={testimonials}
@@ -79,7 +79,7 @@ export default function Slider() {
 					<TestimonialCarousel
 						orientation="horizontal"
 						carouselClassName="hidden md:block select-none"
-						carouselContentClassName=""
+						carouselContentClassName="p-2"
 						carouselItemClassName="md:basis-1/2 lg:basis-1/3 hover:cursor-grab active:cursor-grabbing"
 						session={session}
 						testimonials={testimonials}
