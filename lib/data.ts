@@ -26,15 +26,15 @@ export const links = [
 	{
 		name: "Contact",
 		hash: "#contact"
+	},
+	{
+		name: "Certifications",
+		hash: "#certifications"
+	},
+	{
+		name: "Testimonial",
+		hash: "#testimonial"
 	}
-	// {
-	// 	name: "Certifications",
-	// 	hash: "#certifications"
-	// },
-	// {
-	// 	name: "Testimonial",
-	// 	hash: "#testimonial"
-	// }
 ];
 
 export const experiencesData = [
