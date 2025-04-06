@@ -12,7 +12,7 @@ export default function TestimonialCard({
   LinkedInId
 }: TestimonialType) {
   return (
-    <div className="rounded-2xl shadow-md bg-white dark:bg-gray-800 p-6 h-full flex flex-col justify-start transition-transform duration-300 hover:scale-[1.02]">
+    <div className="rounded-2xl shadow-md bg-white dark:bg-gray-800 p-6 h-full flex flex-col justify-start transition-transform duration-300 lg:hover:scale-[1.02]">
       {/* Header */}
       <div className="flex items-center gap-4">
         <div className="flex-shrink-0">
