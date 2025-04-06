@@ -1,7 +1,7 @@
 .react-simple-star-rating svg {
 	display: inline-flex;
-	/* width: 1rem;
-	height: 1rem; */
+	width: 1rem;
+	height: 1rem;
 }
 
 .react-simple-star-rating.add-rating svg,
