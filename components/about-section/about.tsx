@@ -45,7 +45,7 @@ export default function About() {
                 setActiveSection("Experience");
                 setTimeOfLastClick(Date.now());
               }}
-              className="about__box active:scale-95 lg:hover:scale-105 transition rounded-2xl shadow-md bg-white dark:bg-gray-800">
+              className="about__box active:scale-95 lg:hover:scale-105 transition rounded-xl shadow-md bg-white dark:bg-gray-800">
               <div className="about__icon">
                 <MdInsights />
               </div>
@@ -59,7 +59,7 @@ export default function About() {
                 setActiveSection("Projects");
                 setTimeOfLastClick(Date.now());
               }}
-              className="about__box active:scale-95 lg:hover:scale-105 transition rounded-2xl shadow-md bg-white dark:bg-gray-800">
+              className="about__box active:scale-95 lg:hover:scale-105 transition rounded-xl shadow-md bg-white dark:bg-gray-800">
               <div className="about__icon">
                 <FaLaptopCode />
               </div>
@@ -73,7 +73,7 @@ export default function About() {
                 setActiveSection("Contact");
                 setTimeOfLastClick(Date.now());
               }}
-              className="about__box active:scale-95 lg:hover:scale-105 transition rounded-2xl shadow-md bg-white dark:bg-gray-800">
+              className="about__box active:scale-95 lg:hover:scale-105 transition rounded-xl shadow-md bg-white dark:bg-gray-800">
               <div className="about__icon">
                 <BiSupport />
               </div>
