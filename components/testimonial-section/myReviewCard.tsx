@@ -211,28 +211,29 @@ export default function MyReviewCard() {
                 }}
                 className="flex justify-start flex-col">
                 <div>
-                  <div className="flex items-center justify-start mb-4">
+                  <div className="flex items-center justify-start">
                     <Rating
                       initialValue={rating / 2}
                       allowFraction
                       className="react-simple-star-rating edit-rating"
                       iconsCount={5}
                       fillColorArray={[
-                        "red",
-                        "red",
-                        "#F6412D",
-                        "#F6412D",
-                        "#FF9800",
-                        "#FF9800",
-                        "#FFC100",
-                        "#FFC100",
-                        "#FFEC19",
-                        "#FFEC19"
+                        "#ff0000",
+                        "#ff1a00",
+                        "#ff3300",
+                        "#ff4d00",
+                        "#ff6600",
+                        "#ff8000",
+                        "#ff9900",
+                        "#f59e0b",
+                        "#f59e0b",
+                        "#ffb000"
                       ]}
                       onClick={(rate: number) => {
                         setRating(rate * 2);
                       }}
                     />
+                    {/* <span className="ml-1 text-gray-500 dark:text-gray-400">/ 5</span> */}
                   </div>
                   <Input
                     type="text"
@@ -243,7 +244,7 @@ export default function MyReviewCard() {
                     onChange={(e) => {
                       setReview(e.target.value);
                     }}
-                    className="text-sm rounded-lg borderBlack bg-white dark:bg-opacity-10 dark:text-gray-300 transition-all outline-none focus-visible:ring-0"
+                    className="mt-2 text-sm rounded-lg borderBlack bg-white dark:bg-opacity-10 dark:text-gray-300 transition-all outline-none focus-visible:ring-0"
                   />
                   <span className="text-gray-500 text-xs">
                     {review.length} / 130
@@ -270,7 +271,6 @@ export default function MyReviewCard() {
             ) : (
               <div className="flex flex-col justify-start">
                 <div>
-                  
                   <p className="testimonial_comment text-sm">
                     &quot;{myTestimonial.review}&quot;
                   </p>
@@ -314,21 +314,22 @@ export default function MyReviewCard() {
                     className="react-simple-star-rating add-rating"
                     iconsCount={5}
                     fillColorArray={[
-                      "red",
-                      "red",
-                      "#F6412D",
-                      "#F6412D",
-                      "#FF9800",
-                      "#FF9800",
-                      "#FFC100",
-                      "#FFC100",
-                      "#FFEC19",
-                      "#FFEC19"
+                      "#ff0000",
+                      "#ff1a00",
+                      "#ff3300",
+                      "#ff4d00",
+                      "#ff6600",
+                      "#ff8000",
+                      "#ff9900",
+                      "#f59e0b",
+                      "#f59e0b",
+                      "#ffb000"
                     ]}
                     onClick={(rate: number) => {
                       setRating(rate * 2);
                     }}
                   />
+                  {/* <span className="ml-1 text-gray-500 dark:text-gray-400">/ 5</span> */}
                 </div>
                 <Input
                   type="text"
@@ -339,7 +340,7 @@ export default function MyReviewCard() {
                   onChange={(e) => {
                     setReview(e.target.value);
                   }}
-                  className="mt-4 text-sm rounded-lg borderBlack bg-white dark:bg-opacity-10 dark:text-gray-300 transition-all outline-none focus-visible:ring-0"
+                  className="mt-2 text-sm rounded-lg borderBlack bg-white dark:bg-opacity-10 dark:text-gray-300 transition-all outline-none focus-visible:ring-0"
                 />
                 <span className="text-gray-500 text-xs">
                   {review.length} / 130

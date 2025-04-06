@@ -98,7 +98,7 @@ export default function ProjectNew({
 				sliderClass=""
 				slidesToSlide={1}
 				swipeable
-				className="w-[24rem] md:w-[28rem] h-[16rem]"
+				className="w-[22rem] md:w-[28rem] h-[16rem]"
 				removeArrowOnDeviceType={["tablet", "mobile"]}>
 				{imageUrl.map((img, index) => (
 					// <div className="w-full h-[16rem] !rounded-lg">
