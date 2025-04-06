@@ -101,7 +101,7 @@ export default function RootLayout({
 				<link rel="canonical" href="https://smitbhamwala.vercel.app" />
 			</head>
 			<body
-				className={`${poppins.className} bg-gray-50 text-gray-950 relative dark:bg-gray-900 dark:text-gray-50 dark:text-opacity-90`}>
+				className={`${poppins.className} bg-gray-50 text-gray-950 dark:bg-gray-900 dark:text-gray-50 dark:text-opacity-90`}>
 				<ThemeContextProvider>
 					<ActiveSectionContextProvider>
 						{children}
