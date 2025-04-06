@@ -1,5 +1,5 @@
-import { toast, ToastOptions } from "react-hot-toast";
 import { useTheme } from "@/context/theme-context";
+import { toast, ToastOptions } from "react-hot-toast";
 
 export const useCustomToast = () => {
   const { theme } = useTheme();
@@ -9,13 +9,13 @@ export const useCustomToast = () => {
 
   const getToastOptions = (type: "error" | "success"): ToastOptions => {
     const baseOptions: ToastOptions = {
-      position: isMobile ? "top-center" : "top-right",
+      position: isMobile ? "top-center" : "top-right"
     };
 
     if (isDarkMode) {
       baseOptions.style = {
         background: "rgb(51 65 85)",
-        color: "#fff",
+        color: "#fff"
       };
     }
 
