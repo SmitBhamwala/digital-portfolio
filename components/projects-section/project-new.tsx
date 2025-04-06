@@ -43,7 +43,7 @@ export default function ProjectNew({
 	sourceCodeURL
 }: ProjectProps) {
 	return (
-		<div className=" rounded-lg borderBlack shadow-xl dark:text-white bg-[#f3f4f6] dark:bg-[rgb(255, 255, 255)] dark:bg-opacity-5">
+		<div className="rounded-2xl shadow-md bg-white dark:bg-gray-800 dark:text-white">
 			{/* <Carousel slides={imageUrl} />
 			<SwipeCarousel /> */}
 			{/* <div className="carousel-container w-[28rem] h-[16rem]"> */}
@@ -98,7 +98,7 @@ export default function ProjectNew({
 				sliderClass=""
 				slidesToSlide={1}
 				swipeable
-				className="w-[20rem] md:w-[28rem] h-[16rem]"
+				className="w-[24rem] md:w-[28rem] h-[16rem]"
 				removeArrowOnDeviceType={["tablet", "mobile"]}>
 				{imageUrl.map((img, index) => (
 					// <div className="w-full h-[16rem] !rounded-lg">

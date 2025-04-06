@@ -41,7 +41,7 @@ export default function Contact() {
 					<Link
 						href="https://www.linkedin.com/in/smitbhamwala"
 						target="_blank"
-						className="contact__box w-[6rem] md:w-[7rem] active:scale-95 transition bg-[#f3f4f6] dark:bg-[rgb(255, 255, 255)] dark:bg-opacity-5">
+						className="contact__box w-[6rem] md:w-[7rem] active:scale-95 transition rounded-2xl shadow-md bg-white dark:bg-gray-800">
 						<div className="contact__icon">
 							<svg
 								xmlns="http://www.w3.org/2000/svg"
@@ -118,7 +118,7 @@ export default function Contact() {
 					</Link>
 					<Link
 						href="mailto:smitbhamwala@gmail.com"
-						className="contact__box w-[6rem] md:w-[7rem] active:scale-95 transition bg-[#f3f4f6] dark:bg-[rgb(255, 255, 255)] dark:bg-opacity-5">
+						className="contact__box w-[6rem] md:w-[7rem] active:scale-95 transition rounded-2xl shadow-md bg-white dark:bg-gray-800">
 						<div className="contact__icon">
 							<Image src={emailIMG} alt="Email Icon" height={30} width={30} />
 						</div>
@@ -127,7 +127,7 @@ export default function Contact() {
 					<Link
 						href="https://github.com/SmitBhamwala"
 						target="_blank"
-						className="contact__box w-[6rem] md:w-[7rem] active:scale-95 transition bg-[#f3f4f6] dark:bg-[rgb(255, 255, 255)] dark:bg-opacity-5">
+						className="contact__box w-[6rem] md:w-[7rem] active:scale-95 transition rounded-2xl shadow-md bg-white dark:bg-gray-800">
 						<div className="contact__icon">
 							<svg
 								xmlns="http://www.w3.org/2000/svg"

@@ -5,7 +5,7 @@ import "@/components/skills-section/skills.css";
 
 export default function SkillCard({ title, skills }: SkillCardType) {
 	return (
-		<div className="borderBlack rounded-xl p-4 bg-[#f3f4f6] dark:bg-[rgb(255, 255, 255)] dark:bg-opacity-5">
+		<div className="rounded-2xl shadow-md bg-white dark:bg-gray-800 p-4">
 			<h3 className="text-center text-xl mb-8 font-medium text-gray-800 dark:text-white/80">
 				{title}
 			</h3>

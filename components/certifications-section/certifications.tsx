@@ -1,18 +1,18 @@
 "use client";
 
-import { useState } from "react";
-import { useInView } from "react-intersection-observer";
-import {
-	VerticalTimeline,
-	VerticalTimelineElement
-} from "react-vertical-timeline-component";
-import "react-vertical-timeline-component/style.min.css";
-import { FaEye } from "react-icons/fa";
 import SectionHeading from "@/components/common/section-heading";
 import { useTheme } from "@/context/theme-context";
+import { useSectionInView } from "@/hooks/useSectionInView";
 import { certificationsData } from "@/lib/data";
 import { CertificationsElementProps } from "@/lib/types";
-import { useSectionInView } from "@/hooks/useSectionInView";
+import { useState } from "react";
+import { FaEye } from "react-icons/fa";
+import { useInView } from "react-intersection-observer";
+import {
+  VerticalTimeline,
+  VerticalTimelineElement
+} from "react-vertical-timeline-component";
+import "react-vertical-timeline-component/style.min.css";
 import CertificationModal from "./certification-modal";
 // import { ImNewTab } from "react-icons/im";
 
@@ -55,9 +55,9 @@ const CourseElement = ({ theme, course }: CertificationsElementProps) => {
 		<VerticalTimelineElement
 			visible={inView}
 			contentStyle={{
-				background: theme === "light" ? "#f3f4f6" : "rgba(255, 255, 255, 0.05)",
-				boxShadow: "none",
-				border: "1px solid rgba(0, 0, 0, 0.05)",
+				background: theme === "light" ? "#fff" : "#1f2937 ",
+				boxShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1)",
+				border: "none",
 				borderRadius: "1rem",
 				textAlign: "left",
 				padding: 0
