@@ -21,7 +21,7 @@ export default function SignIn() {
 							SignIn
 						</u>
 					</button>
-					<span> with LinkedIn to add/edit a review</span>
+					<span> with LinkedIn to add a review</span>
 				</div>
 			)}
 		</>
