@@ -9,6 +9,7 @@ import {
   type CarouselApi
 } from "@/components/ui/carousel";
 import { TestimonialType } from "@/lib/types";
+import clsx from "clsx";
 import Autoplay from "embla-carousel-autoplay";
 import { Session } from "next-auth";
 import { useEffect, useState } from "react";
@@ -127,8 +128,12 @@ export default function TestimonialCarousel({
               <div
                 key={i}
                 onClick={() => api?.scrollTo(i)}
-                className={`h-2 w-2 rounded-full cursor-pointer transition-all duration-300 bg-gray-300 dark:bg-gray-700 
-                  ${i + 1 === current && "bg-gray-700 dark:bg-gray-300 scale-110"}`}
+                className={clsx(
+                  "h-2 w-2 rounded-full cursor-pointer transition-all duration-300 bg-gray-300 dark:bg-gray-700",
+                  {
+                    "bg-gray-700 dark:bg-gray-300 scale-110": i + 1 === current
+                  }
+                )}
               />
             ))}
           </div>
