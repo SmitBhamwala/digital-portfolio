@@ -96,7 +96,7 @@ export default function TestimonialCarousel({
           <CarouselContent className={carouselContentClassName}>
             {filteredTestimonials.map((testimonial: TestimonialType) => (
               <CarouselItem
-                key={testimonial._id}
+                key={testimonial.email}
                 className={carouselItemClassName}>
                 <TestimonialCard
                   name={testimonial.name}

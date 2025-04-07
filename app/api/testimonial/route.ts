@@ -56,14 +56,25 @@ export async function POST(request: NextRequest) {
   if (trimmedReview.length < 1) {
     return NextResponse.json({ error: "Review is required" });
   }
+
   if (testimonial.rating < 1 || testimonial.rating > 10) {
     return NextResponse.json({ error: "Rating must be between 1 and 10" });
+  }
+
+  const trimmedLinkedInId = testimonial.review.replace(/^\s+|\s+$/g, "");
+  if (trimmedLinkedInId.length > 40) {
+    return NextResponse.json({
+      error: "LinkedIn ID must be less than 40 characters"
+    });
+  }
+  if (trimmedReview.length < 1) {
+    return NextResponse.json({ error: "LinkedIn ID is required" });
   }
 
   try {
     await Testimonial.updateOne(
       { email: testimonial.email },
-      { ...testimonial, review: trimmedReview },
+      { ...testimonial, review: trimmedReview, linkedInId: trimmedLinkedInId },
       {
         upsert: true
       }

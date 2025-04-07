@@ -19,6 +19,8 @@ const TestimonialSchema = new Schema<TestimonialType>(
     LinkedInId: {
       type: String,
       unique: true,
+      maxlength: 40,
+      minlength: 1,
       required: [true, "LinkedIn is required"]
     },
     image: {
@@ -36,6 +38,7 @@ const TestimonialSchema = new Schema<TestimonialType>(
     review: {
       type: String,
       maxlength: 130,
+      minlength: 1,
       required: [true, "Review is required"]
     }
   },

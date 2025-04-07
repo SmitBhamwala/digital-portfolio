@@ -29,10 +29,6 @@ html.dark::-webkit-scrollbar-thumb {
   border-radius: 10px;
 } */
 
-.borderBlack {
-  @apply border border-black/10;
-}
-
 @layer base {
   :root {
     --background: 0 0% 100%;

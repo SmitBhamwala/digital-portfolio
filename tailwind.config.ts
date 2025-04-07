@@ -86,6 +86,12 @@ const config: Config = {
           "-ms-overflow-style": "none", // IE and Edge
           "scrollbar-width": "none" // Firefox
         }
+      }), 
+      addUtilities({
+        ".borderBlack": {
+          "border-width": "1px",
+          "border-color": "rgb(0 0 0 / 0.1)"
+        }
       });
     }
   ],

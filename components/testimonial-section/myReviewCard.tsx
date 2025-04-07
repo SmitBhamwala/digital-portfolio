@@ -40,6 +40,7 @@ export default function MyReviewCard({
 
   const [review, setReview] = useState("");
   const [rating, setRating] = useState(10);
+  const [linkedInId, setLinkedInId] = useState("");
 
   useEffect(() => {
     if (!session?.user?.email) return;
@@ -50,22 +51,21 @@ export default function MyReviewCard({
 
     if (userTestimonial) {
       setMyTestimonial(userTestimonial);
+      setLinkedInId(userTestimonial.LinkedInId);
       setReview(userTestimonial.review);
       setRating(userTestimonial.rating);
     } else {
-      // if user hasn't submitted yet
+      // New user
       setMyTestimonial({
         name: session.user.name!,
         email: session.user.email!,
-        LinkedInId: "",
+        LinkedInId: myTestimonial.LinkedInId,
         image: session.user.image!,
-        review: "",
-        rating: 10
+        review: myTestimonial.review,
+        rating: myTestimonial.rating
       });
-      setReview("");
-      setRating(10);
     }
-  }, [session?.user?.email, testimonials]);
+  }, [session.user?.email, testimonials]);
 
   async function submitTestimonial() {
     setSubmitting(true);
@@ -76,7 +76,7 @@ export default function MyReviewCard({
           testimonial: {
             name: myTestimonial.name,
             email: myTestimonial.email,
-            LinkedInId: myTestimonial.LinkedInId,
+            linkedInId: linkedInId,
             image: myTestimonial.image,
             review: review,
             rating: rating
@@ -95,13 +95,41 @@ export default function MyReviewCard({
         return;
       }
 
-      setTestimonialsAction((prev) =>
-        prev.map((testimonial) =>
-          testimonial.email === myTestimonial.email
-            ? { ...testimonial, review: review, rating: rating }
-            : testimonial
-        )
-      );
+      setMyTestimonial({
+        name: myTestimonial.name,
+        email: myTestimonial.email,
+        image: myTestimonial.image,
+        LinkedInId: linkedInId,
+        review: review,
+        rating: rating
+      });
+
+      setTestimonialsAction((prev) => {
+        const oldTestimonials = [...prev];
+        const index = oldTestimonials.findIndex(
+          (testimonial) => testimonial.email === myTestimonial.email
+        );
+
+        if (index !== -1) {
+          // Update existing testimonial
+          oldTestimonials[index] = {
+            ...oldTestimonials[index],
+            LinkedInId: linkedInId,
+            review,
+            rating
+          };
+        } else {
+          // Add new testimonial
+          oldTestimonials.push({
+            ...myTestimonial,
+            LinkedInId: linkedInId,
+            review,
+            rating
+          });
+        }
+
+        return oldTestimonials;
+      });
 
       showToast("success", message.message);
     } catch (error: any) {
@@ -119,7 +147,7 @@ export default function MyReviewCard({
           testimonial: {
             name: myTestimonial.name,
             email: myTestimonial.email,
-            LinkedInId: myTestimonial.LinkedInId,
+            linkedInId: myTestimonial.LinkedInId,
             image: myTestimonial.image,
             review: "",
             rating: 10
@@ -276,6 +304,22 @@ export default function MyReviewCard({
                   <span className="text-gray-500 text-xs">
                     {review.length} / 130
                   </span>
+                  <div className="flex items-center gap-1">
+                    <p className="text-gray-700 dark:text-gray-300 text-sm mb-[2px]">
+                      linkedin.com/in/
+                    </p>
+                    <Input
+                      type="text"
+                      required
+                      placeholder="Your LinkedIn Id"
+                      value={linkedInId}
+                      maxLength={40}
+                      onChange={(e) => {
+                        setLinkedInId(e.target.value);
+                      }}
+                      className="text-sm rounded-sm shadow-none border-gray-300 dark:border-gray-700 border-x-0 border-t-0 border-b-2 px-1 py-0 font-semibold text-black dark:text-white transition-all outline-none focus-visible:ring-0"
+                    />
+                  </div>
                 </div>
                 <div className="flex justify-start items-center gap-2">
                   <button
@@ -287,6 +331,7 @@ export default function MyReviewCard({
                   <button
                     type="reset"
                     onClick={() => {
+                      setLinkedInId(myTestimonial.LinkedInId);
                       setReview(myTestimonial.review);
                       setRating(myTestimonial.rating);
                       setEditingTestimonial(false);
@@ -373,6 +418,22 @@ export default function MyReviewCard({
                 <span className="text-gray-500 text-xs">
                   {review.length} / 130
                 </span>
+                <div className="flex items-center gap-1">
+                  <p className="text-gray-700 dark:text-gray-300 text-sm mb-[2px]">
+                    linkedin.com/in/
+                  </p>
+                  <Input
+                    type="text"
+                    required
+                    placeholder="Your LinkedIn Id"
+                    value={linkedInId}
+                    maxLength={40}
+                    onChange={(e) => {
+                      setLinkedInId(e.target.value);
+                    }}
+                    className="text-sm rounded-sm shadow-none border-gray-300 dark:border-gray-700 border-x-0 border-t-0 border-b-2 px-1 py-0 font-semibold text-black dark:text-white transition-all outline-none focus-visible:ring-0"
+                  />
+                </div>
               </div>
               <div className="flex items-center gap-2">
                 <button
