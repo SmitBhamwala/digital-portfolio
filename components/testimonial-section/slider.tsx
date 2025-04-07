@@ -1,6 +1,7 @@
 "use client";
 
 import { TestimonialType } from "@/lib/types";
+import clsx from "clsx";
 import { useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
 import TestimonialCarousel from "./testimonialCarousel";
@@ -95,7 +96,15 @@ export default function Slider() {
           <TestimonialCarousel
             orientation="vertical"
             carouselClassName="block md:hidden select-none mt-16"
-            carouselContentClassName="mb-2 h-[34rem]"
+            carouselContentClassName={clsx(
+              "mb-2",
+              {
+                "h-[34rem]": session?.user
+              },
+              {
+                "h-[30rem]": !session?.user
+              }
+            )}
             carouselItemClassName="basis-1/2 hover:cursor-grab active:cursor-grabbing"
             session={session}
             testimonials={testimonials}
