@@ -83,13 +83,13 @@ export default function TestimonialCarousel({
         {isSkeletonLoading ? (
           <CarouselContent className={carouselContentClassName}>
             <CarouselItem className={carouselItemClassName}>
-              <Skeleton className="borderBlack rounded-xl shadow-none w-[80vw] md:w-auto h-[13rem] lg:h-[14.2rem] bg-[#f3f4f6] dark:bg-gray-800" />
+              <Skeleton className="rounded-2xl shadow-md w-[80vw] md:w-auto h-[14rem] md:h-[12.8rem] lg:h-[14.2rem] bg-[#f3f4f6] dark:bg-gray-800" />
             </CarouselItem>
             <CarouselItem className={carouselItemClassName}>
-              <Skeleton className="borderBlack rounded-xl shadow-none w-[80vw] md:w-auto h-[13rem] lg:h-[14.2rem] bg-[#f3f4f6] dark:bg-gray-800" />
+              <Skeleton className="rounded-2xl shadow-md w-[80vw] md:w-auto h-[14rem] md:h-[12.8rem] lg:h-[14.2rem] bg-[#f3f4f6] dark:bg-gray-800" />
             </CarouselItem>
             <CarouselItem className={carouselItemClassName}>
-              <Skeleton className="borderBlack rounded-xl shadow-none w-[80vw] md:w-auto h-[13rem] lg:h-[14.2rem] bg-[#f3f4f6] dark:bg-gray-800" />
+              <Skeleton className="rounded-2xl shadow-md w-[80vw] md:w-auto h-[14rem] md:h-[12.8rem] lg:h-[14.2rem] bg-[#f3f4f6] dark:bg-gray-800" />
             </CarouselItem>
           </CarouselContent>
         ) : (
