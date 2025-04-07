@@ -38,6 +38,7 @@ export default function Carousel({
             height={2000}
             alt="Project I worked on"
             quality={95}
+            loading="lazy"
             className="w-full h-full !rounded-lg object-fill"
           />
         ))}

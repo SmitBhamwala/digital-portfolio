@@ -21,6 +21,7 @@ export default function TestimonialCard({
             alt={`${name}'s photo`}
             width={48}
             height={48}
+            loading="lazy"
             className="rounded-full ring-2 ring-orange-500"
           />
         </div>

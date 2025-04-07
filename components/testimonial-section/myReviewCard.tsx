@@ -199,6 +199,7 @@ export default function MyReviewCard({
             alt={`${name}'s photo`}
             width={48}
             height={48}
+            loading="lazy"
             className="rounded-full ring-2 ring-orange-500"
           />
         </div>

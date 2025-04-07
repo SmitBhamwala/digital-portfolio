@@ -19,6 +19,7 @@ export default function SkillCard({ title, skills }: SkillCardType) {
                 src={`/svg/skills/${skill}.svg`}
                 height="15"
                 width="15"
+                loading="lazy"
               />
             </div>
             <h4

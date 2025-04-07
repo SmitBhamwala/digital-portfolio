@@ -120,7 +120,13 @@ export default function Contact() {
             href="mailto:smitbhamwala@gmail.com"
             className="contact__box w-[6rem] md:w-[7rem] active:scale-95 transition rounded-xl shadow-md bg-white dark:bg-gray-800">
             <div className="contact__icon">
-              <Image src={emailIMG} alt="Email Icon" height={30} width={30} />
+              <Image
+                src={emailIMG}
+                alt="Email Icon"
+                loading="lazy"
+                height={30}
+                width={30}
+              />
             </div>
             <h3 className="contact__title">Email Me</h3>
           </Link>

@@ -110,6 +110,7 @@ export default function ProjectNew({
             alt="Project I worked on"
             draggable={false}
             quality={95}
+            loading="lazy"
             className="w-full h-[16rem] !rounded-lg object-fill cursor-grab"
           />
           // </d/iv>
