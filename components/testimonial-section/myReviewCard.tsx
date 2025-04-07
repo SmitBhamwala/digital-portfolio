@@ -76,7 +76,7 @@ export default function MyReviewCard({
           testimonial: {
             name: myTestimonial.name,
             email: myTestimonial.email,
-            linkedInId: linkedInId,
+            LinkedInId: linkedInId,
             image: myTestimonial.image,
             review: review,
             rating: rating
