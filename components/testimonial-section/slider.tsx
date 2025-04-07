@@ -1,57 +1,26 @@
 "use client";
 
 import { TestimonialType } from "@/lib/types";
-import clsx from "clsx";
-import { useSession } from "next-auth/react";
-import { useEffect, useState } from "react";
+import { Session } from "next-auth";
+import { Dispatch, SetStateAction } from "react";
 import TestimonialCarousel from "./testimonialCarousel";
 
-function shuffleTestimonials(array: any) {
-  const shuffled = [...array]; // Clone the array to avoid mutation
-  for (let i = shuffled.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
-  }
-  return shuffled;
+interface SliderProps {
+  testimonials: TestimonialType[];
+  setTestimonials: Dispatch<SetStateAction<TestimonialType[]>>;
+  loadingTestimonials: boolean;
+  setLoadingTestimonials: Dispatch<SetStateAction<boolean>>;
+  session: Session | null;
 }
 
-export default function Slider() {
-  const [testimonials, setTestimonials] = useState([]);
-  const [loadingTestimonials, setLoadingTestimonials] = useState(true);
-  const { data: session } = useSession();
-  const [count, setCount] = useState(0);
-
-  useEffect(() => {
-    if (count) {
-      return;
-    }
-    async function fetchPosts() {
-      const res = await fetch("/api/testimonial", {
-        cache: "default",
-        headers: {
-          "x-secret-key": process.env.NEXT_PUBLIC_API_SECRET || ""
-        }
-      });
-      const data = await res.json();
-      const testimonialData = data.filter(
-        (testimonial: TestimonialType) => testimonial.review !== ""
-      );
-      const randomTestimonials: any = shuffleTestimonials(testimonialData);
-      if (session) {
-        const testimonialsWithoutMyReview = randomTestimonials.filter(
-          (testimonial: TestimonialType) =>
-            testimonial.email !== session.user?.email
-        );
-        setTestimonials(testimonialsWithoutMyReview);
-        setCount(count + 1);
-      } else {
-        setTestimonials(randomTestimonials);
-      }
-    }
-    setLoadingTestimonials(true);
-    fetchPosts();
-    setLoadingTestimonials(false);
-  }, [session]);
+export default function Slider({
+  testimonials,
+  setTestimonials,
+  loadingTestimonials,
+  setLoadingTestimonials,
+  session
+}: SliderProps) {
+  // const [count, setCount] = useState(0);
 
   return (
     <div className="transition-all md:h-[16.7rem]">
@@ -96,15 +65,7 @@ export default function Slider() {
           <TestimonialCarousel
             orientation="vertical"
             carouselClassName="block md:hidden select-none mt-16"
-            carouselContentClassName={clsx(
-              "mb-2",
-              {
-                "h-[34rem]": session?.user
-              },
-              {
-                "h-[30rem]": !session?.user
-              }
-            )}
+            carouselContentClassName="mb-2 h-[30rem]"
             carouselItemClassName="basis-1/2 hover:cursor-grab active:cursor-grabbing"
             session={session}
             testimonials={testimonials}

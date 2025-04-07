@@ -14,7 +14,6 @@ import Autoplay from "embla-carousel-autoplay";
 import { Session } from "next-auth";
 import { useEffect, useState } from "react";
 import { Skeleton } from "../ui/skeleton";
-import MyReviewCard from "./myReviewCard";
 import TestimonialCard from "./testimonialCard";
 
 export interface TestimonialCarouselProps {
@@ -39,6 +38,9 @@ export default function TestimonialCarousel({
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
   const [count, setCount] = useState(0);
+  const filteredTestimonials = testimonials.filter(
+    (testimonial: TestimonialType) => testimonial.review !== ""
+  );
 
   useEffect(() => {
     if (!api) return;
@@ -96,12 +98,7 @@ export default function TestimonialCarousel({
             </>
           ) : (
             <>
-              {session && (
-                <CarouselItem className={carouselItemClassName}>
-                  <MyReviewCard />
-                </CarouselItem>
-              )}
-              {testimonials.map((testimonial: TestimonialType) => (
+              {filteredTestimonials.map((testimonial: TestimonialType) => (
                 <CarouselItem
                   key={testimonial._id}
                   className={carouselItemClassName}>

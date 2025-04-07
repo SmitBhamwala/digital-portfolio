@@ -1,17 +1,41 @@
 "use client";
 
-import { signIn, useSession } from "next-auth/react";
+import { TestimonialType } from "@/lib/types";
+import { Session } from "next-auth";
+import { signIn } from "next-auth/react";
+import { Dispatch, SetStateAction } from "react";
+import MyReviewCard from "./myReviewCard";
 
-export default function SignIn() {
-  const { data: session } = useSession();
+interface SignInProps {
+  testimonials: TestimonialType[];
+  setTestimonials: Dispatch<SetStateAction<TestimonialType[]>>;
+  loadingTestimonials: boolean;
+  setLoadingTestimonials: Dispatch<SetStateAction<boolean>>;
+  session: Session | null;
+}
 
+export default function SignIn({
+  testimonials,
+  setTestimonials,
+  loadingTestimonials,
+  setLoadingTestimonials,
+  session
+}: SignInProps) {
   async function handleSignIn() {
     await signIn("linkedin");
   }
 
   return (
     <>
-      {!session && (
+      {session ? (
+        <MyReviewCard
+          testimonials={testimonials}
+          setTestimonials={setTestimonials}
+          loadingTestimonials={loadingTestimonials}
+          setLoadingTestimonials={setLoadingTestimonials}
+          session={session}
+        />
+      ) : (
         <div className="text-sm">
           <button
             onClick={async () => {

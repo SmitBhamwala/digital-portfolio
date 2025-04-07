@@ -3,22 +3,36 @@
 import { useCustomToast } from "@/hooks/useCustomToast";
 import { TestimonialType } from "@/lib/types";
 import { LogOut, Pencil, Plus, Save, Trash2, X } from "lucide-react";
-import { signOut, useSession } from "next-auth/react";
+import { Session } from "next-auth";
+import { signOut } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { Rating } from "react-simple-star-rating";
 import { Input } from "../ui/input";
 
-export default function MyReviewCard() {
+interface MyReviewCardProps {
+  testimonials: TestimonialType[];
+  setTestimonials: Dispatch<SetStateAction<TestimonialType[]>>;
+  loadingTestimonials: boolean;
+  setLoadingTestimonials: Dispatch<SetStateAction<boolean>>;
+  session: Session;
+}
+
+export default function MyReviewCard({
+  testimonials,
+  setTestimonials,
+  loadingTestimonials,
+  setLoadingTestimonials,
+  session
+}: MyReviewCardProps) {
   const { showToast } = useCustomToast();
-  const { data: session } = useSession();
-  const name = session?.user?.name;
-  const image = session?.user?.image;
-  const email = session?.user?.email;
+  const name = session.user?.name;
+  const image = session.user?.image;
+  const email = session.user?.email;
 
   const [isEditingTestimonial, setEditingTestimonial] = useState(false);
-
+  const [submitting, setSubmitting] = useState(false);
   const [myTestimonial, setMyTestimonial] = useState<TestimonialType>({
     name: name!,
     email: email!,
@@ -32,28 +46,33 @@ export default function MyReviewCard() {
   const [rating, setRating] = useState(10);
 
   useEffect(() => {
-    async function fetchPosts() {
-      const res = await fetch("/api/testimonial", {
-        headers: {
-          "x-secret-key": process.env.NEXT_PUBLIC_API_SECRET || ""
-        },
-        cache: "default"
+    if (!session?.user?.email) return;
+
+    const userTestimonial = testimonials.find(
+      (t) => t.email === session.user?.email
+    );
+
+    if (userTestimonial) {
+      setMyTestimonial(userTestimonial);
+      setReview(userTestimonial.review);
+      setRating(userTestimonial.rating);
+    } else {
+      // if user hasn't submitted yet
+      setMyTestimonial({
+        name: session.user.name!,
+        email: session.user.email!,
+        LinkedInId: "",
+        image: session.user.image!,
+        review: "",
+        rating: 10
       });
-      const data = await res.json();
-      const userTestimonial = data.filter(
-        (testimonial: TestimonialType) =>
-          testimonial.email === session?.user?.email
-      );
-      if (userTestimonial[0]) {
-        setMyTestimonial(userTestimonial[0]);
-        setReview(userTestimonial[0].review);
-        setRating(userTestimonial[0].rating);
-      }
+      setReview("");
+      setRating(10);
     }
-    fetchPosts();
-  }, []);
+  }, [session?.user?.email, testimonials]);
 
   async function submitTestimonial() {
+    setSubmitting(true);
     try {
       const response = await fetch("/api/testimonial", {
         method: "POST",
@@ -80,15 +99,19 @@ export default function MyReviewCard() {
         return;
       }
 
-      setMyTestimonial({
-        ...myTestimonial,
-        review: review,
-        rating: rating
-      });
+      setTestimonials((prev) =>
+        prev.map((testimonial) =>
+          testimonial.email === myTestimonial.email
+            ? { ...testimonial, review: review, rating: rating }
+            : testimonial
+        )
+      );
 
       showToast("success", message.message);
     } catch (error: any) {
       showToast("error", error.message || "Something went wrong.");
+    } finally {
+      setSubmitting(false);
     }
   }
 
@@ -128,6 +151,14 @@ export default function MyReviewCard() {
         rating: 10
       });
 
+      setTestimonials((prev) =>
+        prev.map((testimonial) =>
+          testimonial.email === myTestimonial.email
+            ? { ...testimonial, review: "", rating: 10 }
+            : testimonial
+        )
+      );
+
       showToast("success", message.message);
     } catch (error: { error: string } | any) {
       showToast("error", error?.error || "Something went wrong.");
@@ -135,7 +166,7 @@ export default function MyReviewCard() {
   }
 
   return (
-    <div className="rounded-2xl shadow-md bg-white dark:bg-gray-800 p-6 h-full flex flex-col justify-start">
+    <div className="rounded-2xl shadow-md bg-white dark:bg-gray-800 p-6 w-full lg:w-[18.5rem] h-full flex flex-col justify-start">
       {/* Header */}
       <div className="flex items-center gap-4">
         <div className="flex-shrink-0">
@@ -149,7 +180,7 @@ export default function MyReviewCard() {
         </div>
         <div className="flex-1">
           <div className="flex items-center gap-2">
-            <h4 className="text-base font-semibold text-gray-800 dark:text-gray-100">
+            <h4 className="text-base font-semibold line-clamp-2 text-gray-800 dark:text-gray-100">
               {name}
             </h4>
             {myTestimonial.LinkedInId && (
@@ -253,6 +284,7 @@ export default function MyReviewCard() {
                 <div className="flex justify-start items-center gap-2">
                   <button
                     type="submit"
+                    disabled={submitting}
                     className="lg:w-fit mt-3 text-sm text-center bg-green-600 text-white px-4 py-2 flex justify-center items-center gap-2 rounded-xl outline-none active:scale-95 transition">
                     <Save size={18} />
                   </button>
@@ -271,8 +303,8 @@ export default function MyReviewCard() {
             ) : (
               <div className="flex flex-col justify-start">
                 <div>
-                  <p className="testimonial_comment text-sm">
-                    &quot;{myTestimonial.review}&quot;
+                  <p className="italic text-sm text-gray-700 dark:text-gray-300 leading-relaxed">
+                    “{myTestimonial.review}”
                   </p>
                 </div>
                 <div className="flex items-center justify-start gap-2">
@@ -349,6 +381,7 @@ export default function MyReviewCard() {
               <div className="flex items-center gap-2">
                 <button
                   type="submit"
+                  disabled={submitting}
                   className="lg:w-fit mt-3 text-sm text-center justify-center bg-green-600 text-white px-4 py-2 flex gap-2 rounded-xl outline-none active:scale-95 transition">
                   <Plus size={18} /> Add
                 </button>
