@@ -52,18 +52,13 @@ export default function Testimonial() {
       <div className="flex justify-center items-center mb-5">
         <SignIn
           testimonials={testimonials}
-          setTestimonials={setTestimonials}
-          loadingTestimonials={loadingTestimonials}
-          setLoadingTestimonials={setLoadingTestimonials}
+          setTestimonialsAction={setTestimonials}
           session={session}
         />
       </div>
       <Slider
         testimonials={testimonials}
-        setTestimonials={setTestimonials}
         loadingTestimonials={loadingTestimonials}
-        setLoadingTestimonials={setLoadingTestimonials}
-        session={session}
       />
     </section>
   );

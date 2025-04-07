@@ -13,17 +13,13 @@ import { Input } from "../ui/input";
 
 interface MyReviewCardProps {
   testimonials: TestimonialType[];
-  setTestimonials: Dispatch<SetStateAction<TestimonialType[]>>;
-  loadingTestimonials: boolean;
-  setLoadingTestimonials: Dispatch<SetStateAction<boolean>>;
+  setTestimonialsAction: Dispatch<SetStateAction<TestimonialType[]>>;
   session: Session;
 }
 
 export default function MyReviewCard({
   testimonials,
-  setTestimonials,
-  loadingTestimonials,
-  setLoadingTestimonials,
+  setTestimonialsAction,
   session
 }: MyReviewCardProps) {
   const { showToast } = useCustomToast();
@@ -99,7 +95,7 @@ export default function MyReviewCard({
         return;
       }
 
-      setTestimonials((prev) =>
+      setTestimonialsAction((prev) =>
         prev.map((testimonial) =>
           testimonial.email === myTestimonial.email
             ? { ...testimonial, review: review, rating: rating }
@@ -151,7 +147,7 @@ export default function MyReviewCard({
         rating: 10
       });
 
-      setTestimonials((prev) =>
+      setTestimonialsAction((prev) =>
         prev.map((testimonial) =>
           testimonial.email === myTestimonial.email
             ? { ...testimonial, review: "", rating: 10 }
@@ -166,7 +162,7 @@ export default function MyReviewCard({
   }
 
   return (
-    <div className="rounded-2xl shadow-md bg-white dark:bg-gray-800 p-6 w-full lg:w-[18.5rem] h-full flex flex-col justify-start">
+    <div className="rounded-2xl shadow-md bg-white dark:bg-gray-800 p-6 w-full md:max-w-[18.5rem] h-full flex flex-col justify-start">
       {/* Header */}
       <div className="flex items-center gap-4">
         <div className="flex-shrink-0">

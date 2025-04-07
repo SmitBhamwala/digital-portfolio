@@ -8,17 +8,13 @@ import MyReviewCard from "./myReviewCard";
 
 interface SignInProps {
   testimonials: TestimonialType[];
-  setTestimonials: Dispatch<SetStateAction<TestimonialType[]>>;
-  loadingTestimonials: boolean;
-  setLoadingTestimonials: Dispatch<SetStateAction<boolean>>;
+  setTestimonialsAction: Dispatch<SetStateAction<TestimonialType[]>>;
   session: Session | null;
 }
 
 export default function SignIn({
   testimonials,
-  setTestimonials,
-  loadingTestimonials,
-  setLoadingTestimonials,
+  setTestimonialsAction,
   session
 }: SignInProps) {
   async function handleSignIn() {
@@ -30,9 +26,7 @@ export default function SignIn({
       {session ? (
         <MyReviewCard
           testimonials={testimonials}
-          setTestimonials={setTestimonials}
-          loadingTestimonials={loadingTestimonials}
-          setLoadingTestimonials={setLoadingTestimonials}
+          setTestimonialsAction={setTestimonialsAction}
           session={session}
         />
       ) : (
