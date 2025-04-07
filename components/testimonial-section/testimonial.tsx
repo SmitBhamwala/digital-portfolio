@@ -27,7 +27,7 @@ export default function Testimonial() {
   useEffect(() => {
     async function fetchPosts() {
       const res = await fetch("/api/testimonial", {
-        cache: "default",
+        cache: "force-cache",
         headers: {
           "x-secret-key": process.env.NEXT_PUBLIC_API_SECRET || ""
         }
