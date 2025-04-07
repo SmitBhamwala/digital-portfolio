@@ -4,29 +4,42 @@ import { TestimonialType } from "@/lib/types";
 import Testimonial from "@/models/TestimonialModel";
 import { NextRequest, NextResponse } from "next/server";
 
-export async function GET(request: NextRequest) {
+function isRequestValid(request: NextRequest) {
   const secret = request.headers.get("x-secret-key");
-
-  if (secret !== process.env.NEXT_PUBLIC_API_SECRET) {
-    return NextResponse.json({ error: "Forbidden" }, { status: 403 });
-  }
-
   const referer = request.headers.get("referer") || "";
+
   const allowedReferers = [
     "https://smitbhamwala.vercel.app/",
     "http://localhost:3000/"
   ];
 
-  const isAllowed = allowedReferers.some((url) => referer.startsWith(url));
+  const isRefererAllowed = allowedReferers.some((url) =>
+    referer.startsWith(url)
+  );
 
-  if (!isAllowed) {
-    return NextResponse.json({ error: "Forbidden" }, { status: 403 });
+  return {
+    valid: secret === process.env.NEXT_PUBLIC_API_SECRET && isRefererAllowed,
+    error: !isRefererAllowed ? "Forbidden referer" : "Invalid API secret"
+  };
+}
+
+export async function GET(request: NextRequest) {
+  const { valid, error } = isRequestValid(request);
+  if (!valid) {
+    return NextResponse.json({ error }, { status: 403 });
   }
 
-  await connectToDatabase();
-  const testimonials = await Testimonial.find();
-
-  return NextResponse.json(testimonials);
+  try {
+    await connectToDatabase();
+    const testimonials = await Testimonial.find();
+    return NextResponse.json(testimonials);
+  } catch (err) {
+    console.error("GET error:", err);
+    return NextResponse.json(
+      { error: "Failed to fetch testimonials" },
+      { status: 500 }
+    );
+  }
 }
 
 export async function POST(request: NextRequest) {
@@ -35,55 +48,59 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
-  const secret = request.headers.get("x-secret-key");
-  if (secret !== process.env.NEXT_PUBLIC_API_SECRET) {
-    return NextResponse.json({ error: "Forbidden" }, { status: 403 });
+  const { valid, error } = isRequestValid(request);
+  if (!valid) {
+    return NextResponse.json({ error }, { status: 403 });
   }
 
-  const message = await request.json();
-  const testimonial: TestimonialType = message.testimonial;
+  const { testimonial }: { testimonial: TestimonialType } =
+    await request.json();
 
   if (testimonial.email !== session.user?.email) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
-  const trimmedReview = testimonial.review.replace(/^\s+|\s+$/g, "");
-  if (trimmedReview.length > 130) {
-    return NextResponse.json({
-      error: "Review must be less than 130 characters"
-    });
+  const trimmedReview = testimonial.review.trim();
+  const trimmedLinkedInId = testimonial.LinkedInId.trim();
+
+  if (trimmedReview.length < 1 || trimmedReview.length > 130) {
+    return NextResponse.json(
+      { error: "Review must be between 1 and 130 characters" },
+      { status: 400 }
+    );
   }
-  if (trimmedReview.length < 1) {
-    return NextResponse.json({ error: "Review is required" });
+
+  if (trimmedLinkedInId.length < 1 || trimmedLinkedInId.length > 40) {
+    return NextResponse.json(
+      { error: "LinkedIn ID must be between 1 and 40 characters" },
+      { status: 400 }
+    );
   }
 
   if (testimonial.rating < 1 || testimonial.rating > 10) {
-    return NextResponse.json({ error: "Rating must be between 1 and 10" });
-  }
-
-  const trimmedLinkedInId = testimonial.review.replace(/^\s+|\s+$/g, "");
-  if (trimmedLinkedInId.length > 40) {
-    return NextResponse.json({
-      error: "LinkedIn ID must be less than 40 characters"
-    });
-  }
-  if (trimmedReview.length < 1) {
-    return NextResponse.json({ error: "LinkedIn ID is required" });
+    return NextResponse.json(
+      { error: "Rating must be between 1 and 10" },
+      { status: 400 }
+    );
   }
 
   try {
+    await connectToDatabase();
+
     await Testimonial.updateOne(
       { email: testimonial.email },
       { ...testimonial, review: trimmedReview, linkedInId: trimmedLinkedInId },
-      {
-        upsert: true
-      }
+      { upsert: true }
     );
-  } catch (error) {
-    return NextResponse.json({ error });
-  }
 
-  return NextResponse.json({ message: "Testimonial added successfully" });
+    return NextResponse.json({ message: "Testimonial added successfully" });
+  } catch (err) {
+    console.error("POST error:", err);
+    return NextResponse.json(
+      { error: "Failed to add testimonial" },
+      { status: 500 }
+    );
+  }
 }
 
 export async function DELETE(request: NextRequest) {
@@ -92,25 +109,29 @@ export async function DELETE(request: NextRequest) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
-  const secret = request.headers.get("x-secret-key");
-  if (secret !== process.env.NEXT_PUBLIC_API_SECRET) {
-    return NextResponse.json({ error: "Forbidden" }, { status: 403 });
+  const { valid, error } = isRequestValid(request);
+  if (!valid) {
+    return NextResponse.json({ error }, { status: 403 });
   }
 
-  const message = await request.json();
-  const testimonial: TestimonialType = message.testimonial;
+  const { testimonial }: { testimonial: TestimonialType } =
+    await request.json();
 
   if (testimonial.email !== session.user?.email) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
   try {
-    await Testimonial.updateOne({ email: testimonial.email }, testimonial, {
-      upsert: true
-    });
-  } catch (error) {
-    return NextResponse.json({ error });
-  }
+    await connectToDatabase();
 
-  return NextResponse.json({ message: "Testimonial deleted successfully" });
+    await Testimonial.deleteOne({ email: testimonial.email });
+
+    return NextResponse.json({ message: "Testimonial deleted successfully" });
+  } catch (err) {
+    console.error("DELETE error:", err);
+    return NextResponse.json(
+      { error: "Failed to delete testimonial" },
+      { status: 500 }
+    );
+  }
 }
