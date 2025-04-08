@@ -18,6 +18,7 @@ import {
 import { projectsData } from "@/lib/data";
 import clsx from "clsx";
 import Autoplay from "embla-carousel-autoplay";
+import { RocketIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -132,15 +133,15 @@ export default function ProjectCard({
         <div className="flex justify-center items-center gap-2 w-full">
           <Button
             type="button"
-            className="rounded-lg text-sm flex gap-2 items-center justify-center text-center bg-gray-900 dark:bg-gray-200 hover:bg-gray-950 text-white dark:text-black outline-none active:scale-95 transition">
-            <BsGithub />
+            className="rounded-xl text-sm flex gap-2 items-center justify-center text-center bg-gray-900 dark:bg-gray-300 hover:bg-gray-950 text-white dark:text-black outline-none active:scale-95 transition">
+            <RocketIcon />
             <Link href={demoURL} target="_blank">
               Demo
             </Link>
           </Button>
           <Button
             type="button"
-            className="rounded-lg text-sm flex gap-2 items-center justify-center text-center bg-gray-900 dark:bg-gray-200 hover:bg-gray-950 text-white dark:text-black outline-none active:scale-95 transition">
+            className="rounded-xl text-sm flex gap-2 items-center justify-center text-center bg-gray-900 dark:bg-gray-300 hover:bg-gray-950 text-white dark:text-black outline-none active:scale-95 transition">
             <BsGithub />
             <Link href={sourceCodeURL} target="_blank">
               Source Code

@@ -203,7 +203,7 @@ export default function Contact() {
             }
           }}>
           <input
-            className="h-14 px-4 borderBlack rounded-lg shadow-sm bg-white dark:bg-gray-800 dark:text-gray-200 transition-all outline-none"
+            className="h-14 px-4 borderBlack rounded-2xl shadow-sm bg-white dark:bg-gray-800 dark:text-gray-200 transition-all outline-none"
             name="senderName"
             type="name"
             required
@@ -212,7 +212,7 @@ export default function Contact() {
             ref={nameRef}
           />
           <input
-            className="h-14 my-3 px-4 borderBlack rounded-lg shadow-sm bg-white dark:bg-gray-800 dark:text-gray-200 transition-all outline-none"
+            className="h-14 my-3 px-4 borderBlack rounded-2xl shadow-sm bg-white dark:bg-gray-800 dark:text-gray-200 transition-all outline-none"
             name="senderEmail"
             type="email"
             required
@@ -221,7 +221,7 @@ export default function Contact() {
             ref={emailRef}
           />
           <textarea
-            className="h-48 md:h-52 borderBlack rounded-lg shadow-sm bg-white dark:bg-gray-800 p-4 dark:text-gray-200 transition-all outline-none"
+            className="h-48 md:h-52 borderBlack rounded-2xl shadow-sm bg-white dark:bg-gray-800 p-4 dark:text-gray-200 transition-all outline-none"
             name="message"
             placeholder="Your message"
             required

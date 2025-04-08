@@ -112,7 +112,6 @@ export default function About() {
             href="/Smit Bhamwala CV.pdf"
             download
             className="lg:w-fit text-center justify-center bg-gray-900 text-white px-7 py-3 flex items-center gap-2 rounded-2xl outline-none hover:bg-gray-950 active:scale-95 dark:bg-gray-500 transition">
-            Download CV{" "}
             <svg
               className="button__icon"
               xmlns="http://www.w3.org/2000/svg"
@@ -132,7 +131,8 @@ export default function About() {
               <path
                 d="M11.25 17.7502H7.25C6.84 17.7502 6.5 17.4102 6.5 17.0002C6.5 16.5902 6.84 16.2502 7.25 16.2502H11.25C11.66 16.2502 12 16.5902 12 17.0002C12 17.4102 11.66 17.7502 11.25 17.7502Z"
                 fill="#fff"></path>
-            </svg>
+            </svg>{" "}
+            Download CV
           </a>
         </div>
       </div>
