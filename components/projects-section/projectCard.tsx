@@ -113,8 +113,8 @@ export default function ProjectCard({
         )}
       </div>
       <CardHeader>
-        <CardTitle className="text-center mb-2">{title}</CardTitle>
-        <CardDescription className="text-justify">
+        <CardTitle className="text-center mb-2 md:mb-0">{title}</CardTitle>
+        <CardDescription className="text-justify block md:hidden">
           {description}
         </CardDescription>
       </CardHeader>
