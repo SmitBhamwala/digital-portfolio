@@ -89,16 +89,16 @@ const CourseElement = ({ theme, course }: CertificationsElementProps) => {
         <p className="!font-normal !text-sm !m-0">
           Completion date: {course.date}
         </p>
-        <div
+        <p
           onClick={() => setCertificationModalOpen(true)}
-          className="!font-normal text-md text-gray-700 dark:text-white/75 w-fit flex justify-start items-center 
+          className="!font-normal !text-xs !lg:text-sm text-gray-700 dark:text-white/75 w-fit flex justify-start items-center 
           !mt-3 px-3 py-2 rounded-xl shadow-lg shadow-black/[0.15] backdrop-blur-[0.5rem] active:scale-95 
           bg-[#f3f4f6] dark:bg-[rgb(255, 255, 255)] dark:bg-opacity-5 cursor-pointer">
           View More
-          <div className="ml-2">
+          <span className="ml-2">
             <FaEye />
-          </div>
-        </div>
+          </span>
+        </p>
         {isCertificationModalOpen ? (
           <div>
             <CertificationModal
