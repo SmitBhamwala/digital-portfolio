@@ -30,7 +30,7 @@ export default function Experience() {
         </VerticalTimeline>
       </div>
       <div className="hidden xl:block">
-        <VerticalTimeline lineColor="" animate>
+        <VerticalTimeline lineColor="" animate className="!w-[100%]">
           {experiencesData.map((item, index) => (
             <ExperienceElement key={index} theme={theme} item={item} />
           ))}
@@ -103,9 +103,9 @@ const ExperienceElement = ({ theme, item }: ExperienceElementProps) => {
           <div className="flex flex-col md:flex-row justify-center md:justify-between items-start md:items-center">
             <div
               onClick={() => setExperienceModalOpen(true)}
-              className="!font-normal text-gray-700 dark:text-white/75 w-fit flex justify-start items-center 
-          !mt-3 px-4 py-3 rounded-xl shadow-lg shadow-black/[0.15] backdrop-blur-[0.5rem] active:scale-95 
-          borderBlack bg-[#f3f4f6] dark:bg-[rgb(255, 255, 255)] dark:bg-opacity-5 cursor-pointer">
+              className="!font-normal text-md text-gray-700 dark:text-white/75 w-fit flex justify-start items-center 
+              !mt-3 px-3 py-2 rounded-xl shadow-lg shadow-black/[0.15] backdrop-blur-[0.5rem] active:scale-95 
+              bg-[#f3f4f6] dark:bg-[rgb(255, 255, 255)] dark:bg-opacity-5 cursor-pointer">
               View More
               <div className="ml-2">
                 <FaEye />

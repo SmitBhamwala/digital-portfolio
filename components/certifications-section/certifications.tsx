@@ -34,7 +34,7 @@ export default function Certificate() {
         </VerticalTimeline>
       </div>
       <div className="hidden xl:block">
-        <VerticalTimeline lineColor="" animate>
+        <VerticalTimeline lineColor="" animate className="!w-[100%]">
           {certificationsData.map((course, index) => (
             <CourseElement key={index} theme={theme} course={course} />
           ))}
@@ -91,9 +91,9 @@ const CourseElement = ({ theme, course }: CertificationsElementProps) => {
         </p>
         <div
           onClick={() => setCertificationModalOpen(true)}
-          className="!font-normal text-gray-700 dark:text-white/75 w-fit flex justify-start items-center 
-          !mt-3 px-4 py-3 rounded-xl shadow-lg shadow-black/[0.15] backdrop-blur-[0.5rem] active:scale-95 
-          borderBlack bg-[#f3f4f6] dark:bg-[rgb(255, 255, 255)] dark:bg-opacity-5 cursor-pointer">
+          className="!font-normal text-md text-gray-700 dark:text-white/75 w-fit flex justify-start items-center 
+          !mt-3 px-3 py-2 rounded-xl shadow-lg shadow-black/[0.15] backdrop-blur-[0.5rem] active:scale-95 
+          bg-[#f3f4f6] dark:bg-[rgb(255, 255, 255)] dark:bg-opacity-5 cursor-pointer">
           View More
           <div className="ml-2">
             <FaEye />
