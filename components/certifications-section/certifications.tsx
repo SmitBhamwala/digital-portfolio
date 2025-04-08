@@ -91,7 +91,7 @@ const CourseElement = ({ theme, course }: CertificationsElementProps) => {
         </p>
         <p
           onClick={() => setCertificationModalOpen(true)}
-          className="!font-normal !text-xs !lg:text-sm text-gray-700 dark:text-white/75 w-fit flex justify-start items-center 
+          className="!font-normal !text-sm text-gray-700 dark:text-white/75 w-fit flex justify-start items-center 
           !mt-3 px-3 py-2 rounded-xl shadow-lg shadow-black/[0.15] backdrop-blur-[0.5rem] active:scale-95 
           bg-[#f3f4f6] dark:bg-[rgb(255, 255, 255)] dark:bg-opacity-5 cursor-pointer">
           View More
