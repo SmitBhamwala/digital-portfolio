@@ -1,20 +1,22 @@
 "use client";
 
 import SectionHeading from "@/components/common/section-heading";
-import "@/components/projects-section/projects.css";
+import ProjectCard from "@/components/projects-section/projectCard";
 import { useSectionInView } from "@/hooks/useSectionInView";
 import { projectsData } from "@/lib/data";
-import ProjectNew from "./project-new";
 
 export default function Projects() {
   const { ref } = useSectionInView("Projects", 0.25);
 
   return (
-    <section ref={ref} id="projects" className="scroll-mt-28 mb-28 sm:mb-40">
+    <section
+      ref={ref}
+      id="projects"
+      className="scroll-mt-28 mb-28 sm:mb-40 w-full">
       <SectionHeading>My Projects</SectionHeading>
-      <div className="projects__container">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {projectsData.map((project, index) => (
-          <ProjectNew key={index} {...project} />
+          <ProjectCard key={index} {...project} />
         ))}
       </div>
     </section>

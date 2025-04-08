@@ -171,16 +171,16 @@ export const projectsData = [
     imageUrl: ["/nextFoodies.png", "/nextFoodies-1.png"],
     demoURL: "http://nextfoodies.vercel.app/",
     sourceCodeURL: "https://github.com/SmitBhamwala/next-app-router-foodies"
+  },
+  {
+  	title: "NextWorldBlogs",
+  	description:
+  		"An application for blogs related to web development. It is deployed on Vercel.",
+  	tags: ["React", "Next.js 13", "MongoDB"],
+  	imageUrl: ["/nextWorldBlogs.png", "/nextWorldBlogs-1.png"],
+  	demoURL: "https://nextworldblogs.vercel.app/",
+  	sourceCodeURL: "https://github.com/SmitBhamwala/nextjs-blogs"
   }
-  // {
-  // 	title: "NextWorldBlogs",
-  // 	description:
-  // 		"An application for blogs related to web development. It is deployed on Vercel.",
-  // 	tags: ["React", "Next.js 13", "MongoDB"],
-  // 	imageUrl: ["/nextWorldBlogs.png", "/nextWorldBlogs-1.png"],
-  // 	demoURL: "https://nextworldblogs.vercel.app/",
-  // 	sourceCodeURL: "https://github.com/SmitBhamwala/nextjs-blogs"
-  // }
 ];
 
 export const skillsData = [
