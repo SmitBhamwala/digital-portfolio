@@ -12,7 +12,7 @@ export default function Skills() {
   return (
     <section id="skills" ref={ref} className="mb-28 sm:mb-40 scroll-mt-28">
       <SectionHeading>My Skills</SectionHeading>
-      <div className="skills__container w-[90vw] md:w-auto">
+      <div className="skills__container w-[85vw] md:w-auto">
         <SkillCard title="Front-End" skills={skillsData[0]} />
         <SkillCard title="Back-End" skills={skillsData[1]} />
         <SkillCard title="Tools & Technologies" skills={skillsData[2]} />
