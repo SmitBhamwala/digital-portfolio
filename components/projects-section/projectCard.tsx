@@ -71,7 +71,7 @@ export default function ProjectCard({
         opts={{ align: "start" }}
         plugins={[Autoplay({ delay: 4000 })]}
         className="w-full max-w-full overflow-hidden rounded-2xl">
-        <CarouselContent className="h-56 md:h-52 lg:h-48">
+        <CarouselContent className="h-[13rem] md:h-[12.8rem] lg:h-[16rem]">
           {imageUrl.map((url, index) => (
             <CarouselItem
               key={index}
@@ -95,7 +95,7 @@ export default function ProjectCard({
         <CarouselNext /> */}
       </Carousel>
       {count > 1 && (
-        <div className="flex justify-center gap-2 mt-4">
+        <div className="flex justify-center gap-2 mt-3">
           {Array.from({ length: count }).map((_, i) => (
             <div
               key={i}
@@ -111,9 +111,11 @@ export default function ProjectCard({
           ))}
         </div>
       )}
-      <CardHeader>
-        <CardTitle className="text-center mb-2 md:mb-0">{title}</CardTitle>
-        <CardDescription className="text-justify block md:hidden">
+      <CardHeader className="pt-4">
+        <CardTitle className="text-center text-xl mb-2 md:mb-0">
+          {title}
+        </CardTitle>
+        <CardDescription className="text-justify">
           {description}
         </CardDescription>
       </CardHeader>

@@ -14,7 +14,7 @@ export default function Projects() {
       id="projects"
       className="scroll-mt-28 mb-28 sm:mb-40 w-full">
       <SectionHeading>My Projects</SectionHeading>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
         {projectsData.map((project, index) => (
           <ProjectCard key={index} {...project} />
         ))}

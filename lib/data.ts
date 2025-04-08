@@ -145,6 +145,32 @@ export const certificationsData = [
 
 export const projectsData = [
   {
+    title: "RepoMate",
+    description:
+      "A retrieval-augmented generation (RAG) tool that answers user's query from 10,000+ lines of code across the provided GitHub repository.",
+    tags: [
+      "React 19",
+      "Next.js 15",
+      "TypeScript,",
+      "Tailwind CSS",
+      "Google Gemini AI",
+      "Assembly AI",
+      "Prisma",
+      "MongoDB"
+    ],
+    imageUrl: [
+      "/repomate/login.png",
+      "/repomate/create.png",
+      "/repomate/dashboard.png",
+      "/repomate/ai-answer.png",
+      "/repomate/q&a.png",
+      "/repomate/saved-ai-answer.png",
+      "/repomate/invite-members.png"
+    ],
+    demoURL: "https://repomate.vercel.app/",
+    sourceCodeURL: "https://github.com/SmitBhamwala/RepoMate"
+  },
+  {
     title: "HomeoKart",
     description:
       "An E-commerce application for medical supply purchases, doctor appointment bookings and virtual consultations.",
@@ -159,28 +185,37 @@ export const projectsData = [
       "OAuth 2.0",
       "RazorPay"
     ],
-    imageUrl: ["/homeoKart.png", "/homeoKart-1.png"],
+    imageUrl: [
+      "/homeokart/homepage-why-homeopathy.png",
+      "/homeokart/all-products.png",
+      "/homeokart/homepage-shop-by-category.png",
+      "/homeokart/homepage-consult.png",
+      "/homeokart/homepage.png",
+      "/homeokart/razorpay-payment-gateway.png",
+      "/homeokart/cart.png",
+      "/homeokart/doctor-appointment.png"
+    ],
     demoURL: "https://homeokart.onrender.com/",
     sourceCodeURL: "https://github.com/Homeokart007/Homeokart"
-  },
-  {
-    title: "NextFoodies",
-    description:
-      "A platform for foodies to share their favorite recipes with the world. People can discover new dishes, and connect with other food lovers.",
-    tags: ["React", "Next.js 14", "MongoDB", "REST API", "SEO"],
-    imageUrl: ["/nextFoodies.png", "/nextFoodies-1.png"],
-    demoURL: "http://nextfoodies.vercel.app/",
-    sourceCodeURL: "https://github.com/SmitBhamwala/next-app-router-foodies"
-  },
-  {
-  	title: "NextWorldBlogs",
-  	description:
-  		"An application for blogs related to web development. It is deployed on Vercel.",
-  	tags: ["React", "Next.js 13", "MongoDB"],
-  	imageUrl: ["/nextWorldBlogs.png", "/nextWorldBlogs-1.png"],
-  	demoURL: "https://nextworldblogs.vercel.app/",
-  	sourceCodeURL: "https://github.com/SmitBhamwala/nextjs-blogs"
   }
+  // {
+  //   title: "NextFoodies",
+  //   description:
+  //     "A platform for foodies to share their favorite recipes with the world. People can discover new dishes, and connect with other food lovers.",
+  //   tags: ["React", "Next.js 14", "MongoDB", "REST API", "SEO"],
+  //   imageUrl: ["/nextFoodies.png", "/nextFoodies-1.png"],
+  //   demoURL: "http://nextfoodies.vercel.app/",
+  //   sourceCodeURL: "https://github.com/SmitBhamwala/next-app-router-foodies"
+  // },
+  // {
+  //   title: "NextWorldBlogs",
+  //   description:
+  //     "An application for blogs related to web development. It is deployed on Vercel.",
+  //   tags: ["React", "Next.js 13", "MongoDB"],
+  //   imageUrl: ["/nextWorldBlogs.png", "/nextWorldBlogs-1.png"],
+  //   demoURL: "https://nextworldblogs.vercel.app/",
+  //   sourceCodeURL: "https://github.com/SmitBhamwala/nextjs-blogs"
+  // }
 ];
 
 export const skillsData = [
