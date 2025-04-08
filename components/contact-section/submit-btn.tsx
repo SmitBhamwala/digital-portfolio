@@ -13,7 +13,7 @@ export default function SubmitBtn() {
         <div className="h-5 w-5 animate-spin rounded-full border-b-2 border-white dark:border-black cursor-not-allowed"></div>
       ) : (
         <>
-          <FaPaperPlane className="text-xs opacity-70" /> Submit
+          Submit <FaPaperPlane className="text-xs opacity-70" />
         </>
       )}
     </button>

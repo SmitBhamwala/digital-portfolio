@@ -94,25 +94,23 @@ export default function ProjectCard({
         {/* <CarouselPrevious />
         <CarouselNext /> */}
       </Carousel>
-      <div className="hidden lg:block">
-        {count > 1 && (
-          <div className="flex justify-center gap-2 mt-4">
-            {Array.from({ length: count }).map((_, i) => (
-              <div
-                key={i}
-                onClick={() => api?.scrollTo(i)}
-                className={clsx(
-                  "h-2 w-2 rounded-full cursor-pointer transition-all duration-300",
-                  {
-                    "bg-gray-700 dark:bg-gray-300 scale-110": i + 1 === current,
-                    "bg-gray-300 dark:bg-gray-700": i + 1 !== current
-                  }
-                )}
-              />
-            ))}
-          </div>
-        )}
-      </div>
+      {count > 1 && (
+        <div className="flex justify-center gap-2 mt-4">
+          {Array.from({ length: count }).map((_, i) => (
+            <div
+              key={i}
+              onClick={() => api?.scrollTo(i)}
+              className={clsx(
+                "h-2 w-2 rounded-full cursor-pointer transition-all duration-300",
+                {
+                  "bg-gray-700 dark:bg-gray-300 scale-110": i + 1 === current,
+                  "bg-gray-300 dark:bg-gray-700": i + 1 !== current
+                }
+              )}
+            />
+          ))}
+        </div>
+      )}
       <CardHeader>
         <CardTitle className="text-center mb-2 md:mb-0">{title}</CardTitle>
         <CardDescription className="text-justify block md:hidden">
