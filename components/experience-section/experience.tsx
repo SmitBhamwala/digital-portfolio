@@ -22,14 +22,14 @@ export default function Experience() {
   return (
     <section id="experience" ref={ref} className="scroll-mt-28 mb-28 sm:mb-40">
       <SectionHeading>My Experience</SectionHeading>
-      <div className="block xl:hidden">
+      <div className="block lg:hidden">
         <VerticalTimeline lineColor="" animate={false}>
           {experiencesData.map((item, index) => (
             <ExperienceElement key={index} theme={theme} item={item} />
           ))}
         </VerticalTimeline>
       </div>
-      <div className="hidden xl:block">
+      <div className="hidden lg:block">
         <VerticalTimeline lineColor="" animate className="!w-[100%]">
           {experiencesData.map((item, index) => (
             <ExperienceElement key={index} theme={theme} item={item} />

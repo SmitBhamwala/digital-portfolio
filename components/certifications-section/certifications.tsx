@@ -26,14 +26,14 @@ export default function Certificate() {
       ref={ref}
       className="w-fit lg:w-full scroll-mt-28 mb-28 sm:mb-40">
       <SectionHeading>Certifications</SectionHeading>
-      <div className="block xl:hidden">
+      <div className="block lg:hidden">
         <VerticalTimeline lineColor="" animate={false}>
           {certificationsData.map((course, index) => (
             <CourseElement key={index} theme={theme} course={course} />
           ))}
         </VerticalTimeline>
       </div>
-      <div className="hidden xl:block">
+      <div className="hidden lg:block">
         <VerticalTimeline lineColor="" animate className="!w-[100%]">
           {certificationsData.map((course, index) => (
             <CourseElement key={index} theme={theme} course={course} />
