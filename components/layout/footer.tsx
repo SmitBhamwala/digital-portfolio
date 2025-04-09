@@ -6,7 +6,7 @@ export default function Footer() {
   return (
     <footer className="mb-5 text-center text-gray-500">
       <small className="mb-2 block text-xs">
-        &copy; {currentYear} — Designed & developed by{" "}
+        &copy; {currentYear} — Developed by{" "}
         <Link
           href="https://www.linkedin.com/in/smitbhamwala"
           target="_blank"
