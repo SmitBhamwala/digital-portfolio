@@ -9,16 +9,22 @@ export default function ThemeSwitch() {
   return (
     <button
       id="theme-toggle-button"
-      className="fixed bottom-5 right-5 md:bottom-10 md:right-10 bg-white w-[3rem] h-[3rem] bg-opacity-80 backdrop-blur-[0.5rem] border border-white border-opacity-40 shadow-2xl rounded-full flex items-center justify-center hover:scale-[1.15] active:scale-105 transition-all dark:bg-gray-950 dark:border-[#121212]"
+      className="fixed flex items-center justify-center rounded-full bottom-5 right-5 md:bottom-10 md:right-10 w-[3rem] h-[3rem] 
+      bg-opacity-80 backdrop-blur-[0.5rem] border border-opacity-40 shadow-2xl hover:scale-[1.15] active:scale-105 transition-all
+      bg-black dark:bg-gray-300 border-gray-700 dark:border-gray-200"
       style={{
         boxShadow:
           theme === "light"
-            ? "0 0 0 4px #fff, inset 0 2px 0 rgba(0, 0, 0, .08), 0 3px 0 4px rgba(0, 0, 0, .05)"
-            : "0 0 0 4px rgb(17 24 39 / 1), inset 0 2px 0 rgba(0, 0, 0, .4), 0 3px 0 4px rgba(0, 0, 0, .3)"
+            ? "0 0 0 4px #9ca3af, inset 0 2px 0 rgba(0, 0, 0, .08), 0 3px 0 4px rgba(0, 0, 0, .05)"
+            : "0 0 0 4px #e5e7eb, inset 0 2px 0 rgba(0, 0, 0, .08), 0 3px 0 4px rgba(0, 0, 0, .05)"
       }}
       aria-label="Theme toggle button"
       onClick={toggleTheme}>
-      {theme === "light" ? <BsSun /> : <BsMoon />}
+      {theme === "light" ? (
+        <BsMoon color="white" />
+      ) : (
+        <BsSun size={20} color="black" />
+      )}
     </button>
   );
 }
