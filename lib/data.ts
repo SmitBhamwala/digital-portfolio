@@ -151,7 +151,7 @@ export const projectsData = [
     tags: [
       "React 19",
       "Next.js 15",
-      "TypeScript,",
+      "TypeScript",
       "Tailwind CSS",
       "Google Gemini AI",
       "Assembly AI",

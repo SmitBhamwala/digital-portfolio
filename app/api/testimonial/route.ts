@@ -124,7 +124,10 @@ export async function DELETE(request: NextRequest) {
   try {
     await connectToDatabase();
 
-    await Testimonial.deleteOne({ email: testimonial.email });
+    // await Testimonial.deleteOne({ email: testimonial.email });
+    await Testimonial.updateOne({ email: testimonial.email }, testimonial, {
+      upsert: true
+    });
 
     return NextResponse.json({ message: "Testimonial deleted successfully" });
   } catch (err) {

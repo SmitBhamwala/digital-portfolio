@@ -50,6 +50,7 @@ export default function MyReviewCard({
     );
 
     if (userTestimonial) {
+      // Existing user
       setMyTestimonial(userTestimonial);
       setLinkedInId(userTestimonial.LinkedInId);
       setReview(userTestimonial.review);
