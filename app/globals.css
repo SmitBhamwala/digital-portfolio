@@ -83,6 +83,11 @@
   [role="button"]:not(:disabled) {
     cursor: pointer;
   }
+
+  input::placeholder,
+  textarea::placeholder {
+    color: var(--color-gray-400);
+  }
 }
 
 @layer utilities {
