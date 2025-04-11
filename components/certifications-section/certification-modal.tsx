@@ -25,7 +25,7 @@ export default function CertificationModal({
         onClick={() => setCertificationModalOpen(false)}
       />
       <dialog
-        className="z-1001 fixed inset-0 flex justify-center items-center m-auto
+        className="z-1001 fixed inset-0 flex justify-center items-center
         bg-[#f3f4f6] dark:bg-gray-800 text-gray-700 dark:text-white/75 
          rounded-3xl max-w-[90%] xl:max-w-fit overflow-scroll md:overflow-hidden"
         open>

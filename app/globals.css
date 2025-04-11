@@ -88,6 +88,24 @@
   textarea::placeholder {
     color: var(--color-gray-400);
   }
+
+  dialog {
+    margin: auto;
+  }
+}
+
+@utility scrollbar-none {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+
+  &::-webkit-scrollbar {
+    display: none; /* Safari and Chrome */
+  }
+}
+
+@utility borderBlack {
+  border-width: 1px;
+  border-color: rgba(0, 0, 0, 0.1);
 }
 
 @layer utilities {
@@ -98,20 +116,6 @@
   html.dark {
     --line-color: rgba(255, 255, 255, 0.2);
     scrollbar-color: #666 #201c29;
-  }
-
-  .scrollbar-none {
-    -ms-overflow-style: none; /* IE and Edge */
-    scrollbar-width: none; /* Firefox */
-  }
-
-  .scrollbar-none::-webkit-scrollbar {
-    display: none; /* Chrome, Safari, Opera */
-  }
-
-  .borderBlack {
-    border-width: 1px;
-    border-color: rgba(0, 0, 0, 0.1);
   }
 
   /*
