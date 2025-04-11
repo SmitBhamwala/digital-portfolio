@@ -111,7 +111,7 @@ export default function About() {
           <a
             href="/Smit Bhamwala CV.pdf"
             download
-            className="lg:w-fit text-center justify-center bg-gray-900 text-white px-7 py-3 flex items-center gap-2 rounded-2xl outline-none hover:bg-gray-950 active:scale-95 dark:bg-gray-500 transition">
+            className="lg:w-fit text-center justify-center bg-gray-900 text-white px-7 py-3 flex items-center gap-2 rounded-2xl outline-hidden hover:bg-gray-950 active:scale-95 dark:bg-gray-500 transition">
             Download CV{" "}
             <svg
               className="button__icon"

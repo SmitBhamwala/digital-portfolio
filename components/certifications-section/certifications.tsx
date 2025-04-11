@@ -34,7 +34,7 @@ export default function Certificate() {
         </VerticalTimeline>
       </div>
       <div className="hidden lg:block">
-        <VerticalTimeline lineColor="" animate className="!w-[100%]">
+        <VerticalTimeline lineColor="" animate className="w-[100%]!">
           {certificationsData.map((course, index) => (
             <CourseElement key={index} theme={theme} course={course} />
           ))}
@@ -82,18 +82,18 @@ const CourseElement = ({ theme, course }: CertificationsElementProps) => {
         ref={ref}
         className="pt-[1rem] md:pt-[1.3rem] mb-0 lg:mb-[1.3rem] px-[1rem] md:px-[2rem]">
         <h3 className="font-medium text-lg mb-4">{course.title}</h3>
-        <p className="!font-normal !text-sm !m-0">by {course.tutor}</p>
-        <p className="!font-normal !text-sm !m-0">
+        <p className="font-normal! text-sm! m-0!">by {course.tutor}</p>
+        <p className="font-normal! text-sm! m-0!">
           Duration: {course.duration}
         </p>
-        <p className="!font-normal !text-sm !m-0">
+        <p className="font-normal! text-sm! m-0!">
           Completion date: {course.date}
         </p>
         <p
           onClick={() => setCertificationModalOpen(true)}
           className="!font-normal !text-sm text-gray-700 dark:text-white/75 w-fit flex justify-start items-center 
           !mt-3 px-3 py-2 rounded-xl shadow-lg shadow-black/[0.15] backdrop-blur-[0.5rem] active:scale-95 
-          bg-[#f3f4f6] dark:bg-[rgb(255, 255, 255)] dark:bg-opacity-5 cursor-pointer">
+          bg-[#f3f4f6] dark:bg-white/5 cursor-pointer">
           View More
           <span className="ml-2">
             <FaEye />

@@ -9,7 +9,7 @@ export default function NotFound() {
       </h2>
       <Link
         href="/"
-        className="flex justify-center items-center bg-[#f3f4f6] dark:bg-[rgb(255, 255, 255)] dark:bg-opacity-5 
+        className="flex justify-center items-center bg-[#f3f4f6] dark:bg-white/5
         px-4 py-3 rounded-xl text-[1rem] md:text-3xl xl:text-xl text-gray-700 dark:text-white/75 
         shadow-lg shadow-black/[0.15] backdrop-blur-[0.5rem] active:scale-95">
         Return home{" "}

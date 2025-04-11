@@ -30,7 +30,7 @@ export default function Experience() {
         </VerticalTimeline>
       </div>
       <div className="hidden lg:block">
-        <VerticalTimeline lineColor="" animate className="!w-[100%]">
+        <VerticalTimeline lineColor="" animate className="w-[100%]!">
           {experiencesData.map((item, index) => (
             <ExperienceElement key={index} theme={theme} item={item} />
           ))}
@@ -78,25 +78,25 @@ const ExperienceElement = ({ theme, item }: ExperienceElementProps) => {
       }}>
       <div
         ref={ref}
-        className="pt-[0] lg:pt-[0.3rem] mb-0 lg:mb-[1rem] px-[0] xl:px-[1rem]">
+        className="pt-0 lg:pt-[0.3rem] mb-0 lg:mb-[1rem] px-0 xl:px-[1rem]">
         <h3 className="font-semibold capitalize">{item.title}</h3>
         {/* {width <= 1170 ? (
 						<>
-							<p className="font-normal !m-0">{item.location}</p>
-							<p className="!m-0">{item.date}</p>
+							<p className="font-normal m-0!">{item.location}</p>
+							<p className="m-0!">{item.date}</p>
 						</>
 					) : ( */}
-        <p className="font-normal !m-0">{item.location}</p>
+        <p className="font-normal m-0!">{item.location}</p>
         {/* )} */}
 
-        {/* <ul className="!mt-3 !font-normal text-gray-700 dark:text-white/75">
+        {/* <ul className="mt-3! font-normal! text-gray-700 dark:text-white/75">
 					{item.description.map((task, index) => (
 						<li key={index} className="list-disc">
 							{task}
 						</li>
 					))}
 				</ul> */}
-        <p className="!mt-3 !font-normal text-gray-700 dark:text-white/75">
+        <p className="mt-3! font-normal! text-gray-700 dark:text-white/75">
           {item.description[0]}
         </p>
         {item.description[1] ? (
@@ -105,7 +105,7 @@ const ExperienceElement = ({ theme, item }: ExperienceElementProps) => {
               onClick={() => setExperienceModalOpen(true)}
               className="!font-normal !text-sm text-gray-700 dark:text-white/75 w-fit flex justify-start items-center 
               !mt-3 px-3 py-2 rounded-xl shadow-lg shadow-black/[0.15] backdrop-blur-[0.5rem] active:scale-95 
-              bg-[#f3f4f6] dark:bg-[rgb(255, 255, 255)] dark:bg-opacity-5 cursor-pointer">
+              bg-[#f3f4f6] dark:bg-white/5 cursor-pointer">
               View More
               <span className="ml-2">
                 <FaEye />

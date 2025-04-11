@@ -194,7 +194,7 @@ export default function MyReviewCard({
     <div className="rounded-2xl shadow-md bg-white dark:bg-gray-800 p-6 w-full md:max-w-[18.5rem] h-full flex flex-col justify-start">
       {/* Header */}
       <div className="flex items-center gap-4">
-        <div className="flex-shrink-0">
+        <div className="shrink-0">
           <Image
             src={image!}
             alt={`${name}'s photo`}
@@ -301,7 +301,7 @@ export default function MyReviewCard({
                     onChange={(e) => {
                       setReview(e.target.value);
                     }}
-                    className="mt-2 text-sm rounded-lg borderBlack bg-white dark:bg-opacity-10 dark:text-gray-300 transition-all outline-none focus-visible:ring-0"
+                    className="mt-2 text-sm rounded-lg borderBlack bg-white dark:bg-white/10 dark:text-gray-300 transition-all outline-hidden focus-visible:ring-0 focus-visible:border-1 focus-visible:border-black/10"
                   />
                   <span className="text-gray-500 text-xs">
                     {review.length} / 130
@@ -319,7 +319,7 @@ export default function MyReviewCard({
                       onChange={(e) => {
                         setLinkedInId(e.target.value);
                       }}
-                      className="text-sm rounded-sm shadow-none border-gray-300 dark:border-gray-700 border-x-0 border-t-0 border-b-2 px-1 py-0 font-semibold text-black dark:text-white transition-all outline-none focus-visible:ring-0"
+                      className="text-sm rounded-sm shadow-none border-gray-300 dark:border-gray-700 border-x-0 border-t-0 border-b-2 px-1 py-0 font-semibold text-black dark:text-white transition-all outline-hidden focus-visible:ring-0 focus-visible:border-gray-300 dark:focus-visible:border-gray-700"
                     />
                   </div>
                 </div>
@@ -327,7 +327,7 @@ export default function MyReviewCard({
                   <button
                     type="submit"
                     disabled={submitting}
-                    className="lg:w-fit mt-3 text-sm text-center bg-green-600 text-white px-4 py-2 flex justify-center items-center gap-2 rounded-xl outline-none active:scale-95 transition">
+                    className="lg:w-fit mt-3 text-sm text-center bg-green-600 text-white px-4 py-2 flex justify-center items-center gap-2 rounded-xl outline-hidden active:scale-95 transition">
                     <Save size={18} />
                   </button>
                   <button
@@ -338,7 +338,7 @@ export default function MyReviewCard({
                       setRating(myTestimonial.rating);
                       setEditingTestimonial(false);
                     }}
-                    className="lg:w-fit mt-3 text-sm text-center justify-center bg-red-600 text-white px-4 py-2 flex items-center gap-2 rounded-xl outline-none active:scale-95 transition">
+                    className="lg:w-fit mt-3 text-sm text-center justify-center bg-red-600 text-white px-4 py-2 flex items-center gap-2 rounded-xl outline-hidden active:scale-95 transition">
                     <X size={18} />
                   </button>
                 </div>
@@ -353,20 +353,20 @@ export default function MyReviewCard({
                 <div className="flex items-center justify-start gap-2">
                   <button
                     onClick={() => setEditingTestimonial(true)}
-                    className="lg:w-fit mt-3 text-sm text-center justify-center bg-blue-500 text-white px-4 py-2 flex items-center gap-2 rounded-xl outline-none active:scale-95 transition">
+                    className="lg:w-fit mt-3 text-sm text-center justify-center bg-blue-500 text-white px-4 py-2 flex items-center gap-2 rounded-xl outline-hidden active:scale-95 transition">
                     <Pencil size={18} />
                   </button>
                   <button
                     onClick={() => {
                       deleteTestimonial();
                     }}
-                    className="lg:w-fit mt-3 text-sm text-center justify-center bg-red-600 text-white px-4 py-2 flex items-center gap-2 rounded-xl outline-none active:scale-95 transition">
+                    className="lg:w-fit mt-3 text-sm text-center justify-center bg-red-600 text-white px-4 py-2 flex items-center gap-2 rounded-xl outline-hidden active:scale-95 transition">
                     <Trash2 size={18} />
                   </button>
                   <button
                     type="button"
                     onClick={() => signOut()}
-                    className="lg:w-fit mt-3 text-sm text-center justify-center bg-gray-900 text-white px-4 py-2 flex gap-2 rounded-xl outline-none hover:bg-gray-950 active:scale-95 dark:bg-gray-500 transition">
+                    className="lg:w-fit mt-3 text-sm text-center justify-center bg-gray-900 text-white px-4 py-2 flex gap-2 rounded-xl outline-hidden hover:bg-gray-950 active:scale-95 dark:bg-gray-500 transition">
                     <LogOut size={18} /> LogOut
                   </button>
                 </div>
@@ -415,7 +415,7 @@ export default function MyReviewCard({
                   onChange={(e) => {
                     setReview(e.target.value);
                   }}
-                  className="mt-2 text-sm rounded-lg borderBlack bg-white dark:bg-opacity-10 dark:text-gray-300 transition-all outline-none focus-visible:ring-0"
+                  className="mt-2 text-sm rounded-lg borderBlack bg-white dark:bg-white/10 dark:text-gray-300 transition-all outline-hidden focus-visible:ring-0 focus-visible:border-1 focus-visible:border-black/10"
                 />
                 <span className="text-gray-500 text-xs">
                   {review.length} / 130
@@ -433,7 +433,7 @@ export default function MyReviewCard({
                     onChange={(e) => {
                       setLinkedInId(e.target.value);
                     }}
-                    className="text-sm rounded-sm shadow-none border-gray-300 dark:border-gray-700 border-x-0 border-t-0 border-b-2 px-1 py-0 font-semibold text-black dark:text-white transition-all outline-none focus-visible:ring-0"
+                    className="text-sm rounded-sm shadow-none border-gray-300 dark:border-gray-700 border-x-0 border-t-0 border-b-2 px-1 py-0 font-semibold text-black dark:text-white transition-all outline-hidden focus-visible:ring-0"
                   />
                 </div>
               </div>
@@ -441,13 +441,13 @@ export default function MyReviewCard({
                 <button
                   type="submit"
                   disabled={submitting}
-                  className="lg:w-fit mt-3 text-sm text-center justify-center bg-green-600 text-white px-4 py-2 flex gap-2 rounded-xl outline-none active:scale-95 transition">
+                  className="lg:w-fit mt-3 text-sm text-center justify-center bg-green-600 text-white px-4 py-2 flex gap-2 rounded-xl outline-hidden active:scale-95 transition">
                   <Plus size={18} /> Add
                 </button>
                 <button
                   type="button"
                   onClick={() => signOut()}
-                  className="lg:w-fit mt-3 text-sm text-center justify-center bg-gray-900 text-white px-4 py-2 flex gap-2 rounded-xl outline-none hover:bg-gray-950 active:scale-95 dark:bg-gray-500 transition">
+                  className="lg:w-fit mt-3 text-sm text-center justify-center bg-gray-900 text-white px-4 py-2 flex gap-2 rounded-xl outline-hidden hover:bg-gray-950 active:scale-95 dark:bg-gray-500 transition">
                   <LogOut size={18} /> LogOut
                 </button>
               </div>

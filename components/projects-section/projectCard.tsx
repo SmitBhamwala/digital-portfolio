@@ -65,7 +65,7 @@ export default function ProjectCard({
   }, [api]);
 
   return (
-    <Card className="border-none rounded-2xl shadow-md bg-white dark:bg-gray-800">
+    <Card className="border-none rounded-2xl shadow-md bg-white dark:bg-gray-800 pt-0 gap-0">
       <Carousel
         setApi={setApi}
         opts={{ align: "start" }}
@@ -120,7 +120,7 @@ export default function ProjectCard({
           {description}
         </CardDescription>
       </CardHeader>
-      <CardContent className="flex flex-wrap gap-1">
+      <CardContent className="flex justify-center flex-wrap gap-1 my-4">
         {tags.map((tag, index) => (
           <span
             key={index}
@@ -134,7 +134,7 @@ export default function ProjectCard({
         <div className="flex justify-center items-center gap-2 w-full">
           <Button
             type="button"
-            className="rounded-xl text-sm flex gap-2 items-center justify-center text-center bg-gray-900 dark:bg-gray-300 hover:bg-gray-950 text-white dark:text-black outline-none active:scale-95 transition">
+            className="rounded-xl text-sm flex gap-2 items-center justify-center text-center bg-gray-900 dark:bg-gray-300 hover:bg-gray-950 text-white dark:text-black outline-hidden active:scale-95 transition">
             <RocketIcon />
             <Link href={demoURL} target="_blank">
               Demo
@@ -142,7 +142,7 @@ export default function ProjectCard({
           </Button>
           <Button
             type="button"
-            className="rounded-xl text-sm flex gap-2 items-center justify-center text-center bg-gray-900 dark:bg-gray-300 hover:bg-gray-950 text-white dark:text-black outline-none active:scale-95 transition">
+            className="rounded-xl text-sm flex gap-2 items-center justify-center text-center bg-gray-900 dark:bg-gray-300 hover:bg-gray-950 text-white dark:text-black outline-hidden active:scale-95 transition">
             <BsGithub />
             <Link href={sourceCodeURL} target="_blank">
               Source Code

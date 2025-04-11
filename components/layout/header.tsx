@@ -26,11 +26,11 @@ export default function Header() {
   }, [activeSection]);
 
   return (
-    <header className="z-[999] relative">
+    <header className="z-999 relative">
       <motion.div
         className="fixed top-4 lg:top-6 p-0 h-[3.25rem] w-[90vw] lg:w-[48.5rem] rounded-full 
-        border border-white border-opacity-40 bg-slate-100 bg-opacity-80 shadow-lg shadow-black/[0.15] 
-        backdrop-blur-[0.5rem] dark:bg-gray-950 dark:border-black/40 dark:bg-opacity-75"
+        border border-white/40 bg-slate-100/80 shadow-lg shadow-black/[0.15] 
+        backdrop-blur-[0.5rem] dark:bg-gray-950/80 dark:border-black/40"
         initial={{ y: -100, x: "-50%", opacity: 0 }}
         animate={{ y: 0, x: "-50%", opacity: 1 }}></motion.div>
 
@@ -51,7 +51,7 @@ export default function Header() {
                 className={clsx(
                   "flex w-full items-center justify-center px-3 py-3 hover:text-gray-950 transition dark:text-gray-500 dark:hover:text-gray-200",
                   {
-                    "text-gray-950 dark:!text-gray-200":
+                    "text-gray-950 dark:text-gray-200!":
                       activeSection === link.name
                   }
                 )}

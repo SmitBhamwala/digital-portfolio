@@ -45,7 +45,7 @@ export default function Intro() {
       {/* [116px repeat(2, 1fr)] */}
       <div className="home__content flex flex-col-reverse md:flex-row gap-8 lg:gap-16 xl:gap-28 m-auto pt-0 md:pt-[3rem] justify-center items-center">
         <div className="home__data flex flex-col justify-center max-w-[400px] xl:max-w-[500px]">
-          <h1 className="home__title mb-0 text-4xl text font-semibold !leading-[1.5] md:text-[3rem] xl:text-[58px]">
+          <h1 className="home__title mb-0 text-4xl text font-semibold leading-[1.5]! md:text-[3rem] xl:text-[58px]">
             Smit Bhamwala
           </h1>
           <div className="font-medium text-[1.1rem] md:text-[1.5rem] mb-3">
@@ -67,7 +67,7 @@ export default function Intro() {
           <Link
             href="#contact"
             replace
-            className="lg:w-fit text-center justify-center bg-gray-900 text-white px-7 py-3 flex items-center gap-2 rounded-2xl outline-none hover:bg-gray-950 active:scale-95 dark:bg-gray-500 transition"
+            className="lg:w-fit text-center justify-center bg-gray-900 text-white px-7 py-3 flex items-center gap-2 rounded-2xl outline-hidden hover:bg-gray-950 active:scale-95 dark:bg-gray-500 transition"
             onClick={() => {
               setActiveSection("Contact");
               setTimeOfLastClick(Date.now());

@@ -20,12 +20,12 @@ export default function CertificationModal({
   return (
     <>
       <div
-        className="z-[1000] fixed top-0 left-0 w-full h-full bg-black opacity-55 dark:opacity-75 
+        className="z-1000 fixed top-0 left-0 w-full h-full bg-black opacity-55 dark:opacity-75 
         flex justify-center items-center"
         onClick={() => setCertificationModalOpen(false)}
       />
       <dialog
-        className="z-[1001] fixed top-0 bottom-0 left-0 right-0 flex justify-center items-center 
+        className="z-1001 fixed inset-0 flex justify-center items-center m-auto
         bg-[#f3f4f6] dark:bg-gray-800 text-gray-700 dark:text-white/75 
          rounded-3xl max-w-[90%] xl:max-w-fit overflow-scroll md:overflow-hidden"
         open>
@@ -40,13 +40,13 @@ export default function CertificationModal({
           <p className="font-normal text-sm md:text-[1rem] mt-2">
             by {course.tutor}
           </p>
-          <p className="font-normal text-sm md:text-[1rem] !my-1">
+          <p className="font-normal text-sm md:text-[1rem] my-1!">
             Duration: {course.duration}
           </p>
           <Link
             href={`/Certifications/${course.certIMG}`}
             target="_blank"
-            className="text-sm md:text-[1rem] flex items-center w-fit bg-[#f3f4f6] dark:bg-[rgb(255, 255, 255)] dark:bg-opacity-5 
+            className="text-sm md:text-[1rem] flex items-center w-fit bg-[#f3f4f6] dark:bg-white/5
               px-4 py-3 mb-8 md:mb-0 rounded-xl 
               borderBlack shadow-lg shadow-black/[0.15] active:scale-95">
             View Certificate
@@ -67,7 +67,7 @@ export default function CertificationModal({
               </li>
             ))}
           </div>
-          <p className="!mt-0 block md:hidden">&nbsp;</p>
+          <p className="mt-0! block md:hidden">&nbsp;</p>
         </div>
       </dialog>
     </>

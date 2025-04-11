@@ -18,12 +18,12 @@ export default function ExperienceModal({
   return (
     <>
       <div
-        className="z-[1000] fixed top-0 left-0 w-full h-full bg-black opacity-55 dark:opacity-75 
+        className="z-1000 fixed top-0 left-0 w-full h-full bg-black opacity-55 dark:opacity-75 
         flex justify-center items-center"
         onClick={() => setExperienceModalOpen(false)}
       />
       <dialog
-        className="z-[1001] fixed top-0 bottom-0 left-0 right-0 flex justify-center items-center 
+        className="z-1001 fixed inset-0 flex justify-center items-center m-auto
         bg-[#f3f4f6] dark:bg-gray-800 text-gray-700 dark:text-white/75 
          rounded-3xl max-w-[90%] xl:max-w-[70vw] overflow-scroll md:overflow-hidden"
         open>
@@ -35,10 +35,10 @@ export default function ExperienceModal({
             <IoMdClose />
           </div>
           <h3 className="font-bold text-xl md:text-2xl">{item.title}</h3>
-          <p className="font-normal text-sm md:text-[1rem] !mt-1 !md:mt-2">
+          <p className="font-normal text-sm md:text-[1rem] mt-1! !md:mt-2">
             {item.location}
           </p>
-          <p className="font-normal text-sm md:text-[1rem] !my-1">
+          <p className="font-normal text-sm md:text-[1rem] my-1!">
             {item.date}
           </p>
           <div className="mt-8 font-normal text-gray-700 dark:text-white/75">
@@ -54,7 +54,7 @@ export default function ExperienceModal({
               </li>
             ))}
           </div>
-          <p className="!mt-0 block md:hidden">&nbsp;</p>
+          <p className="mt-0! block md:hidden">&nbsp;</p>
         </div>
       </dialog>
     </>
