@@ -50,7 +50,7 @@ export default function About() {
                 <MdInsights />
               </div>
               <h3 className="about__title">Experience</h3>
-              <span className="about__subtitle">2+ Years</span>
+              <span className="about__subtitle">2.5+ Years</span>
             </Link>
             <Link
               href="#projects"
@@ -97,11 +97,11 @@ export default function About() {
 					</p> */}
 
           <p className="my-4 text-justify text-gray-700 dark:text-white/75">
-            I am a Full Stack Web Developer from Ahmedabad dedicated to creating
-            dynamic, user-centric web applications with a blend of innovative
-            front-end design and robust back-end functionality. With my
-            expertise in modern frameworks and tools, I can tackle diverse
-            projects with creativity and precision.
+            I am a Full Stack Web Developer from Ahmedabad, Gujarat, India,
+            dedicated to creating dynamic, user-centric web applications with aak
+            blend of innovative front-end design and robust back-end
+            functionality. With my expertise in modern frameworks and tools, I
+            can tackle diverse projects with creativity and precision.
           </p>
           <p className="my-4 text-justify text-gray-700 dark:text-white/75">
             Passionate about collaboration and continuous learning, I&apos;m

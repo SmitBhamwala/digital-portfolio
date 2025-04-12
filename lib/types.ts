@@ -4,7 +4,10 @@ export type SectionNameType = (typeof links)[number]["name"];
 
 export type SkillCardType = {
   title: string;
-  skills: string[];
+  skills: {
+    name: string;
+    icon: string;
+  }[];
 };
 
 export type ExperienceElementProps = {

@@ -220,40 +220,36 @@ export const projectsData = [
 
 export const skillsData = [
   [
-    "HTML5",
-    // "CSS",
-    // "Bootstrap",
-    "Tailwind",
-    "JavaScript",
-    "TypeScript",
-    "React",
-    "Next.js",
-    "Angular"
-    // "jQuery"
+    { name: "React", icon: "React" },
+    { name: "Next.js", icon: "Next.js" },
+    { name: "Angular", icon: "Angular" },
+    { name: "TypeScript", icon: "TypeScript" },
+    { name: "JavaScript", icon: "JavaScript" },
+    { name: "Tailwind CSS", icon: "Tailwind" },
+    { name: "HTML5", icon: "HTML5" }
+    // { name: "CSS", icon: "CSS" },
   ],
   [
-    "Node.js",
-    "Express",
-    "RESTful API",
-    "EJS",
-    "Prisma",
-    "MongoDB",
-    "Python",
-    "Flask",
-    // "Django",
-    // "AI/ML",
-    // "ChatGPT",
-    "SQL",
-    // "Auth.js",
-    "C++"
+    { name: "Node.js", icon: "Node.js" },
+    { name: "Express", icon: "Express" },
+    { name: "RESTful API", icon: "RESTful API" },
+    { name: "MongoDB", icon: "MongoDB" },
+    { name: "Prisma", icon: "Prisma" },
+    { name: "PostgreSQL", icon: "PostgreSQL" },
+    { name: "C#", icon: "Csharp" },
+    { name: "Python", icon: "Python" },
+    { name: "Flask", icon: "Flask" },
+    { name: "C++", icon: "C++" }
+    // { name: "Django", icon: "Django" },
   ],
   [
-    "AWS",
-    "VS Code",
-    "Postman",
-    "Git",
-    "GitHub",
-    "Visual Studio",
-    "Azure DevOps"
+    { name: "AWS", icon: "AWS" },
+    { name: "Jira", icon: "Jira" },
+    { name: "VS Code", icon: "VS Code" },
+    { name: "Postman", icon: "Postman" },
+    { name: "Git", icon: "Git" },
+    { name: "GitHub", icon: "GitHub" },
+    { name: "Visual Studio", icon: "Visual Studio" },
+    { name: "Azure", icon: "Azure DevOps" }
   ]
 ];
