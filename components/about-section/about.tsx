@@ -98,7 +98,7 @@ export default function About() {
 
           <p className="my-4 text-justify text-gray-700 dark:text-white/75">
             I am a Full Stack Web Developer from Ahmedabad, Gujarat, India,
-            dedicated to creating dynamic, user-centric web applications with aak
+            dedicated to creating dynamic, user-centric web applications with a
             blend of innovative front-end design and robust back-end
             functionality. With my expertise in modern frameworks and tools, I
             can tackle diverse projects with creativity and precision.
