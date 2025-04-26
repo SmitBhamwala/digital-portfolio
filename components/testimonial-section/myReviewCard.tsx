@@ -43,7 +43,7 @@ export default function MyReviewCard({
   const [linkedInId, setLinkedInId] = useState("");
 
   useEffect(() => {
-    if (!session?.user?.email) return;
+    if (!session.user?.email) return;
 
     const userTestimonial = testimonials.find(
       (t) => t.email === session.user?.email
@@ -57,16 +57,21 @@ export default function MyReviewCard({
       setRating(userTestimonial.rating);
     } else {
       // New user
-      setMyTestimonial({
-        name: session.user.name!,
-        email: session.user.email!,
-        LinkedInId: myTestimonial.LinkedInId,
-        image: session.user.image!,
-        review: myTestimonial.review,
-        rating: myTestimonial.rating
-      });
+      setMyTestimonial((prev) => ({
+        name: session.user?.name!,
+        email: session.user?.email!,
+        LinkedInId: prev.LinkedInId,
+        image: session.user?.image!,
+        review: prev.review,
+        rating: prev.rating
+      }));
     }
-  }, [session.user?.email, testimonials]);
+  }, [
+    session.user?.email,
+    session.user?.name,
+    session.user?.image,
+    testimonials
+  ]);
 
   async function submitTestimonial() {
     setSubmitting(true);
