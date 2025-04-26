@@ -206,9 +206,9 @@ export default function MyReviewCard({
         </div>
         <div className="flex-1">
           <div className="flex items-center gap-2">
-            <h4 className="text-base font-semibold line-clamp-2 text-gray-800 dark:text-gray-100">
+            <h3 className="text-base font-semibold line-clamp-2 text-gray-800 dark:text-gray-100">
               {name}
-            </h4>
+            </h3>
             {myTestimonial.LinkedInId && (
               <Link
                 href={`https://www.linkedin.com/in/${myTestimonial.LinkedInId}`}
