@@ -1,16 +1,30 @@
-import About from "@/components/about-section/about";
-import Certifications from "@/components/certifications-section/certifications";
-import SectionDivider from "@/components/common/section-divider";
-import ThemeSwitch from "@/components/common/theme-switch";
-import Contact from "@/components/contact-section/contact";
-import Experience from "@/components/experience-section/experience";
-import Hero from "@/components/hero-section/hero";
-import Footer from "@/components/layout/footer";
-import Header from "@/components/layout/header";
-import Projects from "@/components/projects-section/projects";
-import Skills from "@/components/skills-section/skills";
-import Testimonial from "@/components/testimonial-section/testimonial";
+"use client";
 import { SessionProvider } from "next-auth/react";
+import dynamic from "next/dynamic";
+
+const Hero = dynamic(() => import("@/components/hero-section/hero"));
+const SectionDivider = dynamic(
+  () => import("@/components/common/section-divider")
+);
+const Header = dynamic(() => import("@/components/layout/header"));
+const Footer = dynamic(() => import("@/components/layout/footer"));
+const ThemeSwitch = dynamic(() => import("@/components/common/theme-switch"));
+
+const About = dynamic(() => import("@/components/about-section/about"));
+const Skills = dynamic(() => import("@/components/skills-section/skills"));
+const Projects = dynamic(
+  () => import("@/components/projects-section/projects")
+);
+const Experience = dynamic(
+  () => import("@/components/experience-section/experience")
+);
+const Certifications = dynamic(
+  () => import("@/components/certifications-section/certifications")
+);
+const Testimonial = dynamic(
+  () => import("@/components/testimonial-section/testimonial")
+);
+const Contact = dynamic(() => import("@/components/contact-section/contact"));
 
 export default function Home() {
   return (
