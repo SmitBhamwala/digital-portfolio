@@ -1,6 +1,20 @@
 import type { NextConfig } from "next";
 
+const withBundleAnalyzer = require("@next/bundle-analyzer")({
+  enabled: process.env.ANALYZE === "true"
+});
+
 const nextConfig: NextConfig = {
+  experimental: {
+    optimizePackageImports: [
+      "lucide-react",
+      "react-icons",
+      "react-simple-star-rating",
+      "framer-motion",
+      "lottie-react",
+      "react-hot-toast"
+    ]
+  },
   turbopack: {
     rules: {
       "*.svg": {
@@ -27,4 +41,4 @@ const nextConfig: NextConfig = {
   }
 };
 
-export default nextConfig;
+export default withBundleAnalyzer(nextConfig);
