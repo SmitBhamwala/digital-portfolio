@@ -47,8 +47,7 @@ export const experiencesData = [
       "Developed server-side filtering with React and Express.js for medical devices management & configuration portal.",
       "Upgraded 2 healthcare device's UI from Angular v7 to v18, migrating to standalone components and MDC-based Angular Material architecture.",
       "Upgraded an Angular Micro Frontend (MFE) codebase for the device management platform from Angular 13 to 18, improving maintainability and scalability.",
-      "Led a Proof of Concept (POC) for Angular 19, worked on two projects simultaneously, and resolved two critical MEND vulnerabilities, ensuring license compliance and system security.",
-      "Led knowledge transfer sessions on React and Next.js, improving onboarding speed for 3 junior developers and enabling faster ramp-up for new team members."
+      "Led a Proof of Concept (POC) for Angular 19, worked on two projects simultaneously, and resolved two critical MEND vulnerabilities, ensuring license compliance and system security."
     ],
     icon: React.createElement(CgWorkAlt),
     date: "07/2022 - present"
