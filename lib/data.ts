@@ -42,26 +42,16 @@ export const experiencesData = [
     title: "Senior Software Developer",
     location: "Capgemini",
     description: [
-      "Recognized with the WOW Award for upgrading 3 legacy codebases and implementing 2 security enhancements.",
+      "Recognized with the GEM (Going the Extra Mile) Award for demonstrating leadership in setting up the project infrastructure, mentoring 3 engineers and improving sprint velocity.",
+      "Recognized with the WOW Award for upgrading 3 legacy codebases, implementing 2 security enhancements, and collaborating across 3 teams.",
+      "Developed server-side filtering with React and Express.js for medical devices management & configuration portal.",
       "Upgraded 2 healthcare device's UI from Angular v7 to v18, migrating to standalone components and MDC-based Angular Material architecture.",
-      "Upgraded an Angular Micro Frontend (MFE) codebase for the device management platform from Angular 13 to 18.",
-      "Led a Proof of Concept (POC) for Angular 19, worked on two projects simultaneously, and resolved two critical MEND vulnerabilities, ensuring license compliance and system security."
+      "Upgraded an Angular Micro Frontend (MFE) codebase for the device management platform from Angular 13 to 18, improving maintainability and scalability.",
+      "Led a Proof of Concept (POC) for Angular 19, worked on two projects simultaneously, and resolved two critical MEND vulnerabilities, ensuring license compliance and system security.",
+      "Led knowledge transfer sessions on React and Next.js, improving onboarding speed for 3 junior developers and enabling faster ramp-up for new team members."
     ],
     icon: React.createElement(CgWorkAlt),
-    date: "07/2024 - present"
-  },
-  {
-    title: "Software Developer",
-    location: "Capgemini",
-    description: [
-      "Recognized with the GEM (Going the Extra Mile) Award for setting up the project infrastructure and mentoring 3 engineers.",
-      "Debugged and resolved 10+ critical issues in two C/C++ projects using Valgrind to address memory exceptions and other critical errors.",
-      "Implemented and standardized Google Test framework, resulting in early project kickoff.",
-      "Conducted Knowledge Transfer (KT) sessions on Google Test framework and project overview and guided 3 team members in debugging complex test cases.",
-      "Conducted unit testing on heart's angiography device codebase, increasing code coverage from 60% to 100%."
-    ],
-    icon: React.createElement(CgWorkAlt),
-    date: "07/2022 - 06/2024"
+    date: "07/2022 - present"
   },
   {
     title: "Front-End Web Developer (Intern)",
