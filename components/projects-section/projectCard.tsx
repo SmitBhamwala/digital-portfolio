@@ -1,6 +1,5 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
@@ -132,22 +131,20 @@ export default function ProjectCard({
       </CardContent>
       <CardFooter>
         <div className="flex justify-center items-center gap-2 w-full">
-          <Button
-            type="button"
-            className="rounded-xl text-sm flex gap-2 items-center justify-center text-center bg-gray-900 dark:bg-gray-300 hover:bg-gray-950 text-white dark:text-black outline-hidden active:scale-95 transition">
-            <RocketIcon />
-            <Link href={demoURL} target="_blank">
-              Demo
-            </Link>
-          </Button>
-          <Button
-            type="button"
-            className="rounded-xl text-sm flex gap-2 items-center justify-center text-center bg-gray-900 dark:bg-gray-300 hover:bg-gray-950 text-white dark:text-black outline-hidden active:scale-95 transition">
-            <BsGithub />
-            <Link href={sourceCodeURL} target="_blank">
-              Source Code
-            </Link>
-          </Button>
+          <Link
+            href={demoURL}
+            target="_blank"
+            className="font-medium rounded-xl py-2 px-3 text-sm flex gap-2 items-center justify-center text-center bg-gray-900 dark:bg-gray-300 hover:bg-gray-950 text-white dark:text-black outline-hidden active:scale-95 transition">
+            <RocketIcon className="h-4 w-4" />
+            Demo
+          </Link>
+          <Link
+            href={sourceCodeURL}
+            target="_blank"
+            className="font-medium rounded-xl py-2 px-3 text-sm flex gap-2 items-center justify-center text-center bg-gray-900 dark:bg-gray-300 hover:bg-gray-950 text-white dark:text-black outline-hidden active:scale-95 transition">
+            <BsGithub className="h-4 w-4" />
+            Source Code
+          </Link>
         </div>
       </CardFooter>
     </Card>
