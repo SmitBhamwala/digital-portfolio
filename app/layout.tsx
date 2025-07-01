@@ -104,8 +104,8 @@ export default function RootLayout({
         className={`${poppins.className} bg-gray-50 text-gray-950 dark:bg-gray-900 dark:text-gray-50 dark:text-opacity-90`}>
         <ThemeContextProvider>
           <ActiveSectionContextProvider>
-            {children}
             <Toaster position="bottom-center" />
+            {children}
           </ActiveSectionContextProvider>
         </ThemeContextProvider>
         <Analytics />
