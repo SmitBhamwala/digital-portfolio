@@ -2,7 +2,6 @@
 
 import SectionHeading from "@/components/common/section-heading";
 import { useActiveSectionContext } from "@/context/active-section-context";
-import { useCustomToast } from "@/hooks/useCustomToast";
 import { useSectionInView } from "@/hooks/useSectionInView";
 import animation from "@/public/lottie/code.json";
 import dynamic from "next/dynamic";
@@ -16,7 +15,6 @@ const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
 export default function About() {
   const { ref } = useSectionInView("About");
   const { setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
-  const { showToast } = useCustomToast();
 
   const defaultOptions = {
     loop: true,
@@ -113,17 +111,6 @@ export default function About() {
           <a
             href="/Smit Bhamwala CV.pdf"
             download
-            onClick={(e) => {
-              e.preventDefault();
-              showToast("success", "CV downloaded successfully!");
-              // Trigger the download after showing the toast
-              const link = document.createElement("a");
-              link.href = "/Smit Bhamwala CV.pdf";
-              link.download = "Smit Bhamwala CV.pdf";
-              document.body.appendChild(link);
-              link.click();
-              document.body.removeChild(link);
-            }}
             className="lg:w-fit text-center justify-center bg-gray-900 text-white px-7 py-3 flex items-center gap-2 rounded-2xl outline-hidden hover:bg-gray-950 active:scale-95 dark:bg-gray-500 transition">
             Download CV{" "}
             <svg
