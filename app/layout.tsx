@@ -4,6 +4,7 @@ import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata, Viewport } from "next";
 import { Poppins } from "next/font/google";
+import { cookies } from "next/headers";
 import { Toaster } from "react-hot-toast";
 import "./globals.css";
 
@@ -86,13 +87,18 @@ export const viewport: Viewport = {
   maximumScale: 5
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const cookieStore = await cookies();
+  const theme = cookieStore.get("theme")?.value;
+
   return (
-    <html lang="en" className="scroll-smooth!">
+    <html
+      lang="en"
+      className={`scroll-smooth! ${theme === "dark" ? "dark" : ""}`}>
       <head>
         <meta
           name="google-site-verification"
