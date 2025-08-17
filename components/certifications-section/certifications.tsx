@@ -100,12 +100,12 @@ const CourseElement = ({ theme, course }: CertificationsElementProps) => {
           </span>
         </p>
         {isCertificationModalOpen ? (
-          <div>
+          <>
             <CertificationModal
               course={course}
               setCertificationModalOpen={setCertificationModalOpen}
             />
-          </div>
+          </>
         ) : (
           <></>
         )}

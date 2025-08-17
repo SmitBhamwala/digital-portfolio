@@ -263,7 +263,7 @@ export default function MyReviewCard({
       </div>
       <div className="testimonial_card_body mt-4">
         {myTestimonial.review ? (
-          <div>
+          <>
             {isEditingTestimonial ? (
               <form
                 onSubmit={(e) => {
@@ -272,31 +272,29 @@ export default function MyReviewCard({
                   setEditingTestimonial(false);
                 }}
                 className="flex justify-start flex-col">
-                <div>
-                  <div className="flex items-center justify-start">
-                    <Rating
-                      initialValue={rating / 2}
-                      allowFraction
-                      className="react-simple-star-rating edit-rating"
-                      iconsCount={5}
-                      fillColorArray={[
-                        "#ff0000",
-                        "#ff1a00",
-                        "#ff3300",
-                        "#ff4d00",
-                        "#ff6600",
-                        "#ff8000",
-                        "#ff9900",
-                        "#f59e0b",
-                        "#f59e0b",
-                        "#ffb000"
-                      ]}
-                      onClick={(rate: number) => {
-                        setRating(rate * 2);
-                      }}
-                    />
-                    {/* <span className="ml-1 text-gray-500 dark:text-gray-400">/ 5</span> */}
-                  </div>
+                <div className="flex items-center justify-start">
+                  <Rating
+                    initialValue={rating / 2}
+                    allowFraction
+                    className="react-simple-star-rating edit-rating"
+                    iconsCount={5}
+                    fillColorArray={[
+                      "#ff0000",
+                      "#ff1a00",
+                      "#ff3300",
+                      "#ff4d00",
+                      "#ff6600",
+                      "#ff8000",
+                      "#ff9900",
+                      "#f59e0b",
+                      "#f59e0b",
+                      "#ffb000"
+                    ]}
+                    onClick={(rate: number) => {
+                      setRating(rate * 2);
+                    }}
+                  />
+
                   <Input
                     type="text"
                     required
@@ -350,11 +348,9 @@ export default function MyReviewCard({
               </form>
             ) : (
               <div className="flex flex-col justify-start">
-                <div>
-                  <p className="italic text-sm text-gray-700 dark:text-gray-300 leading-relaxed">
-                    “{myTestimonial.review}”
-                  </p>
-                </div>
+                <p className="italic text-sm text-gray-700 dark:text-gray-300 leading-relaxed">
+                  “{myTestimonial.review}”
+                </p>
                 <div className="flex items-center justify-start gap-2">
                   <button
                     onClick={() => setEditingTestimonial(true)}
@@ -377,7 +373,7 @@ export default function MyReviewCard({
                 </div>
               </div>
             )}
-          </div>
+          </>
         ) : (
           <>
             <form
@@ -386,61 +382,59 @@ export default function MyReviewCard({
                 submitTestimonial();
               }}
               className="flex justify-start flex-col">
-              <div>
-                <div className="flex items-center justify-start">
-                  <Rating
-                    initialValue={rating / 2}
-                    allowFraction
-                    className="react-simple-star-rating add-rating"
-                    iconsCount={5}
-                    fillColorArray={[
-                      "#ff0000",
-                      "#ff1a00",
-                      "#ff3300",
-                      "#ff4d00",
-                      "#ff6600",
-                      "#ff8000",
-                      "#ff9900",
-                      "#f59e0b",
-                      "#f59e0b",
-                      "#ffb000"
-                    ]}
-                    onClick={(rate: number) => {
-                      setRating(rate * 2);
-                    }}
-                  />
-                  {/* <span className="ml-1 text-gray-500 dark:text-gray-400">/ 5</span> */}
-                </div>
+              <div className="flex items-center justify-start">
+                <Rating
+                  initialValue={rating / 2}
+                  allowFraction
+                  className="react-simple-star-rating add-rating"
+                  iconsCount={5}
+                  fillColorArray={[
+                    "#ff0000",
+                    "#ff1a00",
+                    "#ff3300",
+                    "#ff4d00",
+                    "#ff6600",
+                    "#ff8000",
+                    "#ff9900",
+                    "#f59e0b",
+                    "#f59e0b",
+                    "#ffb000"
+                  ]}
+                  onClick={(rate: number) => {
+                    setRating(rate * 2);
+                  }}
+                />
+                {/* <span className="ml-1 text-gray-500 dark:text-gray-400">/ 5</span> */}
+              </div>
+              <Input
+                type="text"
+                required
+                placeholder="Review"
+                value={review}
+                maxLength={130}
+                onChange={(e) => {
+                  setReview(e.target.value);
+                }}
+                className="mt-2 text-sm rounded-lg borderBlack bg-white dark:bg-white/10 dark:text-gray-300 transition-all outline-hidden focus-visible:ring-0 focus-visible:border-1 focus-visible:border-black/10"
+              />
+              <span className="text-gray-500 text-xs">
+                {review.length} / 130
+              </span>
+              <div className="flex items-center gap-1">
+                <p className="text-gray-700 dark:text-gray-300 text-sm mb-[2px]">
+                  linkedin.com/in/
+                </p>
                 <Input
                   type="text"
                   required
-                  placeholder="Review"
-                  value={review}
-                  maxLength={130}
+                  placeholder="Your LinkedIn Id"
+                  value={linkedInId}
+                  maxLength={40}
                   onChange={(e) => {
-                    setReview(e.target.value);
+                    setLinkedInId(e.target.value);
                   }}
-                  className="mt-2 text-sm rounded-lg borderBlack bg-white dark:bg-white/10 dark:text-gray-300 transition-all outline-hidden focus-visible:ring-0 focus-visible:border-1 focus-visible:border-black/10"
+                  className="text-sm rounded-sm shadow-none border-gray-300 dark:border-gray-700 border-x-0 border-t-0 border-b-2 px-1 py-0 font-semibold text-black dark:text-white transition-all outline-hidden focus-visible:ring-0"
                 />
-                <span className="text-gray-500 text-xs">
-                  {review.length} / 130
-                </span>
-                <div className="flex items-center gap-1">
-                  <p className="text-gray-700 dark:text-gray-300 text-sm mb-[2px]">
-                    linkedin.com/in/
-                  </p>
-                  <Input
-                    type="text"
-                    required
-                    placeholder="Your LinkedIn Id"
-                    value={linkedInId}
-                    maxLength={40}
-                    onChange={(e) => {
-                      setLinkedInId(e.target.value);
-                    }}
-                    className="text-sm rounded-sm shadow-none border-gray-300 dark:border-gray-700 border-x-0 border-t-0 border-b-2 px-1 py-0 font-semibold text-black dark:text-white transition-all outline-hidden focus-visible:ring-0"
-                  />
-                </div>
               </div>
               <div className="flex items-center gap-2">
                 <button

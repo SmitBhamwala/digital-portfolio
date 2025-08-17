@@ -112,12 +112,12 @@ const ExperienceElement = ({ theme, item }: ExperienceElementProps) => {
               </span>
             </p>
             {isExperienceModalOpen ? (
-              <div>
+              <>
                 <ExperienceModal
                   item={item}
                   setExperienceModalOpen={setExperienceModalOpen}
                 />
-              </div>
+              </>
             ) : (
               <></>
             )}

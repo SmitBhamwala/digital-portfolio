@@ -66,7 +66,7 @@ export default function TestimonialCarousel({
   }, [api]);
 
   return (
-    <div>
+    <>
       <Carousel
         setApi={setApi}
         opts={{
@@ -133,6 +133,6 @@ export default function TestimonialCarousel({
           </div>
         )}
       </div>
-    </div>
+    </>
   );
 }

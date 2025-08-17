@@ -15,7 +15,7 @@ export default function Slider({
   return (
     <div className="transition-all md:h-[16.7rem]">
       {loadingTestimonials ? (
-        <div>
+        <>
           {/* For Desktop Loader */}
           <TestimonialCarousel
             orientation="horizontal"
@@ -35,9 +35,9 @@ export default function Slider({
             testimonials={testimonials}
             isSkeletonLoading={loadingTestimonials}
           />
-        </div>
+        </>
       ) : (
-        <div>
+        <>
           {/* For Desktop */}
           <TestimonialCarousel
             orientation="horizontal"
@@ -57,7 +57,7 @@ export default function Slider({
             testimonials={testimonials}
             isSkeletonLoading={loadingTestimonials}
           />
-        </div>
+        </>
       )}
     </div>
   );
