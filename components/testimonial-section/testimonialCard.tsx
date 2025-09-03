@@ -1,6 +1,7 @@
 import { TestimonialType } from "@/lib/types";
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 import { Rating } from "react-simple-star-rating";
 import "./test.css";
 
@@ -11,19 +12,33 @@ export default function TestimonialCard({
   rating,
   LinkedInId
 }: TestimonialType) {
+  const [imgError, setImgError] = useState(false);
+
   return (
     <div className="rounded-2xl shadow-md bg-white dark:bg-gray-800 p-6 h-full flex flex-col justify-start transition-transform duration-300 lg:hover:scale-[1.02]">
       {/* Header */}
       <div className="flex items-center gap-4">
         <div className="shrink-0">
-          <Image
-            src={image}
-            alt={`${name}'s photo`}
-            width={48}
-            height={48}
-            loading="lazy"
-            className="rounded-full ring-2 ring-orange-500"
-          />
+          {!imgError ? (
+            <Image
+              src={image}
+              alt={`${name}'s photo`}
+              width={48}
+              height={48}
+              loading="lazy"
+              onError={() => setImgError(true)}
+              className="rounded-full ring-2 ring-orange-500"
+            />
+          ) : (
+            <div className="flex items-center justify-center w-12 h-12 rounded-full ring-2 ring-orange-500 bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-200 font-semibold">
+              {name
+                .split(" ")
+                .map((n) => n[0])
+                .slice(0, 2)
+                .join("")
+                .toUpperCase()}
+            </div>
+          )}
         </div>
         <div className="flex-1">
           <div className="flex items-center gap-2">
