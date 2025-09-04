@@ -15,8 +15,8 @@ const nextConfig: NextConfig = {
       "lottie-react",
       "react-hot-toast"
     ],
-    optimizeCss: true,
-    // scrollRestoration: true
+    // optimizeCss: true,
+    scrollRestoration: true
   },
   turbopack: {
     rules: {
