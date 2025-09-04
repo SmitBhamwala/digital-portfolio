@@ -16,7 +16,7 @@ const nextConfig: NextConfig = {
       "react-hot-toast"
     ],
     optimizeCss: true,
-    scrollRestoration: true
+    // scrollRestoration: true
   },
   turbopack: {
     rules: {
