@@ -56,7 +56,7 @@ export default function Intro() {
           </div>
 
           <p className="max-w-[200rem] mb-[2rem]">
-            Passionate Full-Stack Web Developer specializing in developing
+            Passionate Full Stack Developer specializing in developing
             responsive, and robust web applications{" "}
             <span className="italic font-semibold">
               from concept to deployment

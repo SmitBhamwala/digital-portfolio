@@ -39,6 +39,16 @@ export const links = [
 
 export const experiencesData = [
   {
+    title: "Software Engineer",
+    location: "PixelQue Software Pvt. Ltd.",
+    description: [
+      "Joined as a MEAN Stack Developer.",
+      "Will be involved in developing Kintavo (formarly Perfeqta) Software using the MEAN stack (MongoDB, Express.js, Angular, Node.js)."
+    ],
+    icon: React.createElement(CgWorkAlt),
+    date: "09/2025 - Present"
+  },
+  {
     title: "Senior Software Developer",
     location: "Capgemini",
     description: [
@@ -50,19 +60,19 @@ export const experiencesData = [
       "Led a Proof of Concept (POC) for Angular 19, worked on two projects simultaneously, and resolved two critical MEND vulnerabilities, ensuring license compliance and system security."
     ],
     icon: React.createElement(CgWorkAlt),
-    date: "07/2022 - present"
+    date: "07/2022 - 08/2025"
   },
-  {
-    title: "Front-End Web Developer (Intern)",
-    location: "RAB Stacks LLP",
-    description: [
-      "Developed front end of a website using React, translating 6+ Figma designs into responsive components.",
-      "Secured a 100% project completion rate by fostering a collaborative team environment.",
-      "Streamlined deployment with CI/CD pipelines using GitHub, reducing deployment time by 60%."
-    ],
-    icon: React.createElement(CgWorkAlt),
-    date: "08/2021 - 09/2021"
-  },
+  // {
+  //   title: "Front-End Web Developer (Intern)",
+  //   location: "RAB Stacks LLP",
+  //   description: [
+  //     "Developed front end of a website using React, translating 6+ Figma designs into responsive components.",
+  //     "Secured a 100% project completion rate by fostering a collaborative team environment.",
+  //     "Streamlined deployment with CI/CD pipelines using GitHub, reducing deployment time by 60%."
+  //   ],
+  //   icon: React.createElement(CgWorkAlt),
+  //   date: "08/2021 - 09/2021"
+  // },
   {
     title: "Bachelor of Technology (B.Tech)",
     location: "Parul University, Gujarat",
@@ -214,7 +224,7 @@ export const skillsData = [
     { name: "Angular", icon: "Angular" },
     { name: "TypeScript", icon: "TypeScript" },
     { name: "JavaScript", icon: "JavaScript" },
-    { name: "Tailwind CSS", icon: "Tailwind" },
+    { name: "Tailwind CSS", icon: "Tailwind" }
     // { name: "HTML5", icon: "HTML5" }
     // { name: "CSS", icon: "CSS" },
   ],
