@@ -14,7 +14,9 @@ const nextConfig: NextConfig = {
       "framer-motion",
       "lottie-react",
       "react-hot-toast"
-    ]
+    ],
+    optimizeCss: true,
+    scrollRestoration: true
   },
   turbopack: {
     rules: {

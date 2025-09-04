@@ -95,7 +95,8 @@ export default function Intro() {
             alt="Smit Bhamwala profile pic"
             // width="300"
             // height="300"
-            quality="85"
+            quality="100"
+            fetchPriority="high"
             priority
             draggable={false}
             // bg-[#007FFF] ring-8 ring-[rgba(255,0,255,0.5)]
