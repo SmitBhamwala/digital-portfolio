@@ -1,12 +1,15 @@
 export default async function sitemap() {
-  const myXML = [
+  const baseUrl = "https://smitbhamwala.vercel.app";
+  const currentDate = new Date();
+
+  const routes = [
     {
-      url: "https://smitbhamwala.vercel.app",
-      lastModified: new Date(),
-      changeFrequency: "daily",
-      priority: 1
+      url: baseUrl,
+      lastModified: currentDate,
+      changeFrequency: "weekly",
+      priority: 1.0
     }
   ];
 
-  return myXML;
+  return routes;
 }

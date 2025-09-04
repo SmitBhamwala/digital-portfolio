@@ -4,9 +4,24 @@ export default function robots() {
       {
         userAgent: "*",
         allow: ["/"],
-        disallow: ["/api/*", "/_next/*", "/favicon.ico"]
+        disallow: [
+          "/api/*",
+          "/_next/*",
+          "/favicon.ico",
+          "/_vercel/*",
+          "/manifest.json"
+        ]
+      },
+      {
+        userAgent: "GPTBot",
+        disallow: ["/"]
+      },
+      {
+        userAgent: "Google-Extended",
+        disallow: ["/"]
       }
     ],
-    sitemap: "https://smitbhamwala.vercel.app/sitemap.xml"
+    sitemap: "https://smitbhamwala.vercel.app/sitemap.xml",
+    host: "https://smitbhamwala.vercel.app"
   };
 }

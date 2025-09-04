@@ -215,7 +215,7 @@ export const skillsData = [
     { name: "TypeScript", icon: "TypeScript" },
     { name: "JavaScript", icon: "JavaScript" },
     { name: "Tailwind CSS", icon: "Tailwind" },
-    { name: "HTML5", icon: "HTML5" }
+    // { name: "HTML5", icon: "HTML5" }
     // { name: "CSS", icon: "CSS" },
   ],
   [

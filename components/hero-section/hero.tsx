@@ -18,11 +18,11 @@ export default function Intro() {
   useEffect(() => {
     const typed = new Typed(typedRef.current, {
       strings: [
-        "Full Stack Web Developer",
+        "Full Stack Developer",
         "C++ Developer",
         "MERN Stack Developer",
         "Next.JS Developer",
-        "Senior Software Developer"
+        "Senior Software Engineer"
       ],
       typeSpeed: 60,
       smartBackspace: true,
