@@ -7,7 +7,7 @@ import animation from "@/public/lottie/code.json";
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import { BiSupport } from "react-icons/bi";
-import { FaLaptopCode } from "react-icons/fa";
+import { FaLaptopCode } from "react-icons/fa6";
 import { MdInsights } from "react-icons/md";
 import "./about.css";
 const Lottie = dynamic(() => import("lottie-react"), { ssr: false });

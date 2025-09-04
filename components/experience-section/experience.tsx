@@ -6,7 +6,7 @@ import { useSectionInView } from "@/hooks/useSectionInView";
 import { experiencesData } from "@/lib/data";
 import { ExperienceElementProps } from "@/lib/types";
 import { useState } from "react";
-import { FaEye } from "react-icons/fa";
+import { FaEye } from "react-icons/fa6";
 import { useInView } from "react-intersection-observer";
 import {
   VerticalTimeline,
