@@ -42,8 +42,8 @@ export const experiencesData = [
     title: "Software Engineer",
     location: "PixelQue Software Pvt. Ltd.",
     description: [
-      "Joined as a MEAN Stack Developer.",
-      "Will be involved in developing Kintavo (formarly Perfeqta) Software using the MEAN stack (MongoDB, Express.js, Angular, Node.js)."
+      "Joined as a MEAN Stack Developer."
+      // "Will be involved in developing Kintavo (formarly Perfeqta) Software using the MEAN stack (MongoDB, Express.js, Angular, Node.js)."
     ],
     icon: React.createElement(CgWorkAlt),
     date: "09/2025 - Present"
